@@ -17,11 +17,14 @@ participants_df = pd.read_csv('data/public_match_participants_export_2026-01-19_
 participants_df['created_at'] = pd.to_datetime(participants_df['created_at'], format='mixed')
 matches_df['created_at'] = pd.to_datetime(matches_df['created_at'], format='mixed')
 
-participants_df['hour'] = participants_df['created_at'].dt.hour
-participants_df['weekday'] = participants_df['created_at'].dt.day_name()
-participants_df['month'] = participants_df['created_at'].dt.month
-participants_df['week'] = participants_df['created_at'].dt.isocalendar().week
-participants_df['date'] = participants_df['created_at'].dt.date
+# Convert from GMT to PST (subtract 8 hours)
+participants_df['created_at_pst'] = participants_df['created_at'] - pd.Timedelta(hours=8)
+
+participants_df['hour'] = participants_df['created_at_pst'].dt.hour
+participants_df['weekday'] = participants_df['created_at_pst'].dt.day_name()
+participants_df['month'] = participants_df['created_at_pst'].dt.month
+participants_df['week'] = participants_df['created_at_pst'].dt.isocalendar().week
+participants_df['date'] = participants_df['created_at_pst'].dt.date
 
 player_lookup = players_df.set_index('id')['display_name'].to_dict()
 
@@ -488,7 +491,7 @@ print(f"  Best cold starter: {cold_starter['player']}")
 # ============================================================
 print("\nAnalyzing monthly activity...")
 
-participants_df['year_month'] = participants_df['created_at'].dt.to_period('M')
+participants_df['year_month'] = participants_df['created_at_pst'].dt.to_period('M')
 monthly_games = participants_df.groupby('year_month').size()
 peak_month = str(monthly_games.idxmax())
 peak_games = int(monthly_games.max())

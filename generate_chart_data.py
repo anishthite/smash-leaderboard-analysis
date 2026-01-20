@@ -14,9 +14,11 @@ matches_df = pd.read_csv('data/public_matches_export_2026-01-19_214740.csv')
 participants_df = pd.read_csv('data/public_match_participants_export_2026-01-19_214731.csv')
 
 participants_df['created_at'] = pd.to_datetime(participants_df['created_at'], format='mixed')
-participants_df['hour'] = participants_df['created_at'].dt.hour
-participants_df['weekday'] = participants_df['created_at'].dt.day_name()
-participants_df['date'] = participants_df['created_at'].dt.date
+# Convert from GMT to PST (subtract 8 hours)
+participants_df['created_at_pst'] = participants_df['created_at'] - pd.Timedelta(hours=8)
+participants_df['hour'] = participants_df['created_at_pst'].dt.hour
+participants_df['weekday'] = participants_df['created_at_pst'].dt.day_name()
+participants_df['date'] = participants_df['created_at_pst'].dt.date
 
 player_lookup = players_df.set_index('id')['display_name'].to_dict()
 
@@ -109,7 +111,8 @@ for hour in range(24):
 chart_data['hourlyActivity'] = {
     'labels': [f'{h}:00' for h in range(24)],
     'games': [h['games'] for h in hourly_stats],
-    'winRates': [h['winRate'] for h in hourly_stats]
+    'winRates': [h['winRate'] for h in hourly_stats],
+    'timezone': 'PST'
 }
 
 # ============================================================
@@ -135,7 +138,7 @@ chart_data['dailyActivity'] = {
 # 5. MONTHLY ACTIVITY
 # ============================================================
 print("Generating monthly data...")
-participants_df['month'] = participants_df['created_at'].dt.to_period('M')
+participants_df['month'] = participants_df['created_at_pst'].dt.to_period('M')
 monthly = participants_df.groupby('month').size()
 chart_data['monthlyActivity'] = {
     'labels': [str(m) for m in monthly.index],

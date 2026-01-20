@@ -21,11 +21,14 @@ players_df['created_at'] = pd.to_datetime(players_df['created_at'], format='mixe
 matches_df['created_at'] = pd.to_datetime(matches_df['created_at'], format='mixed')
 participants_df['created_at'] = pd.to_datetime(participants_df['created_at'], format='mixed')
 
-# Add time features
-participants_df['hour'] = participants_df['created_at'].dt.hour
-participants_df['weekday'] = participants_df['created_at'].dt.day_name()
-participants_df['month'] = participants_df['created_at'].dt.month_name()
-participants_df['is_weekend'] = participants_df['created_at'].dt.dayofweek >= 5
+# Convert from GMT to PST (subtract 8 hours)
+participants_df['created_at_pst'] = participants_df['created_at'] - pd.Timedelta(hours=8)
+
+# Add time features (using PST)
+participants_df['hour'] = participants_df['created_at_pst'].dt.hour
+participants_df['weekday'] = participants_df['created_at_pst'].dt.day_name()
+participants_df['month'] = participants_df['created_at_pst'].dt.month_name()
+participants_df['is_weekend'] = participants_df['created_at_pst'].dt.dayofweek >= 5
 participants_df['is_late_night'] = (participants_df['hour'] >= 22) | (participants_df['hour'] <= 4)
 participants_df['time_period'] = participants_df['hour'].apply(lambda h:
     'Late Night (10PM-4AM)' if h >= 22 or h <= 4 else
@@ -448,7 +451,7 @@ crazy_stats['rare_characters'] = [
 # ============================================================
 print("  - Monthly champions...")
 
-participants_df['year_month'] = participants_df['created_at'].dt.to_period('M')
+participants_df['year_month'] = participants_df['created_at_pst'].dt.to_period('M')
 monthly_champions = {}
 
 for month in participants_df['year_month'].unique():
