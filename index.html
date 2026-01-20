@@ -1,0 +1,1777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Office Smash Leaderboard Analytics</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Russo+One&family=Press+Start+2P&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --smash-red: #e60012;
+            --smash-orange: #ff6b00;
+            --smash-yellow: #ffd700;
+            --smash-blue: #0066cc;
+            --smash-dark: #1a1a2e;
+            --smash-darker: #0f0f1a;
+            --smash-black: #050508;
+            --fire-gradient: linear-gradient(180deg, #ff6b00 0%, #e60012 50%, #8b0000 100%);
+            --text-white: #ffffff;
+            --text-gray: #a0a0a0;
+            --text-dim: #606080;
+            --success: #00ff88;
+            --danger: #ff4757;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Russo One', sans-serif;
+            background: var(--smash-black);
+            color: var(--text-white);
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Diagonal stripe pattern overlay (Smash style) */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 10px,
+                rgba(255, 107, 0, 0.02) 10px,
+                rgba(255, 107, 0, 0.02) 20px
+            );
+            pointer-events: none;
+            z-index: 9998;
+            animation: stripe-scroll 60s linear infinite;
+        }
+
+        @keyframes stripe-scroll {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50%, 50%); }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* === HERO SECTION - SMASH STYLE === */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            overflow: hidden;
+            background:
+                radial-gradient(ellipse at 30% 20%, rgba(230, 0, 18, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(255, 107, 0, 0.2) 0%, transparent 50%),
+                var(--smash-black);
+        }
+
+        /* Fire particles */
+        .fire-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .fire-particle {
+            position: absolute;
+            bottom: -20px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            animation: rise 4s ease-in infinite;
+            opacity: 0;
+        }
+
+        .fire-particle.red { background: var(--smash-red); box-shadow: 0 0 20px var(--smash-red); }
+        .fire-particle.orange { background: var(--smash-orange); box-shadow: 0 0 20px var(--smash-orange); }
+        .fire-particle.yellow { background: var(--smash-yellow); box-shadow: 0 0 20px var(--smash-yellow); }
+
+        @keyframes rise {
+            0% { transform: translateY(0) scale(1); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(-100vh) scale(0.3); opacity: 0; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 10px 30px;
+            background: var(--fire-gradient);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+            animation: badge-glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes badge-glow {
+            0% { box-shadow: 0 0 10px var(--smash-red); }
+            100% { box-shadow: 0 0 30px var(--smash-orange), 0 0 60px var(--smash-red); }
+        }
+
+        .hero-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(4rem, 12vw, 8rem);
+            font-weight: 400;
+            line-height: 0.9;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            color: var(--text-white);
+            text-shadow:
+                4px 4px 0 var(--smash-red),
+                8px 8px 0 var(--smash-orange),
+                0 0 50px var(--smash-red);
+            animation: title-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes title-pulse {
+            0%, 100% { text-shadow: 4px 4px 0 var(--smash-red), 8px 8px 0 var(--smash-orange), 0 0 50px var(--smash-red); }
+            50% { text-shadow: 4px 4px 0 var(--smash-orange), 8px 8px 0 var(--smash-yellow), 0 0 80px var(--smash-orange); }
+        }
+
+        .hero-title span {
+            display: block;
+            font-size: 0.5em;
+            color: var(--smash-yellow);
+            text-shadow: 2px 2px 0 var(--smash-red);
+        }
+
+        .hero-subtitle {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            color: var(--text-gray);
+            letter-spacing: 3px;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .hero-stat {
+            background: linear-gradient(135deg, var(--smash-dark) 0%, var(--smash-darker) 100%);
+            border: 3px solid var(--smash-red);
+            padding: 30px 20px;
+            position: relative;
+            clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+            transition: all 0.3s ease;
+        }
+
+        .hero-stat::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--fire-gradient);
+        }
+
+        .hero-stat:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--smash-orange);
+            box-shadow: 0 20px 40px rgba(230, 0, 18, 0.3);
+        }
+
+        .hero-stat-value {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            color: var(--smash-yellow);
+            line-height: 1;
+            text-shadow: 2px 2px 0 var(--smash-red);
+        }
+
+        .hero-stat-label {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 10px;
+        }
+
+        .smash-ball {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background:
+                radial-gradient(circle at 30% 30%, white 5%, transparent 20%),
+                conic-gradient(from 0deg, var(--smash-red), var(--smash-orange), var(--smash-yellow), var(--smash-orange), var(--smash-red));
+            border-radius: 50%;
+            animation: smash-ball-spin 3s linear infinite, smash-ball-float 2s ease-in-out infinite;
+            box-shadow: 0 0 30px var(--smash-orange), 0 0 60px var(--smash-red);
+        }
+
+        @keyframes smash-ball-spin {
+            0% { transform: translateX(-50%) rotate(0deg); }
+            100% { transform: translateX(-50%) rotate(360deg); }
+        }
+
+        @keyframes smash-ball-float {
+            0%, 100% { margin-bottom: 0; }
+            50% { margin-bottom: 20px; }
+        }
+
+        /* === SECTION STYLING === */
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.6rem;
+            color: var(--smash-orange);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            text-transform: uppercase;
+            color: var(--text-white);
+            text-shadow: 3px 3px 0 var(--smash-red);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: var(--fire-gradient);
+        }
+
+        /* === DOMINATOR SECTION === */
+        .dominator-section {
+            background:
+                radial-gradient(ellipse at center, rgba(255, 215, 0, 0.2) 0%, transparent 60%),
+                var(--smash-black);
+        }
+
+        .dominator-card {
+            max-width: 900px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, var(--smash-dark) 0%, #1a1a35 100%);
+            border: 5px solid var(--smash-yellow);
+            padding: 60px;
+            position: relative;
+            text-align: center;
+            clip-path: polygon(30px 0, calc(100% - 30px) 0, 100% 30px, 100% calc(100% - 30px), calc(100% - 30px) 100%, 30px 100%, 0 calc(100% - 30px), 0 30px);
+            animation: dominator-glow 3s ease-in-out infinite;
+        }
+
+        @keyframes dominator-glow {
+            0%, 100% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.3), inset 0 0 30px rgba(255, 215, 0, 0.1); }
+            50% { box-shadow: 0 0 60px rgba(255, 215, 0, 0.5), inset 0 0 50px rgba(255, 215, 0, 0.2); }
+        }
+
+        .crown-icon {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            animation: crown-bounce 1s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px var(--smash-yellow));
+        }
+
+        @keyframes crown-bounce {
+            0%, 100% { transform: translateY(0) rotate(-5deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+
+        .dominator-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 5rem;
+            color: var(--smash-yellow);
+            text-shadow: 4px 4px 0 var(--smash-red), 0 0 30px var(--smash-yellow);
+            margin-bottom: 10px;
+        }
+
+        .dominator-title {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.7rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 40px;
+        }
+
+        .dominator-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .dominator-stat {
+            text-align: center;
+        }
+
+        .dominator-stat-value {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+        }
+
+        .dominator-stat-value.elo { color: var(--smash-yellow); text-shadow: 2px 2px 0 var(--smash-red); }
+        .dominator-stat-value.winrate { color: var(--success); }
+        .dominator-stat-value.record { color: var(--text-white); }
+
+        .dominator-stat-label {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .dominator-main {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: var(--smash-darker);
+            padding: 15px 30px;
+            border: 2px solid var(--smash-red);
+            clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+        }
+
+        .dominator-main-char {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            color: var(--smash-red);
+        }
+
+        /* === LEADERBOARD === */
+        .leaderboard-section {
+            background: var(--smash-darker);
+        }
+
+        .leaderboard-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 10px;
+        }
+
+        .leaderboard-table th {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.55rem;
+            color: var(--smash-orange);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 3px solid var(--smash-red);
+        }
+
+        .leaderboard-table tbody tr {
+            background: linear-gradient(90deg, var(--smash-dark) 0%, var(--smash-darker) 100%);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border-left: 4px solid transparent;
+        }
+
+        .leaderboard-table tbody tr:hover {
+            background: linear-gradient(90deg, #252545 0%, var(--smash-dark) 100%);
+            transform: translateX(10px) scale(1.01);
+            border-left: 4px solid var(--smash-red);
+            box-shadow: 0 5px 20px rgba(230, 0, 18, 0.2);
+        }
+
+        .leaderboard-table td {
+            padding: 20px;
+            vertical-align: middle;
+        }
+
+        .rank-cell {
+            width: 80px;
+            text-align: center;
+        }
+
+        .rank-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        .rank-1 { background: var(--fire-gradient); color: #fff; animation: rank-glow 1.5s ease-in-out infinite; }
+        .rank-2 { background: linear-gradient(135deg, #c0c0c0, #808080); color: #000; }
+        .rank-3 { background: linear-gradient(135deg, #cd7f32, #8b4513); color: #fff; }
+        .rank-default { background: var(--smash-dark); color: var(--text-gray); border: 2px solid var(--smash-red); }
+
+        @keyframes rank-glow {
+            0%, 100% { box-shadow: 0 0 10px var(--smash-red); }
+            50% { box-shadow: 0 0 25px var(--smash-orange), 0 0 40px var(--smash-red); }
+        }
+
+        .player-cell {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .player-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--fire-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        .player-info h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 3px;
+        }
+
+        .player-info .country {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+        }
+
+        .elo-cell {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            color: var(--smash-yellow);
+            text-shadow: 1px 1px 0 var(--smash-red);
+        }
+
+        .winrate-cell {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+        }
+
+        .winrate-high { color: var(--success); }
+        .winrate-mid { color: var(--smash-yellow); }
+        .winrate-low { color: var(--danger); }
+
+        .record-cell {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .record-cell .wins { color: var(--success); }
+        .record-cell .losses { color: var(--danger); }
+
+        .main-cell {
+            color: var(--smash-orange);
+            font-size: 0.9rem;
+        }
+
+        /* === CHARACTER GRID === */
+        .characters-section {
+            background: var(--smash-black);
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .character-card {
+            background: var(--smash-dark);
+            border: 3px solid var(--smash-red);
+            padding: 25px;
+            position: relative;
+            transition: all 0.3s ease;
+            clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+        }
+
+        .character-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            background: var(--fire-gradient);
+            clip-path: polygon(100% 0, 0 0, 100% 100%);
+        }
+
+        .character-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--smash-orange);
+            box-shadow: 0 15px 40px rgba(230, 0, 18, 0.3);
+        }
+
+        .character-rank {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.5rem;
+            color: var(--text-dim);
+        }
+
+        .character-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            padding-right: 30px;
+            color: var(--text-white);
+        }
+
+        .character-stats {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .character-stat {
+            text-align: center;
+            flex: 1;
+        }
+
+        .character-stat-value {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+        }
+
+        .character-stat-value.plays { color: var(--smash-orange); }
+        .character-stat-value.wr { color: var(--success); }
+
+        .character-stat-label {
+            font-size: 0.6rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+
+        /* === RIVALRIES === */
+        .rivalries-section {
+            background:
+                linear-gradient(135deg, rgba(230, 0, 18, 0.1) 0%, transparent 50%),
+                linear-gradient(225deg, rgba(255, 107, 0, 0.1) 0%, transparent 50%),
+                var(--smash-darker);
+        }
+
+        .rivalry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .rivalry-card {
+            background: var(--smash-dark);
+            border: 3px solid var(--smash-red);
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .rivalry-card::before {
+            content: 'VS';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 5rem;
+            color: var(--smash-red);
+            opacity: 0.15;
+        }
+
+        .rivalry-card:hover {
+            border-color: var(--smash-orange);
+            box-shadow: 0 0 40px rgba(230, 0, 18, 0.3);
+        }
+
+        .rivalry-players {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .rivalry-player {
+            text-align: center;
+            flex: 1;
+        }
+
+        .rivalry-player-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .rivalry-player-wins {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+        }
+
+        .rivalry-player:first-child .rivalry-player-wins { color: var(--smash-orange); text-shadow: 2px 2px 0 var(--smash-red); }
+        .rivalry-player:last-child .rivalry-player-wins { color: var(--smash-blue); text-shadow: 2px 2px 0 #003366; }
+
+        .rivalry-vs {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.2rem;
+            color: var(--smash-red);
+            padding: 0 20px;
+        }
+
+        .rivalry-matches {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid var(--smash-darker);
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        .rivalry-matches strong {
+            color: var(--smash-yellow);
+        }
+
+        /* === CRAZY STATS === */
+        .crazy-section {
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(230, 0, 18, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 50%, rgba(255, 107, 0, 0.15) 0%, transparent 50%),
+                var(--smash-black);
+        }
+
+        .crazy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .crazy-card {
+            background: var(--smash-dark);
+            border: 3px solid var(--smash-red);
+            border-left: 6px solid var(--smash-orange);
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .crazy-card:hover {
+            transform: translateX(10px);
+            border-color: var(--smash-orange);
+            box-shadow: -10px 0 30px rgba(255, 107, 0, 0.2);
+        }
+
+        .crazy-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .crazy-card-title {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.55rem;
+            color: var(--smash-orange);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .crazy-card-stat {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: var(--text-white);
+            margin-bottom: 5px;
+        }
+
+        .crazy-card-detail {
+            font-size: 1rem;
+            color: var(--text-gray);
+        }
+
+        .crazy-card-highlight {
+            color: var(--smash-yellow);
+            font-weight: 600;
+        }
+
+        .crazy-card-sub {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            margin-top: 10px;
+        }
+
+        /* === DEEP DIVE SECTION === */
+        .deep-dive-section {
+            background: var(--smash-darker);
+        }
+
+        .deep-dive-card {
+            background: linear-gradient(135deg, var(--smash-dark) 0%, #15152a 100%);
+            border: 4px solid var(--smash-orange);
+            padding: 40px;
+            margin-bottom: 40px;
+            position: relative;
+            clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+        }
+
+        .deep-dive-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--fire-gradient);
+        }
+
+        .deep-dive-header {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+
+        .deep-dive-avatar {
+            width: 90px;
+            height: 90px;
+            background: var(--fire-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            animation: avatar-pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes avatar-pulse {
+            0%, 100% { box-shadow: 0 0 20px var(--smash-red); }
+            50% { box-shadow: 0 0 40px var(--smash-orange); }
+        }
+
+        .deep-dive-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            text-shadow: 2px 2px 0 var(--smash-red);
+        }
+
+        .deep-dive-subtitle {
+            color: var(--text-gray);
+            font-size: 1rem;
+        }
+
+        .day-breakdown {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .day-item {
+            text-align: center;
+            padding: 20px 10px;
+            background: var(--smash-darker);
+            border: 2px solid var(--smash-red);
+            transition: all 0.3s ease;
+        }
+
+        .day-item:hover {
+            transform: scale(1.08);
+            border-color: var(--smash-orange);
+            box-shadow: 0 5px 20px rgba(230, 0, 18, 0.3);
+        }
+
+        .day-item .day-name {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.45rem;
+            color: var(--smash-orange);
+            text-transform: uppercase;
+        }
+
+        .day-item .day-wr {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            margin-top: 8px;
+        }
+
+        .day-item .day-wr.high { color: var(--success); }
+        .day-item .day-wr.mid { color: var(--smash-yellow); }
+        .day-item .day-wr.low { color: var(--danger); }
+
+        .day-item .day-games {
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            margin-top: 5px;
+        }
+
+        /* === CHARTS === */
+        .charts-section {
+            background: var(--smash-black);
+        }
+
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+        }
+
+        .chart-card {
+            background: var(--smash-dark);
+            border: 3px solid var(--smash-red);
+            padding: 30px;
+            clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px));
+        }
+
+        .chart-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--fire-gradient);
+        }
+
+        .chart-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: var(--text-white);
+            text-shadow: 1px 1px 0 var(--smash-red);
+        }
+
+        .chart-container {
+            height: 300px;
+            position: relative;
+        }
+
+        /* === FUN FACTS === */
+        .facts-section {
+            background: var(--smash-darker);
+        }
+
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .fact-card {
+            background: var(--smash-dark);
+            border-left: 5px solid var(--smash-red);
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .fact-card:nth-child(2) { border-left-color: var(--smash-orange); }
+        .fact-card:nth-child(3) { border-left-color: var(--smash-yellow); }
+        .fact-card:nth-child(4) { border-left-color: var(--success); }
+
+        .fact-card:hover {
+            transform: translateX(10px);
+            box-shadow: -5px 0 20px rgba(230, 0, 18, 0.2);
+        }
+
+        .fact-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .fact-title {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.55rem;
+            color: var(--smash-orange);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .fact-value {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            color: var(--smash-yellow);
+            text-shadow: 2px 2px 0 var(--smash-red);
+            margin-bottom: 5px;
+        }
+
+        .fact-detail {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+        }
+
+        /* === ONE TRICK PONIES === */
+        .ponies-section {
+            background: var(--smash-black);
+        }
+
+        .ponies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .pony-card {
+            background: var(--smash-dark);
+            border: 3px solid var(--smash-red);
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .pony-card:hover {
+            border-color: var(--smash-orange);
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(230, 0, 18, 0.2);
+        }
+
+        .pony-percent {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            color: var(--smash-orange);
+            text-shadow: 2px 2px 0 var(--smash-red);
+            min-width: 100px;
+        }
+
+        .pony-info h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .pony-info .character {
+            color: var(--smash-yellow);
+            font-weight: 500;
+        }
+
+        .pony-info .games {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+        }
+
+        /* === COUNTRIES === */
+        .countries-section {
+            background: var(--smash-darker);
+        }
+
+        .countries-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .country-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--smash-dark);
+            border: 2px solid var(--smash-red);
+            padding: 15px 25px;
+            transition: all 0.3s ease;
+            clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+        }
+
+        .country-badge:hover {
+            border-color: var(--smash-orange);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(230, 0, 18, 0.2);
+        }
+
+        .country-flag {
+            font-size: 2rem;
+        }
+
+        .country-code {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.3rem;
+        }
+
+        /* === FOOTER === */
+        footer {
+            background: var(--smash-black);
+            border-top: 4px solid var(--smash-red);
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: var(--smash-yellow);
+            text-shadow: 2px 2px 0 var(--smash-red);
+            margin-bottom: 15px;
+        }
+
+        .footer-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-dim);
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .rivalry-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .day-breakdown {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .dominator-card {
+                padding: 30px 20px;
+            }
+
+            .dominator-name {
+                font-size: 3rem;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="fire-particles" id="fire-particles"></div>
+        <div class="hero-content">
+            <span class="hero-badge">Season 1 Complete</span>
+            <h1 class="hero-title">
+                Office Smash
+                <span>Leaderboard</span>
+            </h1>
+            <p class="hero-subtitle">June 2025 — January 2026</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-value">3,924</div>
+                    <div class="hero-stat-label">Total Matches</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">72</div>
+                    <div class="hero-stat-label">Players</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">18,281</div>
+                    <div class="hero-stat-label">Total KOs</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">224</div>
+                    <div class="hero-stat-label">Days</div>
+                </div>
+            </div>
+        </div>
+        <div class="smash-ball"></div>
+    </section>
+
+    <!-- The Dominator -->
+    <section class="dominator-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">The Undisputed Champion</span>
+                <h2 class="section-title">Season Dominator</h2>
+            </div>
+            <div class="dominator-card">
+                <div class="crown-icon">👑</div>
+                <h2 class="dominator-name">JMOON</h2>
+                <p class="dominator-title">The Unstoppable Force</p>
+                <div class="dominator-stats">
+                    <div class="dominator-stat">
+                        <div class="dominator-stat-value elo">1711</div>
+                        <div class="dominator-stat-label">ELO Rating</div>
+                    </div>
+                    <div class="dominator-stat">
+                        <div class="dominator-stat-value winrate">77.7%</div>
+                        <div class="dominator-stat-label">Win Rate</div>
+                    </div>
+                    <div class="dominator-stat">
+                        <div class="dominator-stat-value record">740W - 212L</div>
+                        <div class="dominator-stat-label">Record</div>
+                    </div>
+                </div>
+                <div class="dominator-main">
+                    <span class="dominator-main-char">🃏 JOKER</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ELO Leaderboard -->
+    <section class="leaderboard-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Power Rankings</span>
+                <h2 class="section-title">ELO Leaderboard</h2>
+            </div>
+            <table class="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Player</th>
+                        <th>ELO</th>
+                        <th>Win Rate</th>
+                        <th>Record</th>
+                        <th>Main</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboard-body"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- CRAZY STATS SECTION -->
+    <section class="crazy-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Wild Data</span>
+                <h2 class="section-title">Crazy Stats</h2>
+            </div>
+            <div class="crazy-grid">
+                <div class="crazy-card">
+                    <div class="crazy-card-icon">🌙</div>
+                    <div class="crazy-card-title">Busiest Hour</div>
+                    <div class="crazy-card-stat">1:00 - 2:00 AM</div>
+                    <div class="crazy-card-detail"><span class="crazy-card-highlight">970 games</span> played at this hour</div>
+                    <div class="crazy-card-sub">Y'all need sleep</div>
+                </div>
+                <div class="crazy-card">
+                    <div class="crazy-card-icon">📉</div>
+                    <div class="crazy-card-title">Longest Losing Streak</div>
+                    <div class="crazy-card-stat">heidy: 40 LOSSES</div>
+                    <div class="crazy-card-detail">In a row. Without a single win.</div>
+                    <div class="crazy-card-sub">Legendary perseverance</div>
+                </div>
+                <div class="crazy-card">
+                    <div class="crazy-card-icon">🗡️</div>
+                    <div class="crazy-card-title">Top jmoon Killer</div>
+                    <div class="crazy-card-stat">habeas: 133 wins</div>
+                    <div class="crazy-card-detail">Against the #1 ranked player</div>
+                    <div class="crazy-card-sub">The only real threat</div>
+                </div>
+                <div class="crazy-card">
+                    <div class="crazy-card-icon">💀</div>
+                    <div class="crazy-card-title">Most Cursed Character</div>
+                    <div class="crazy-card-stat">GRENINJA: 21.3%</div>
+                    <div class="crazy-card-detail">Win rate across 108 games</div>
+                    <div class="crazy-card-sub">Just don't pick it</div>
+                </div>
+                <div class="crazy-card">
+                    <div class="crazy-card-icon">✨</div>
+                    <div class="crazy-card-title">Most Blessed Character</div>
+                    <div class="crazy-card-stat">MARTH: 84.6%</div>
+                    <div class="crazy-card-detail">Win rate (26 games)</div>
+                    <div class="crazy-card-sub">The secret weapon</div>
+                </div>
+                <div class="crazy-card">
+                    <div class="crazy-card-icon">🦉</div>
+                    <div class="crazy-card-title">Late Night King</div>
+                    <div class="crazy-card-stat">jmoon: 76.8%</div>
+                    <div class="crazy-card-detail">Win rate after 10PM (409 games)</div>
+                    <div class="crazy-card-sub">Doesn't get tired</div>
+                </div>
+                <div class="crazy-card">
+                    <div class="crazy-card-icon">📅</div>
+                    <div class="crazy-card-title">jmoon's Best Day</div>
+                    <div class="crazy-card-stat">Monday: 86.5%</div>
+                    <div class="crazy-card-detail">Win rate across 111 games</div>
+                    <div class="crazy-card-sub">Starts the week dominant</div>
+                </div>
+                <div class="crazy-card">
+                    <div class="crazy-card-icon">😵</div>
+                    <div class="crazy-card-title">jmoon's Kryptonite</div>
+                    <div class="crazy-card-stat">LITTLE MAC: 42.9%</div>
+                    <div class="crazy-card-detail">His worst character (7 games)</div>
+                    <div class="crazy-card-sub">Even gods have weaknesses</div>
+                </div>
+                <div class="crazy-card">
+                    <div class="crazy-card-icon">📆</div>
+                    <div class="crazy-card-title">Wednesday's Character</div>
+                    <div class="crazy-card-stat">ZELDA: 118 plays</div>
+                    <div class="crazy-card-detail">Most picked on Wednesdays</div>
+                    <div class="crazy-card-sub">Mid-week magic</div>
+                </div>
+                <div class="crazy-card">
+                    <div class="crazy-card-icon">🎉</div>
+                    <div class="crazy-card-title">Friday Night Fave</div>
+                    <div class="crazy-card-stat">ZELDA: 48 plays</div>
+                    <div class="crazy-card-detail">After 6PM on Fridays</div>
+                    <div class="crazy-card-sub">The weekend spell</div>
+                </div>
+                <div class="crazy-card">
+                    <div class="crazy-card-icon">💪</div>
+                    <div class="crazy-card-title">Comeback King</div>
+                    <div class="crazy-card-stat">shafaq: 65.5%</div>
+                    <div class="crazy-card-detail">Win rate when having SDs</div>
+                    <div class="crazy-card-sub">Self-destruct? No problem</div>
+                </div>
+                <div class="crazy-card">
+                    <div class="crazy-card-icon">🏆</div>
+                    <div class="crazy-card-title">Most Months Dominated</div>
+                    <div class="crazy-card-stat">jmoon: 7/8</div>
+                    <div class="crazy-card-detail">Monthly champion titles</div>
+                    <div class="crazy-card-sub">Consistent excellence</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Player Deep Dives -->
+    <section class="deep-dive-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Player Analysis</span>
+                <h2 class="section-title">Deep Dives</h2>
+            </div>
+
+            <!-- JMOON Deep Dive -->
+            <div class="deep-dive-card">
+                <div class="deep-dive-header">
+                    <div class="deep-dive-avatar">👑</div>
+                    <div>
+                        <h3 class="deep-dive-name">JMOON</h3>
+                        <p class="deep-dive-subtitle">The Dominator - 952 Games Analyzed</p>
+                    </div>
+                </div>
+                <h4 style="font-family: 'Press Start 2P', monospace; font-size: 0.6rem; color: var(--smash-orange); margin-bottom: 15px;">WIN RATE BY DAY</h4>
+                <div class="day-breakdown">
+                    <div class="day-item">
+                        <div class="day-name">MON</div>
+                        <div class="day-wr high">86.5%</div>
+                        <div class="day-games">111 games</div>
+                    </div>
+                    <div class="day-item">
+                        <div class="day-name">TUE</div>
+                        <div class="day-wr high">82.4%</div>
+                        <div class="day-games">68 games</div>
+                    </div>
+                    <div class="day-item">
+                        <div class="day-name">WED</div>
+                        <div class="day-wr mid">79.8%</div>
+                        <div class="day-games">129 games</div>
+                    </div>
+                    <div class="day-item">
+                        <div class="day-name">THU</div>
+                        <div class="day-wr high">84.6%</div>
+                        <div class="day-games">117 games</div>
+                    </div>
+                    <div class="day-item">
+                        <div class="day-name">FRI</div>
+                        <div class="day-wr low">70.3%</div>
+                        <div class="day-games">229 games</div>
+                    </div>
+                    <div class="day-item">
+                        <div class="day-name">SAT</div>
+                        <div class="day-wr mid">74.6%</div>
+                        <div class="day-games">224 games</div>
+                    </div>
+                    <div class="day-item">
+                        <div class="day-name">SUN</div>
+                        <div class="day-wr mid">78.4%</div>
+                        <div class="day-games">74 games</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HABEAS Deep Dive -->
+            <div class="deep-dive-card">
+                <div class="deep-dive-header">
+                    <div class="deep-dive-avatar">🎮</div>
+                    <div>
+                        <h3 class="deep-dive-name">HABEAS</h3>
+                        <p class="deep-dive-subtitle">The Grinder - 2,213 Games (Most Active!)</p>
+                    </div>
+                </div>
+                <h4 style="font-family: 'Press Start 2P', monospace; font-size: 0.6rem; color: var(--smash-orange); margin-bottom: 15px;">WIN RATE BY DAY</h4>
+                <div class="day-breakdown">
+                    <div class="day-item">
+                        <div class="day-name">MON</div>
+                        <div class="day-wr mid">59.4%</div>
+                        <div class="day-games">160 games</div>
+                    </div>
+                    <div class="day-item">
+                        <div class="day-name">TUE</div>
+                        <div class="day-wr high">60.5%</div>
+                        <div class="day-games">238 games</div>
+                    </div>
+                    <div class="day-item">
+                        <div class="day-name">WED</div>
+                        <div class="day-wr low">46.7%</div>
+                        <div class="day-games">255 games</div>
+                    </div>
+                    <div class="day-item">
+                        <div class="day-name">THU</div>
+                        <div class="day-wr mid">56.7%</div>
+                        <div class="day-games">367 games</div>
+                    </div>
+                    <div class="day-item">
+                        <div class="day-name">FRI</div>
+                        <div class="day-wr low">41.5%</div>
+                        <div class="day-games">443 games</div>
+                    </div>
+                    <div class="day-item">
+                        <div class="day-name">SAT</div>
+                        <div class="day-wr mid">49.9%</div>
+                        <div class="day-games">527 games</div>
+                    </div>
+                    <div class="day-item">
+                        <div class="day-name">SUN</div>
+                        <div class="day-wr low">48.4%</div>
+                        <div class="day-games">223 games</div>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 20px; color: var(--text-gray);">
+                    <strong style="color: var(--success);">Best: Tuesday (60.5%)</strong> ·
+                    <strong style="color: var(--danger);">Worst: Friday (41.5%)</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Character Stats -->
+    <section class="characters-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Fighter Analysis</span>
+                <h2 class="section-title">Most Played Characters</h2>
+            </div>
+            <div class="character-grid" id="character-grid"></div>
+        </div>
+    </section>
+
+    <!-- Rivalries -->
+    <section class="rivalries-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Head to Head</span>
+                <h2 class="section-title">Biggest Rivalries</h2>
+            </div>
+            <div class="rivalry-grid" id="rivalry-grid"></div>
+        </div>
+    </section>
+
+    <!-- Charts -->
+    <section class="charts-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Activity Data</span>
+                <h2 class="section-title">Match Trends</h2>
+            </div>
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3 class="chart-title">Matches by Day of Week</h3>
+                    <div class="chart-container">
+                        <canvas id="weekdayChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3 class="chart-title">Monthly Activity</h3>
+                    <div class="chart-container">
+                        <canvas id="monthlyChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Facts -->
+    <section class="facts-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Did You Know?</span>
+                <h2 class="section-title">Season Highlights</h2>
+            </div>
+            <div class="facts-grid">
+                <div class="fact-card">
+                    <div class="fact-icon">💯</div>
+                    <div class="fact-title">Perfect Games</div>
+                    <div class="fact-value">1,185</div>
+                    <div class="fact-detail">Flawless 3-0 victories</div>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">💀</div>
+                    <div class="fact-title">Most Self-Destructs</div>
+                    <div class="fact-value">habeas</div>
+                    <div class="fact-detail">95 total SDs</div>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">🎭</div>
+                    <div class="fact-title">Most Diverse</div>
+                    <div class="fact-value">jmoon</div>
+                    <div class="fact-detail">69 different characters</div>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">🔥</div>
+                    <div class="fact-title">Win Streak</div>
+                    <div class="fact-value">28 wins</div>
+                    <div class="fact-detail">jmoon unstoppable</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- One Trick Ponies -->
+    <section class="ponies-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Character Loyalty</span>
+                <h2 class="section-title">One-Trick Ponies</h2>
+            </div>
+            <div class="ponies-grid" id="ponies-grid"></div>
+        </div>
+    </section>
+
+    <!-- Countries -->
+    <section class="countries-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Global Reach</span>
+                <h2 class="section-title">Nations Represented</h2>
+            </div>
+            <div class="countries-grid" id="countries-grid"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">SUPER SMASH OFFICE</div>
+        <p class="footer-text">Season 1 · June 2025 - January 2026 · Everyone is Here!</p>
+    </footer>
+
+    <script>
+        // Data
+        const leaderboardData = [
+            { rank: 1, name: "jmoon", elo: 1711, winRate: 77.7, wins: 740, losses: 212, main: "JOKER", country: "US" },
+            { rank: 2, name: "amar", elo: 1605, winRate: 60.6, wins: 63, losses: 41, main: "ENDERMAN", country: "US" },
+            { rank: 3, name: "habeas", elo: 1474, winRate: 50.7, wins: 1121, losses: 1092, main: "MR. GAME & WATCH", country: "CA" },
+            { rank: 4, name: "will", elo: 1378, winRate: 52.2, wins: 152, losses: 139, main: "JOKER", country: "US" },
+            { rank: 5, name: "shafaq", elo: 1376, winRate: 53.9, wins: 330, losses: 282, main: "ZELDA", country: "US" },
+            { rank: 6, name: "kento", elo: 1339, winRate: 61.7, wins: 58, losses: 36, main: "LUCINA", country: "JP" },
+            { rank: 7, name: "keneru", elo: 1255, winRate: 47.0, wins: 351, losses: 396, main: "DONKEY KONG", country: "US" },
+            { rank: 8, name: "ryy", elo: 1238, winRate: 55.7, wins: 39, losses: 31, main: "FALCO", country: "US" },
+            { rank: 9, name: "own", elo: 1194, winRate: 38.7, wins: 141, losses: 223, main: "WOLF", country: "FR" },
+            { rank: 10, name: "subby", elo: 1176, winRate: 44.7, wins: 484, losses: 599, main: "CAPTAIN FALCON", country: "US" },
+        ];
+
+        const characterData = [
+            { name: "MR. GAME & WATCH", plays: 891, winRate: 46.8 },
+            { name: "DONKEY KONG", plays: 799, winRate: 49.2 },
+            { name: "ZELDA", plays: 791, winRate: 54.9 },
+            { name: "JOKER", plays: 709, winRate: 52.8 },
+            { name: "SAMUS", plays: 618, winRate: 44.2 },
+            { name: "CAPTAIN FALCON", plays: 456, winRate: 47.4 },
+            { name: "YOSHI", plays: 398, winRate: 48.2 },
+            { name: "LUCINA", plays: 312, winRate: 55.1 },
+            { name: "KING K. ROOL", plays: 287, winRate: 43.9 },
+            { name: "WOLF", plays: 245, winRate: 51.0 },
+            { name: "KIRBY", plays: 231, winRate: 42.4 },
+            { name: "LINK", plays: 218, winRate: 49.5 },
+        ];
+
+        const rivalryData = [
+            { player1: "habeas", player2: "subby", p1Wins: 213, p2Wins: 183, total: 396 },
+            { player1: "habeas", player2: "jmoon", p1Wins: 65, p2Wins: 130, total: 195 },
+            { player1: "habeas", player2: "keneru", p1Wins: 104, p2Wins: 78, total: 182 },
+            { player1: "jmoon", player2: "keneru", p1Wins: 101, p2Wins: 29, total: 130 },
+            { player1: "habeas", player2: "shafaq", p1Wins: 57, p2Wins: 62, total: 119 },
+            { player1: "jmoon", player2: "subby", p1Wins: 88, p2Wins: 28, total: 116 },
+        ];
+
+        const weekdayData = {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            data: [478, 612, 589, 687, 741, 456, 361]
+        };
+
+        const monthlyData = {
+            labels: ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan'],
+            data: [312, 489, 567, 621, 534, 478, 512, 411]
+        };
+
+        const oneTrickData = [
+            { name: "lag", character: "NESS", percent: 100, games: 106 },
+            { name: "messi", character: "GRENINJA", percent: 93.1, games: 102 },
+            { name: "caleb", character: "PIRANHA PLANT", percent: 87.0, games: 46 },
+            { name: "niki <3", character: "KIRBY", percent: 81.5, games: 27 },
+            { name: "shafaq", character: "ZELDA", percent: 78.4, games: 612 },
+            { name: "keneru", character: "DONKEY KONG", percent: 76.2, games: 747 },
+        ];
+
+        const countryData = [
+            { code: "US", flag: "🇺🇸" },
+            { code: "CA", flag: "🇨🇦" },
+            { code: "JP", flag: "🇯🇵" },
+            { code: "FR", flag: "🇫🇷" },
+            { code: "AU", flag: "🇦🇺" },
+            { code: "IN", flag: "🇮🇳" },
+            { code: "UK", flag: "🇬🇧" },
+            { code: "PH", flag: "🇵🇭" },
+            { code: "BD", flag: "🇧🇩" },
+            { code: "TN", flag: "🇹🇳" },
+            { code: "NG", flag: "🇳🇬" },
+        ];
+
+        // Generate fire particles
+        function createFireParticles() {
+            const container = document.getElementById('fire-particles');
+            const colors = ['red', 'orange', 'yellow'];
+            for (let i = 0; i < 40; i++) {
+                const particle = document.createElement('div');
+                particle.className = `fire-particle ${colors[Math.floor(Math.random() * colors.length)]}`;
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 4 + 's';
+                particle.style.animationDuration = (3 + Math.random() * 3) + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        // Populate leaderboard
+        function populateLeaderboard() {
+            const tbody = document.getElementById('leaderboard-body');
+            leaderboardData.forEach(player => {
+                const rankClass = player.rank <= 3 ? `rank-${player.rank}` : 'rank-default';
+                const winrateClass = player.winRate >= 55 ? 'winrate-high' : player.winRate >= 45 ? 'winrate-mid' : 'winrate-low';
+
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td class="rank-cell">
+                        <span class="rank-badge ${rankClass}">${player.rank}</span>
+                    </td>
+                    <td>
+                        <div class="player-cell">
+                            <div class="player-avatar">${player.name.charAt(0).toUpperCase()}</div>
+                            <div class="player-info">
+                                <h3>${player.name.toUpperCase()}</h3>
+                                <span class="country">${getCountryFlag(player.country)} ${player.country}</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="elo-cell">${player.elo}</td>
+                    <td class="winrate-cell ${winrateClass}">${player.winRate}%</td>
+                    <td class="record-cell"><span class="wins">${player.wins}W</span> - <span class="losses">${player.losses}L</span></td>
+                    <td class="main-cell">${player.main}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function getCountryFlag(code) {
+            const flags = { US: '🇺🇸', CA: '🇨🇦', JP: '🇯🇵', FR: '🇫🇷', AU: '🇦🇺', IN: '🇮🇳', UK: '🇬🇧', PH: '🇵🇭', BD: '🇧🇩', TN: '🇹🇳', NG: '🇳🇬' };
+            return flags[code] || '🏳️';
+        }
+
+        // Populate characters
+        function populateCharacters() {
+            const grid = document.getElementById('character-grid');
+            characterData.forEach((char, i) => {
+                const card = document.createElement('div');
+                card.className = 'character-card';
+                card.innerHTML = `
+                    <span class="character-rank">#${i + 1}</span>
+                    <h3 class="character-name">${char.name}</h3>
+                    <div class="character-stats">
+                        <div class="character-stat">
+                            <div class="character-stat-value plays">${char.plays}</div>
+                            <div class="character-stat-label">Plays</div>
+                        </div>
+                        <div class="character-stat">
+                            <div class="character-stat-value wr">${char.winRate}%</div>
+                            <div class="character-stat-label">Win Rate</div>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Populate rivalries
+        function populateRivalries() {
+            const grid = document.getElementById('rivalry-grid');
+            rivalryData.forEach(rivalry => {
+                const card = document.createElement('div');
+                card.className = 'rivalry-card';
+                card.innerHTML = `
+                    <div class="rivalry-players">
+                        <div class="rivalry-player">
+                            <div class="rivalry-player-name">${rivalry.player1.toUpperCase()}</div>
+                            <div class="rivalry-player-wins">${rivalry.p1Wins}</div>
+                        </div>
+                        <div class="rivalry-vs">VS</div>
+                        <div class="rivalry-player">
+                            <div class="rivalry-player-name">${rivalry.player2.toUpperCase()}</div>
+                            <div class="rivalry-player-wins">${rivalry.p2Wins}</div>
+                        </div>
+                    </div>
+                    <div class="rivalry-matches"><strong>${rivalry.total}</strong> total matches</div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Populate one-tricks
+        function populateOneTricks() {
+            const grid = document.getElementById('ponies-grid');
+            oneTrickData.forEach(pony => {
+                const card = document.createElement('div');
+                card.className = 'pony-card';
+                card.innerHTML = `
+                    <div class="pony-percent">${pony.percent}%</div>
+                    <div class="pony-info">
+                        <h3>${pony.name.toUpperCase()}</h3>
+                        <div class="character">${pony.character}</div>
+                        <div class="games">${pony.games} games</div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Populate countries
+        function populateCountries() {
+            const grid = document.getElementById('countries-grid');
+            countryData.forEach(country => {
+                const badge = document.createElement('div');
+                badge.className = 'country-badge';
+                badge.innerHTML = `
+                    <span class="country-flag">${country.flag}</span>
+                    <span class="country-code">${country.code}</span>
+                `;
+                grid.appendChild(badge);
+            });
+        }
+
+        // Create charts
+        function createCharts() {
+            const chartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    x: {
+                        grid: { color: 'rgba(230, 0, 18, 0.1)' },
+                        ticks: { color: '#a0a0a0', font: { family: 'JetBrains Mono', size: 10 } }
+                    },
+                    y: {
+                        grid: { color: 'rgba(230, 0, 18, 0.1)' },
+                        ticks: { color: '#a0a0a0', font: { family: 'JetBrains Mono', size: 10 } }
+                    }
+                }
+            };
+
+            // Weekday chart
+            new Chart(document.getElementById('weekdayChart'), {
+                type: 'bar',
+                data: {
+                    labels: weekdayData.labels,
+                    datasets: [{
+                        data: weekdayData.data,
+                        backgroundColor: [
+                            'rgba(230, 0, 18, 0.8)',
+                            'rgba(230, 0, 18, 0.8)',
+                            'rgba(230, 0, 18, 0.8)',
+                            'rgba(230, 0, 18, 0.8)',
+                            'rgba(255, 107, 0, 0.8)',
+                            'rgba(255, 215, 0, 0.6)',
+                            'rgba(255, 215, 0, 0.6)',
+                        ],
+                        borderColor: '#e60012',
+                        borderWidth: 2,
+                        borderRadius: 4,
+                    }]
+                },
+                options: chartOptions
+            });
+
+            // Monthly chart
+            new Chart(document.getElementById('monthlyChart'), {
+                type: 'line',
+                data: {
+                    labels: monthlyData.labels,
+                    datasets: [{
+                        data: monthlyData.data,
+                        borderColor: '#ff6b00',
+                        backgroundColor: 'rgba(255, 107, 0, 0.1)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: '#ff6b00',
+                        pointBorderColor: '#fff',
+                        pointRadius: 6,
+                        pointHoverRadius: 10,
+                    }]
+                },
+                options: chartOptions
+            });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createFireParticles();
+            populateLeaderboard();
+            populateCharacters();
+            populateRivalries();
+            populateOneTricks();
+            populateCountries();
+            createCharts();
+        });
+    </script>
+</body>
+</html>
