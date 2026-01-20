@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Office Smash Leaderboard Analytics</title>
+    <title>Office Smash Analytics - Deep Dive</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,202 +25,58 @@
             --danger: #ff4757;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Russo One', sans-serif;
             background: var(--smash-black);
             color: var(--text-white);
             min-height: 100vh;
-            overflow-x: hidden;
             line-height: 1.6;
         }
 
-        /* Diagonal stripe pattern overlay (Smash style) */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 200%;
-            height: 200%;
-            background: repeating-linear-gradient(
-                -45deg,
-                transparent,
-                transparent 10px,
-                rgba(255, 107, 0, 0.02) 10px,
-                rgba(255, 107, 0, 0.02) 20px
-            );
-            pointer-events: none;
-            z-index: 9998;
-            animation: stripe-scroll 60s linear infinite;
-        }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
 
-        @keyframes stripe-scroll {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50%, 50%); }
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* === HERO SECTION - SMASH STYLE === */
+        /* Hero */
         .hero {
             position: relative;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            padding: 80px 20px;
             text-align: center;
-            padding: 40px 20px;
-            overflow: hidden;
-            background:
-                radial-gradient(ellipse at 30% 20%, rgba(230, 0, 18, 0.3) 0%, transparent 50%),
-                radial-gradient(ellipse at 70% 80%, rgba(255, 107, 0, 0.2) 0%, transparent 50%),
-                var(--smash-black);
-        }
-
-        /* Fire particles */
-        .fire-particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            pointer-events: none;
-        }
-
-        .fire-particle {
-            position: absolute;
-            bottom: -20px;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            animation: rise 4s ease-in infinite;
-            opacity: 0;
-        }
-
-        .fire-particle.red { background: var(--smash-red); box-shadow: 0 0 20px var(--smash-red); }
-        .fire-particle.orange { background: var(--smash-orange); box-shadow: 0 0 20px var(--smash-orange); }
-        .fire-particle.yellow { background: var(--smash-yellow); box-shadow: 0 0 20px var(--smash-yellow); }
-
-        @keyframes rise {
-            0% { transform: translateY(0) scale(1); opacity: 0; }
-            10% { opacity: 0.8; }
-            90% { opacity: 0.8; }
-            100% { transform: translateY(-100vh) scale(0.3); opacity: 0; }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            padding: 10px 30px;
-            background: var(--fire-gradient);
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-            clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
-            animation: badge-glow 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes badge-glow {
-            0% { box-shadow: 0 0 10px var(--smash-red); }
-            100% { box-shadow: 0 0 30px var(--smash-orange), 0 0 60px var(--smash-red); }
+            background: radial-gradient(ellipse at 30% 20%, rgba(230, 0, 18, 0.3) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 80%, rgba(255, 107, 0, 0.2) 0%, transparent 50%),
+                        var(--smash-black);
         }
 
         .hero-title {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(4rem, 12vw, 8rem);
-            font-weight: 400;
-            line-height: 0.9;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            color: var(--text-white);
-            text-shadow:
-                4px 4px 0 var(--smash-red),
-                8px 8px 0 var(--smash-orange),
-                0 0 50px var(--smash-red);
-            animation: title-pulse 3s ease-in-out infinite;
-        }
-
-        @keyframes title-pulse {
-            0%, 100% { text-shadow: 4px 4px 0 var(--smash-red), 8px 8px 0 var(--smash-orange), 0 0 50px var(--smash-red); }
-            50% { text-shadow: 4px 4px 0 var(--smash-orange), 8px 8px 0 var(--smash-yellow), 0 0 80px var(--smash-orange); }
-        }
-
-        .hero-title span {
-            display: block;
-            font-size: 0.5em;
-            color: var(--smash-yellow);
-            text-shadow: 2px 2px 0 var(--smash-red);
+            font-size: clamp(3rem, 10vw, 6rem);
+            text-shadow: 4px 4px 0 var(--smash-red), 8px 8px 0 var(--smash-orange);
+            margin-bottom: 10px;
         }
 
         .hero-subtitle {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 1rem;
             color: var(--text-gray);
             letter-spacing: 3px;
-            margin-bottom: 50px;
-            text-transform: uppercase;
+            margin-bottom: 40px;
         }
 
         .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 20px;
-            max-width: 900px;
-            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
         }
 
         .hero-stat {
-            background: linear-gradient(135deg, var(--smash-dark) 0%, var(--smash-darker) 100%);
-            border: 3px solid var(--smash-red);
-            padding: 30px 20px;
-            position: relative;
-            clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
-            transition: all 0.3s ease;
-        }
-
-        .hero-stat::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--fire-gradient);
-        }
-
-        .hero-stat:hover {
-            transform: translateY(-10px) scale(1.02);
-            border-color: var(--smash-orange);
-            box-shadow: 0 20px 40px rgba(230, 0, 18, 0.3);
+            text-align: center;
         }
 
         .hero-stat-value {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 3rem;
             color: var(--smash-yellow);
-            line-height: 1;
             text-shadow: 2px 2px 0 var(--smash-red);
         }
 
@@ -228,1747 +84,1175 @@
             font-size: 0.8rem;
             color: var(--text-gray);
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 10px;
         }
 
-        .smash-ball {
-            position: absolute;
-            bottom: 60px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 50px;
-            background:
-                radial-gradient(circle at 30% 30%, white 5%, transparent 20%),
-                conic-gradient(from 0deg, var(--smash-red), var(--smash-orange), var(--smash-yellow), var(--smash-orange), var(--smash-red));
-            border-radius: 50%;
-            animation: smash-ball-spin 3s linear infinite, smash-ball-float 2s ease-in-out infinite;
-            box-shadow: 0 0 30px var(--smash-orange), 0 0 60px var(--smash-red);
-        }
-
-        @keyframes smash-ball-spin {
-            0% { transform: translateX(-50%) rotate(0deg); }
-            100% { transform: translateX(-50%) rotate(360deg); }
-        }
-
-        @keyframes smash-ball-float {
-            0%, 100% { margin-bottom: 0; }
-            50% { margin-bottom: 20px; }
-        }
-
-        /* === SECTION STYLING === */
-        section {
-            padding: 100px 0;
-            position: relative;
-        }
+        /* Section */
+        section { padding: 60px 0; }
 
         .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
         .section-tag {
             font-family: 'Press Start 2P', monospace;
-            font-size: 0.6rem;
+            font-size: 0.5rem;
             color: var(--smash-orange);
             letter-spacing: 4px;
             text-transform: uppercase;
-            margin-bottom: 15px;
             display: block;
+            margin-bottom: 10px;
         }
 
         .section-title {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            text-transform: uppercase;
-            color: var(--text-white);
-            text-shadow: 3px 3px 0 var(--smash-red);
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 5px;
-            background: var(--fire-gradient);
-        }
-
-        /* === DOMINATOR SECTION === */
-        .dominator-section {
-            background:
-                radial-gradient(ellipse at center, rgba(255, 215, 0, 0.2) 0%, transparent 60%),
-                var(--smash-black);
-        }
-
-        .dominator-card {
-            max-width: 900px;
-            margin: 0 auto;
-            background: linear-gradient(135deg, var(--smash-dark) 0%, #1a1a35 100%);
-            border: 5px solid var(--smash-yellow);
-            padding: 60px;
-            position: relative;
-            text-align: center;
-            clip-path: polygon(30px 0, calc(100% - 30px) 0, 100% 30px, 100% calc(100% - 30px), calc(100% - 30px) 100%, 30px 100%, 0 calc(100% - 30px), 0 30px);
-            animation: dominator-glow 3s ease-in-out infinite;
-        }
-
-        @keyframes dominator-glow {
-            0%, 100% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.3), inset 0 0 30px rgba(255, 215, 0, 0.1); }
-            50% { box-shadow: 0 0 60px rgba(255, 215, 0, 0.5), inset 0 0 50px rgba(255, 215, 0, 0.2); }
-        }
-
-        .crown-icon {
-            font-size: 5rem;
-            margin-bottom: 20px;
-            animation: crown-bounce 1s ease-in-out infinite;
-            filter: drop-shadow(0 0 20px var(--smash-yellow));
-        }
-
-        @keyframes crown-bounce {
-            0%, 100% { transform: translateY(0) rotate(-5deg); }
-            50% { transform: translateY(-15px) rotate(5deg); }
-        }
-
-        .dominator-name {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 5rem;
-            color: var(--smash-yellow);
-            text-shadow: 4px 4px 0 var(--smash-red), 0 0 30px var(--smash-yellow);
-            margin-bottom: 10px;
-        }
-
-        .dominator-title {
-            font-family: 'Press Start 2P', monospace;
-            font-size: 0.7rem;
-            color: var(--text-gray);
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 40px;
-        }
-
-        .dominator-stats {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-        }
-
-        .dominator-stat {
-            text-align: center;
-        }
-
-        .dominator-stat-value {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 3rem;
-        }
-
-        .dominator-stat-value.elo { color: var(--smash-yellow); text-shadow: 2px 2px 0 var(--smash-red); }
-        .dominator-stat-value.winrate { color: var(--success); }
-        .dominator-stat-value.record { color: var(--text-white); }
-
-        .dominator-stat-label {
-            font-size: 0.75rem;
-            color: var(--text-dim);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .dominator-main {
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            background: var(--smash-darker);
-            padding: 15px 30px;
-            border: 2px solid var(--smash-red);
-            clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
-        }
-
-        .dominator-main-char {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.5rem;
-            color: var(--smash-red);
-        }
-
-        /* === LEADERBOARD === */
-        .leaderboard-section {
-            background: var(--smash-darker);
-        }
-
-        .leaderboard-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0 10px;
-        }
-
-        .leaderboard-table th {
-            font-family: 'Press Start 2P', monospace;
-            font-size: 0.55rem;
-            color: var(--smash-orange);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            padding: 15px 20px;
-            text-align: left;
-            border-bottom: 3px solid var(--smash-red);
-        }
-
-        .leaderboard-table tbody tr {
-            background: linear-gradient(90deg, var(--smash-dark) 0%, var(--smash-darker) 100%);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border-left: 4px solid transparent;
-        }
-
-        .leaderboard-table tbody tr:hover {
-            background: linear-gradient(90deg, #252545 0%, var(--smash-dark) 100%);
-            transform: translateX(10px) scale(1.01);
-            border-left: 4px solid var(--smash-red);
-            box-shadow: 0 5px 20px rgba(230, 0, 18, 0.2);
-        }
-
-        .leaderboard-table td {
-            padding: 20px;
-            vertical-align: middle;
-        }
-
-        .rank-cell {
-            width: 80px;
-            text-align: center;
-        }
-
-        .rank-badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.5rem;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        }
-
-        .rank-1 { background: var(--fire-gradient); color: #fff; animation: rank-glow 1.5s ease-in-out infinite; }
-        .rank-2 { background: linear-gradient(135deg, #c0c0c0, #808080); color: #000; }
-        .rank-3 { background: linear-gradient(135deg, #cd7f32, #8b4513); color: #fff; }
-        .rank-default { background: var(--smash-dark); color: var(--text-gray); border: 2px solid var(--smash-red); }
-
-        @keyframes rank-glow {
-            0%, 100% { box-shadow: 0 0 10px var(--smash-red); }
-            50% { box-shadow: 0 0 25px var(--smash-orange), 0 0 40px var(--smash-red); }
-        }
-
-        .player-cell {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .player-avatar {
-            width: 50px;
-            height: 50px;
-            background: var(--fire-gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        }
-
-        .player-info h3 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 3px;
-        }
-
-        .player-info .country {
-            font-size: 0.8rem;
-            color: var(--text-dim);
-        }
-
-        .elo-cell {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.8rem;
-            color: var(--smash-yellow);
-            text-shadow: 1px 1px 0 var(--smash-red);
-        }
-
-        .winrate-cell {
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 600;
-        }
-
-        .winrate-high { color: var(--success); }
-        .winrate-mid { color: var(--smash-yellow); }
-        .winrate-low { color: var(--danger); }
-
-        .record-cell {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
-        }
-
-        .record-cell .wins { color: var(--success); }
-        .record-cell .losses { color: var(--danger); }
-
-        .main-cell {
-            color: var(--smash-orange);
-            font-size: 0.9rem;
-        }
-
-        /* === CHARACTER GRID === */
-        .characters-section {
-            background: var(--smash-black);
-        }
-
-        .character-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .character-card {
-            background: var(--smash-dark);
-            border: 3px solid var(--smash-red);
-            padding: 25px;
-            position: relative;
-            transition: all 0.3s ease;
-            clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
-        }
-
-        .character-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 40px;
-            height: 40px;
-            background: var(--fire-gradient);
-            clip-path: polygon(100% 0, 0 0, 100% 100%);
-        }
-
-        .character-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--smash-orange);
-            box-shadow: 0 15px 40px rgba(230, 0, 18, 0.3);
-        }
-
-        .character-rank {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            font-family: 'Press Start 2P', monospace;
-            font-size: 0.5rem;
-            color: var(--text-dim);
-        }
-
-        .character-name {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            padding-right: 30px;
-            color: var(--text-white);
-        }
-
-        .character-stats {
-            display: flex;
-            justify-content: space-between;
-            gap: 10px;
-        }
-
-        .character-stat {
-            text-align: center;
-            flex: 1;
-        }
-
-        .character-stat-value {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.5rem;
-        }
-
-        .character-stat-value.plays { color: var(--smash-orange); }
-        .character-stat-value.wr { color: var(--success); }
-
-        .character-stat-label {
-            font-size: 0.6rem;
-            color: var(--text-dim);
-            text-transform: uppercase;
-        }
-
-        /* === RIVALRIES === */
-        .rivalries-section {
-            background:
-                linear-gradient(135deg, rgba(230, 0, 18, 0.1) 0%, transparent 50%),
-                linear-gradient(225deg, rgba(255, 107, 0, 0.1) 0%, transparent 50%),
-                var(--smash-darker);
-        }
-
-        .rivalry-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
-        }
-
-        .rivalry-card {
-            background: var(--smash-dark);
-            border: 3px solid var(--smash-red);
-            padding: 30px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .rivalry-card::before {
-            content: 'VS';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 5rem;
-            color: var(--smash-red);
-            opacity: 0.15;
-        }
-
-        .rivalry-card:hover {
-            border-color: var(--smash-orange);
-            box-shadow: 0 0 40px rgba(230, 0, 18, 0.3);
-        }
-
-        .rivalry-players {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .rivalry-player {
-            text-align: center;
-            flex: 1;
-        }
-
-        .rivalry-player-name {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .rivalry-player-wins {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 3rem;
-        }
-
-        .rivalry-player:first-child .rivalry-player-wins { color: var(--smash-orange); text-shadow: 2px 2px 0 var(--smash-red); }
-        .rivalry-player:last-child .rivalry-player-wins { color: var(--smash-blue); text-shadow: 2px 2px 0 #003366; }
-
-        .rivalry-vs {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.2rem;
-            color: var(--smash-red);
-            padding: 0 20px;
-        }
-
-        .rivalry-matches {
-            text-align: center;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 2px solid var(--smash-darker);
-            font-size: 0.9rem;
-            color: var(--text-gray);
-        }
-
-        .rivalry-matches strong {
-            color: var(--smash-yellow);
-        }
-
-        /* === CRAZY STATS === */
-        .crazy-section {
-            background:
-                radial-gradient(ellipse at 20% 50%, rgba(230, 0, 18, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 50%, rgba(255, 107, 0, 0.15) 0%, transparent 50%),
-                var(--smash-black);
-        }
-
-        .crazy-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-        }
-
-        .crazy-card {
-            background: var(--smash-dark);
-            border: 3px solid var(--smash-red);
-            border-left: 6px solid var(--smash-orange);
-            padding: 30px;
-            transition: all 0.3s ease;
-        }
-
-        .crazy-card:hover {
-            transform: translateX(10px);
-            border-color: var(--smash-orange);
-            box-shadow: -10px 0 30px rgba(255, 107, 0, 0.2);
-        }
-
-        .crazy-card-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-
-        .crazy-card-title {
-            font-family: 'Press Start 2P', monospace;
-            font-size: 0.55rem;
-            color: var(--smash-orange);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-        }
-
-        .crazy-card-stat {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2rem;
-            color: var(--text-white);
-            margin-bottom: 5px;
-        }
-
-        .crazy-card-detail {
-            font-size: 1rem;
-            color: var(--text-gray);
-        }
-
-        .crazy-card-highlight {
-            color: var(--smash-yellow);
-            font-weight: 600;
-        }
-
-        .crazy-card-sub {
-            font-size: 0.8rem;
-            color: var(--text-dim);
-            margin-top: 10px;
-        }
-
-        /* === DEEP DIVE SECTION === */
-        .deep-dive-section {
-            background: var(--smash-darker);
-        }
-
-        .deep-dive-card {
-            background: linear-gradient(135deg, var(--smash-dark) 0%, #15152a 100%);
-            border: 4px solid var(--smash-orange);
-            padding: 40px;
-            margin-bottom: 40px;
-            position: relative;
-            clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
-        }
-
-        .deep-dive-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: var(--fire-gradient);
-        }
-
-        .deep-dive-header {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-            margin-bottom: 35px;
-        }
-
-        .deep-dive-avatar {
-            width: 90px;
-            height: 90px;
-            background: var(--fire-gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            animation: avatar-pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes avatar-pulse {
-            0%, 100% { box-shadow: 0 0 20px var(--smash-red); }
-            50% { box-shadow: 0 0 40px var(--smash-orange); }
-        }
-
-        .deep-dive-name {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 3rem;
+            font-size: clamp(2rem, 5vw, 3rem);
             text-shadow: 2px 2px 0 var(--smash-red);
         }
 
-        .deep-dive-subtitle {
-            color: var(--text-gray);
-            font-size: 1rem;
-        }
-
-        .day-breakdown {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 10px;
-            margin-top: 30px;
-        }
-
-        .day-item {
-            text-align: center;
-            padding: 20px 10px;
-            background: var(--smash-darker);
-            border: 2px solid var(--smash-red);
-            transition: all 0.3s ease;
-        }
-
-        .day-item:hover {
-            transform: scale(1.08);
-            border-color: var(--smash-orange);
-            box-shadow: 0 5px 20px rgba(230, 0, 18, 0.3);
-        }
-
-        .day-item .day-name {
-            font-family: 'Press Start 2P', monospace;
-            font-size: 0.45rem;
-            color: var(--smash-orange);
-            text-transform: uppercase;
-        }
-
-        .day-item .day-wr {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.8rem;
-            margin-top: 8px;
-        }
-
-        .day-item .day-wr.high { color: var(--success); }
-        .day-item .day-wr.mid { color: var(--smash-yellow); }
-        .day-item .day-wr.low { color: var(--danger); }
-
-        .day-item .day-games {
-            font-size: 0.7rem;
-            color: var(--text-dim);
-            margin-top: 5px;
-        }
-
-        /* === CHARTS === */
-        .charts-section {
-            background: var(--smash-black);
-        }
-
-        .charts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 30px;
-        }
-
-        .chart-card {
-            background: var(--smash-dark);
-            border: 3px solid var(--smash-red);
-            padding: 30px;
-            clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px));
-        }
-
-        .chart-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--fire-gradient);
-        }
-
-        .chart-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 25px;
-            color: var(--text-white);
-            text-shadow: 1px 1px 0 var(--smash-red);
-        }
-
-        .chart-container {
-            height: 300px;
-            position: relative;
-        }
-
-        /* === FUN FACTS === */
-        .facts-section {
-            background: var(--smash-darker);
-        }
-
-        .facts-grid {
+        /* Outlier Cards */
+        .outlier-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            gap: 20px;
+            margin-bottom: 20px;
         }
 
-        .fact-card {
+        .outlier-card {
             background: var(--smash-dark);
-            border-left: 5px solid var(--smash-red);
-            padding: 30px;
+            border: 2px solid var(--smash-red);
+            border-left: 5px solid var(--smash-orange);
+            padding: 25px;
             transition: all 0.3s ease;
         }
 
-        .fact-card:nth-child(2) { border-left-color: var(--smash-orange); }
-        .fact-card:nth-child(3) { border-left-color: var(--smash-yellow); }
-        .fact-card:nth-child(4) { border-left-color: var(--success); }
-
-        .fact-card:hover {
-            transform: translateX(10px);
-            box-shadow: -5px 0 20px rgba(230, 0, 18, 0.2);
+        .outlier-card:hover {
+            transform: translateX(5px);
+            border-color: var(--smash-orange);
         }
 
-        .fact-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
+        .outlier-icon { font-size: 2rem; margin-bottom: 10px; }
 
-        .fact-title {
+        .outlier-title {
             font-family: 'Press Start 2P', monospace;
-            font-size: 0.55rem;
+            font-size: 0.5rem;
             color: var(--smash-orange);
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 10px;
         }
 
-        .fact-value {
+        .outlier-value {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.5rem;
-            color: var(--smash-yellow);
-            text-shadow: 2px 2px 0 var(--smash-red);
+            font-size: 1.8rem;
+            color: var(--text-white);
             margin-bottom: 5px;
         }
 
-        .fact-detail {
-            font-size: 0.9rem;
-            color: var(--text-dim);
-        }
+        .outlier-detail { font-size: 0.9rem; color: var(--text-gray); }
+        .outlier-sub { font-size: 0.75rem; color: var(--text-dim); margin-top: 8px; }
+        .highlight { color: var(--smash-yellow); }
 
-        /* === ONE TRICK PONIES === */
-        .ponies-section {
-            background: var(--smash-black);
-        }
-
-        .ponies-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .pony-card {
-            background: var(--smash-dark);
-            border: 3px solid var(--smash-red);
-            padding: 25px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .pony-card:hover {
-            border-color: var(--smash-orange);
-            transform: scale(1.02);
-            box-shadow: 0 10px 30px rgba(230, 0, 18, 0.2);
-        }
-
-        .pony-percent {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.5rem;
-            color: var(--smash-orange);
-            text-shadow: 2px 2px 0 var(--smash-red);
-            min-width: 100px;
-        }
-
-        .pony-info h3 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 5px;
-        }
-
-        .pony-info .character {
-            color: var(--smash-yellow);
-            font-weight: 500;
-        }
-
-        .pony-info .games {
-            font-size: 0.8rem;
-            color: var(--text-dim);
-        }
-
-        /* === COUNTRIES === */
-        .countries-section {
+        /* Expandable Section */
+        .expandable {
             background: var(--smash-darker);
-        }
-
-        .countries-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .country-badge {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: var(--smash-dark);
             border: 2px solid var(--smash-red);
-            padding: 15px 25px;
-            transition: all 0.3s ease;
-            clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+            margin-top: 20px;
+            border-radius: 5px;
+            overflow: hidden;
         }
 
-        .country-badge:hover {
-            border-color: var(--smash-orange);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(230, 0, 18, 0.2);
+        .expand-header {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--smash-dark);
+            transition: background 0.3s;
         }
 
-        .country-flag {
-            font-size: 2rem;
-        }
+        .expand-header:hover { background: #252545; }
 
-        .country-code {
+        .expand-title {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        /* === FOOTER === */
+        .expand-arrow {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .expandable.open .expand-arrow { transform: rotate(180deg); }
+
+        .expand-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .expandable.open .expand-content { max-height: 2000px; }
+
+        .expand-inner { padding: 20px; }
+
+        /* Charts */
+        .chart-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        .chart-card {
+            background: var(--smash-dark);
+            border: 2px solid var(--smash-red);
+            padding: 25px;
+        }
+
+        .chart-card h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--text-white);
+        }
+
+        .chart-container { height: 300px; position: relative; }
+        .chart-container.tall { height: 500px; }
+
+        /* Data Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        .data-table th {
+            background: var(--smash-dark);
+            padding: 12px 10px;
+            text-align: left;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.5rem;
+            color: var(--smash-orange);
+            border-bottom: 2px solid var(--smash-red);
+            cursor: pointer;
+        }
+
+        .data-table th:hover { color: var(--smash-yellow); }
+
+        .data-table td {
+            padding: 10px;
+            border-bottom: 1px solid var(--smash-darker);
+        }
+
+        .data-table tr:hover { background: rgba(230, 0, 18, 0.1); }
+
+        .data-table .highlight-row { background: rgba(255, 107, 0, 0.2); }
+
+        .bar-cell {
+            position: relative;
+            padding-right: 60px !important;
+        }
+
+        .bar-bg {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 20px;
+            background: var(--smash-red);
+            opacity: 0.3;
+            border-radius: 2px;
+        }
+
+        .bar-value {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Heatmap */
+        .heatmap-container {
+            overflow-x: auto;
+        }
+
+        .heatmap {
+            display: grid;
+            grid-template-columns: 50px repeat(24, 1fr);
+            gap: 2px;
+            min-width: 800px;
+        }
+
+        .heatmap-cell {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            border-radius: 3px;
+        }
+
+        .heatmap-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            color: var(--text-gray);
+        }
+
+        /* H2H Matrix */
+        .h2h-container { overflow-x: auto; }
+
+        .h2h-table {
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        .h2h-table th, .h2h-table td {
+            padding: 8px;
+            text-align: center;
+            border: 1px solid var(--smash-darker);
+            font-size: 0.75rem;
+        }
+
+        .h2h-table th {
+            background: var(--smash-dark);
+            font-family: 'Bebas Neue', sans-serif;
+        }
+
+        .h2h-cell {
+            min-width: 50px;
+        }
+
+        .h2h-win { background: rgba(0, 255, 136, 0.3); }
+        .h2h-loss { background: rgba(255, 71, 87, 0.3); }
+        .h2h-even { background: rgba(255, 215, 0, 0.2); }
+        .h2h-self { background: var(--smash-darker); }
+
+        /* Footer */
         footer {
             background: var(--smash-black);
-            border-top: 4px solid var(--smash-red);
-            padding: 50px 20px;
+            border-top: 3px solid var(--smash-red);
+            padding: 40px 20px;
             text-align: center;
         }
 
-        .footer-logo {
+        .footer-title {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: var(--smash-yellow);
-            text-shadow: 2px 2px 0 var(--smash-red);
-            margin-bottom: 15px;
         }
 
         .footer-text {
-            font-family: 'JetBrains Mono', monospace;
             font-size: 0.75rem;
             color: var(--text-dim);
         }
 
-        /* === RESPONSIVE === */
+        /* Responsive */
         @media (max-width: 768px) {
-            .charts-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .rivalry-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .day-breakdown {
-                grid-template-columns: repeat(4, 1fr);
-            }
-
-            .dominator-card {
-                padding: 30px 20px;
-            }
-
-            .dominator-name {
-                font-size: 3rem;
-            }
-
-            .hero-title {
-                font-size: 3rem;
-            }
+            .chart-row { grid-template-columns: 1fr; }
+            .hero-stats { gap: 20px; }
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero">
-        <div class="fire-particles" id="fire-particles"></div>
-        <div class="hero-content">
-            <span class="hero-badge">Season 1 Complete</span>
-            <h1 class="hero-title">
-                Office Smash
-                <span>Leaderboard</span>
-            </h1>
-            <p class="hero-subtitle">June 2025 — January 2026</p>
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <div class="hero-stat-value">3,924</div>
-                    <div class="hero-stat-label">Total Matches</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-value">72</div>
-                    <div class="hero-stat-label">Players</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-value">18,281</div>
-                    <div class="hero-stat-label">Total KOs</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-value">224</div>
-                    <div class="hero-stat-label">Days</div>
-                </div>
+        <h1 class="hero-title">OFFICE SMASH ANALYTICS</h1>
+        <p class="hero-subtitle">JUNE 2025 — JANUARY 2026 • DEEP DIVE</p>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <div class="hero-stat-value">3,924</div>
+                <div class="hero-stat-label">Matches</div>
             </div>
-        </div>
-        <div class="smash-ball"></div>
-    </section>
-
-    <!-- The Dominator -->
-    <section class="dominator-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">The Undisputed Champion</span>
-                <h2 class="section-title">Season Dominator</h2>
+            <div class="hero-stat">
+                <div class="hero-stat-value">72</div>
+                <div class="hero-stat-label">Players</div>
             </div>
-            <div class="dominator-card">
-                <div class="crown-icon">👑</div>
-                <h2 class="dominator-name">JMOON</h2>
-                <p class="dominator-title">The Unstoppable Force</p>
-                <div class="dominator-stats">
-                    <div class="dominator-stat">
-                        <div class="dominator-stat-value elo">1711</div>
-                        <div class="dominator-stat-label">ELO Rating</div>
-                    </div>
-                    <div class="dominator-stat">
-                        <div class="dominator-stat-value winrate">77.7%</div>
-                        <div class="dominator-stat-label">Win Rate</div>
-                    </div>
-                    <div class="dominator-stat">
-                        <div class="dominator-stat-value record">740W - 212L</div>
-                        <div class="dominator-stat-label">Record</div>
-                    </div>
-                </div>
-                <div class="dominator-main">
-                    <span class="dominator-main-char">🃏 JOKER</span>
-                </div>
+            <div class="hero-stat">
+                <div class="hero-stat-value">18,281</div>
+                <div class="hero-stat-label">Total KOs</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-value">98</div>
+                <div class="hero-stat-label">Characters</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-value">224</div>
+                <div class="hero-stat-label">Days</div>
             </div>
         </div>
     </section>
 
-    <!-- Trends & Correlations Section -->
-    <section class="crazy-section">
+    <!-- Activity Section -->
+    <section style="background: var(--smash-darker);">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Data Science</span>
-                <h2 class="section-title">Trends & Correlations</h2>
-            </div>
-            <div class="crazy-grid">
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">🔥</div>
-                    <div class="crazy-card-title">Momentum Effect</div>
-                    <div class="crazy-card-stat">+16.4% after winning</div>
-                    <div class="crazy-card-detail">Average win rate boost after a win</div>
-                    <div class="crazy-card-sub">Winning breeds winning</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">🎰</div>
-                    <div class="crazy-card-title">Biggest Momentum</div>
-                    <div class="crazy-card-stat">lag: +33.3%</div>
-                    <div class="crazy-card-detail">55.9% after win vs 22.5% after loss</div>
-                    <div class="crazy-card-sub">Confidence is everything</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">😤</div>
-                    <div class="crazy-card-title">Revenge Specialist</div>
-                    <div class="crazy-card-stat">ryy: +38.3% boost</div>
-                    <div class="crazy-card-detail">45% normal → 83.3% in rematches</div>
-                    <div class="crazy-card-sub">Don't make them angry</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">🎯</div>
-                    <div class="crazy-card-title">Most Clutch Player</div>
-                    <div class="crazy-card-stat">lando: +43.3%</div>
-                    <div class="crazy-card-detail">50% close games vs 6.7% blowouts</div>
-                    <div class="crazy-card-sub">Thrives under pressure</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">😰</div>
-                    <div class="crazy-card-title">Biggest Choker</div>
-                    <div class="crazy-card-stat">amar: -31.9%</div>
-                    <div class="crazy-card-detail">Dominates blowouts, struggles when close</div>
-                    <div class="crazy-card-sub">Nerves get the best of them</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">☕</div>
-                    <div class="crazy-card-title">Needs Warmup Most</div>
-                    <div class="crazy-card-stat">pat: +19.8% warmed up</div>
-                    <div class="crazy-card-detail">22.2% first game → 42% after warmup</div>
-                    <div class="crazy-card-sub">Don't play game 1</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">🧊</div>
-                    <div class="crazy-card-title">Best Cold Starter</div>
-                    <div class="crazy-card-stat">heidy: -30.3%</div>
-                    <div class="crazy-card-detail">Actually plays WORSE after warmup</div>
-                    <div class="crazy-card-sub">Peak performance is game 1</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">📊</div>
-                    <div class="crazy-card-title">Diversity = Winning</div>
-                    <div class="crazy-card-stat">-0.277 correlation</div>
-                    <div class="crazy-card-detail">Players who use more characters win more</div>
-                    <div class="crazy-card-sub">Don't be a one-trick</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">⚡</div>
-                    <div class="crazy-card-title">Fastest Player</div>
-                    <div class="crazy-card-stat">lando: 3.4 min avg</div>
-                    <div class="crazy-card-detail">Average time between games</div>
-                    <div class="crazy-card-sub">Speed runner energy</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">🐢</div>
-                    <div class="crazy-card-title">Slowest Player</div>
-                    <div class="crazy-card-stat">jeni: 8.1 min avg</div>
-                    <div class="crazy-card-detail">Takes their time between games</div>
-                    <div class="crazy-card-sub">Strategic pacing?</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">📈</div>
-                    <div class="crazy-card-title">Most Streaky</div>
-                    <div class="crazy-card-stat">habeas: 61 hot streaks</div>
-                    <div class="crazy-card-detail">5+ win streaks across 2,213 games</div>
-                    <div class="crazy-card-sub">When they're on, they're ON</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">📆</div>
-                    <div class="crazy-card-title">Saturday vs Monday</div>
-                    <div class="crazy-card-stat">2.4x more games</div>
-                    <div class="crazy-card-detail">Saturday: 1,821 | Monday: 757</div>
-                    <div class="crazy-card-sub">Weekends are for Smash</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Dominant Matchups Section -->
-    <section class="rivalries-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">One-Sided Battles</span>
-                <h2 class="section-title">Complete Domination</h2>
-            </div>
-            <div class="rivalry-grid">
-                <div class="rivalry-card">
-                    <div class="rivalry-players">
-                        <div class="rivalry-player">
-                            <div class="rivalry-player-name">SUBBY</div>
-                            <div class="rivalry-player-wins">22</div>
-                        </div>
-                        <div class="rivalry-vs">VS</div>
-                        <div class="rivalry-player">
-                            <div class="rivalry-player-name">YA</div>
-                            <div class="rivalry-player-wins">0</div>
-                        </div>
-                    </div>
-                    <div class="rivalry-matches"><strong>100%</strong> win rate - PERFECT record</div>
-                </div>
-                <div class="rivalry-card">
-                    <div class="rivalry-players">
-                        <div class="rivalry-player">
-                            <div class="rivalry-player-name">JMOON</div>
-                            <div class="rivalry-player-wins">20</div>
-                        </div>
-                        <div class="rivalry-vs">VS</div>
-                        <div class="rivalry-player">
-                            <div class="rivalry-player-name">HEIDY</div>
-                            <div class="rivalry-player-wins">0</div>
-                        </div>
-                    </div>
-                    <div class="rivalry-matches"><strong>100%</strong> win rate - Never lost</div>
-                </div>
-                <div class="rivalry-card">
-                    <div class="rivalry-players">
-                        <div class="rivalry-player">
-                            <div class="rivalry-player-name">JMOON</div>
-                            <div class="rivalry-player-wins">38</div>
-                        </div>
-                        <div class="rivalry-vs">VS</div>
-                        <div class="rivalry-player">
-                            <div class="rivalry-player-name">KENERU</div>
-                            <div class="rivalry-player-wins">2</div>
-                        </div>
-                    </div>
-                    <div class="rivalry-matches"><strong>95%</strong> win rate - 40 games played</div>
-                </div>
-                <div class="rivalry-card">
-                    <div class="rivalry-players">
-                        <div class="rivalry-player">
-                            <div class="rivalry-player-name">HABEAS</div>
-                            <div class="rivalry-player-wins">15</div>
-                        </div>
-                        <div class="rivalry-vs">VS</div>
-                        <div class="rivalry-player">
-                            <div class="rivalry-player-name">YA</div>
-                            <div class="rivalry-player-wins">1</div>
-                        </div>
-                    </div>
-                    <div class="rivalry-matches"><strong>93.8%</strong> win rate - ya's nightmare</div>
-                </div>
-                <div class="rivalry-card">
-                    <div class="rivalry-players">
-                        <div class="rivalry-player">
-                            <div class="rivalry-player-name">HABEAS</div>
-                            <div class="rivalry-player-wins">14</div>
-                        </div>
-                        <div class="rivalry-vs">VS</div>
-                        <div class="rivalry-player">
-                            <div class="rivalry-player-name">PAT</div>
-                            <div class="rivalry-player-wins">1</div>
-                        </div>
-                    </div>
-                    <div class="rivalry-matches"><strong>93.3%</strong> win rate - 15 games</div>
-                </div>
-                <div class="rivalry-card">
-                    <div class="rivalry-players">
-                        <div class="rivalry-player">
-                            <div class="rivalry-player-name">HABEAS</div>
-                            <div class="rivalry-player-wins">213</div>
-                        </div>
-                        <div class="rivalry-vs">VS</div>
-                        <div class="rivalry-player">
-                            <div class="rivalry-player-name">SUBBY</div>
-                            <div class="rivalry-player-wins">183</div>
-                        </div>
-                    </div>
-                    <div class="rivalry-matches"><strong>396</strong> total - Most played rivalry</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CRAZY STATS SECTION -->
-    <section class="crazy-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Wild Data</span>
-                <h2 class="section-title">Crazy Stats & Outliers</h2>
-            </div>
-            <div class="crazy-grid">
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">🎮</div>
-                    <div class="crazy-card-title">The Absolute Grinder</div>
-                    <div class="crazy-card-stat">habeas: 2,213 games</div>
-                    <div class="crazy-card-detail">That's <span class="crazy-card-highlight">9.9 games per day</span> average</div>
-                    <div class="crazy-card-sub">More games than anyone else by far</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">📉</div>
-                    <div class="crazy-card-title">Longest Losing Streak</div>
-                    <div class="crazy-card-stat">heidy: 40 LOSSES</div>
-                    <div class="crazy-card-detail">In a row. Without a single win.</div>
-                    <div class="crazy-card-sub">Kept coming back. That's dedication.</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">😅</div>
-                    <div class="crazy-card-title">The Underdog</div>
-                    <div class="crazy-card-stat">heidy: 14.6% win rate</div>
-                    <div class="crazy-card-detail">Still showed up for 137 games</div>
-                    <div class="crazy-card-sub">Respect the commitment</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">🗡️</div>
-                    <div class="crazy-card-title">Giant Killer</div>
-                    <div class="crazy-card-stat">habeas: 138 wins vs jmoon</div>
-                    <div class="crazy-card-detail">Against the #1 ranked player</div>
-                    <div class="crazy-card-sub">The only real threat to the throne</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">⚔️</div>
-                    <div class="crazy-card-title">Greatest Rivalry</div>
-                    <div class="crazy-card-stat">habeas vs jmoon: 583 games</div>
-                    <div class="crazy-card-detail">The most frequent matchup ever</div>
-                    <div class="crazy-card-sub">An epic battle spanning the season</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">🪦</div>
-                    <div class="crazy-card-title">Worst K/D Ratio</div>
-                    <div class="crazy-card-stat">mizan: 0.44 K/D</div>
-                    <div class="crazy-card-detail">Gets KO'd more than they KO</div>
-                    <div class="crazy-card-sub">Needs defensive training</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">✨</div>
-                    <div class="crazy-card-title">Cleanest Player</div>
-                    <div class="crazy-card-stat">kento: 0 SDs in 94 games</div>
-                    <div class="crazy-card-detail">Zero self-destructs. Ever.</div>
-                    <div class="crazy-card-sub">Absolute precision</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">🤦</div>
-                    <div class="crazy-card-title">Most SD-Prone</div>
-                    <div class="crazy-card-stat">Raulito: 0.23 SDs/game</div>
-                    <div class="crazy-card-detail">10 SDs in just 43 games</div>
-                    <div class="crazy-card-sub">Needs to stay on stage</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">🎯</div>
-                    <div class="crazy-card-title">Ultimate One-Trick</div>
-                    <div class="crazy-card-stat">lag: 99.1% NESS</div>
-                    <div class="crazy-card-detail">106 games, basically only Ness</div>
-                    <div class="crazy-card-sub">PK Fire is life</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">🌴</div>
-                    <div class="crazy-card-title">Weekend Warrior</div>
-                    <div class="crazy-card-stat">lag: +18.8% on weekends</div>
-                    <div class="crazy-card-detail">50% weekend vs 31% weekday</div>
-                    <div class="crazy-card-sub">Comes alive when it matters</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">💼</div>
-                    <div class="crazy-card-title">Weekday Grinder</div>
-                    <div class="crazy-card-stat">messi: +18.6% on weekdays</div>
-                    <div class="crazy-card-detail">35.5% weekday vs 16.9% weekend</div>
-                    <div class="crazy-card-sub">Loses focus on weekends</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">⏰</div>
-                    <div class="crazy-card-title">The 1AM Warrior</div>
-                    <div class="crazy-card-stat">habeas: 194 games at 1AM</div>
-                    <div class="crazy-card-detail">Why are you playing at 1AM?!</div>
-                    <div class="crazy-card-sub">Sleep is for the weak</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">🦉</div>
-                    <div class="crazy-card-title">Biggest Night Owl</div>
-                    <div class="crazy-card-stat">habeas: 1,046 late-night games</div>
-                    <div class="crazy-card-detail">47% of games after 10PM</div>
-                    <div class="crazy-card-sub">Nocturnal gaming machine</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">📈</div>
-                    <div class="crazy-card-title">Most Improved</div>
-                    <div class="crazy-card-stat">pat: +26% improvement</div>
-                    <div class="crazy-card-detail">20% first 50 games → 46% last 50</div>
-                    <div class="crazy-card-sub">The training paid off</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">📉</div>
-                    <div class="crazy-card-title">Biggest Decline</div>
-                    <div class="crazy-card-stat">own: -24% decline</div>
-                    <div class="crazy-card-detail">52% first 50 → 28% last 50</div>
-                    <div class="crazy-card-sub">What happened?</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">💪</div>
-                    <div class="crazy-card-title">Comeback King</div>
-                    <div class="crazy-card-stat">shafaq: 65.5% with SDs</div>
-                    <div class="crazy-card-detail">Still wins after self-destructing</div>
-                    <div class="crazy-card-sub">Never count them out</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">⚡</div>
-                    <div class="crazy-card-title">Most KOs Single Game</div>
-                    <div class="crazy-card-stat">shafaq: 9 KOs</div>
-                    <div class="crazy-card-detail">In one match, playing SAMUS</div>
-                    <div class="crazy-card-sub">Absolute destruction</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">💀</div>
-                    <div class="crazy-card-title">Most Cursed Character</div>
-                    <div class="crazy-card-stat">GRENINJA: 21.3% win rate</div>
-                    <div class="crazy-card-detail">Across 108 games played</div>
-                    <div class="crazy-card-sub">Just don't pick it</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">🌟</div>
-                    <div class="crazy-card-title">Most Blessed Character</div>
-                    <div class="crazy-card-stat">MARTH: 84.6% win rate</div>
-                    <div class="crazy-card-detail">The secret weapon (26 games)</div>
-                    <div class="crazy-card-sub">Free wins apparently</div>
-                </div>
-                <div class="crazy-card">
-                    <div class="crazy-card-icon">💯</div>
-                    <div class="crazy-card-title">Perfect Game Master</div>
-                    <div class="crazy-card-stat">jmoon: 98 flawless wins</div>
-                    <div class="crazy-card-detail">10.3% of games are perfect</div>
-                    <div class="crazy-card-sub">3-0 stockings on the regular</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Player Spotlights -->
-    <section class="deep-dive-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Player Spotlights</span>
-                <h2 class="section-title">The Characters of Our League</h2>
+                <span class="section-tag">When Do You Play?</span>
+                <h2 class="section-title">Activity Patterns</h2>
             </div>
 
-            <!-- Spotlight Grid -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
-
-                <!-- habeas -->
-                <div class="deep-dive-card" style="margin-bottom: 0;">
-                    <div class="deep-dive-header" style="margin-bottom: 20px;">
-                        <div class="deep-dive-avatar">🎮</div>
-                        <div>
-                            <h3 class="deep-dive-name" style="font-size: 2rem;">HABEAS</h3>
-                            <p class="deep-dive-subtitle">The Grinder</p>
-                        </div>
-                    </div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                        <div style="background: var(--smash-darker); padding: 15px; text-align: center;">
-                            <div style="font-family: 'Bebas Neue'; font-size: 1.8rem; color: var(--smash-yellow);">2,213</div>
-                            <div style="font-size: 0.7rem; color: var(--text-dim);">TOTAL GAMES</div>
-                        </div>
-                        <div style="background: var(--smash-darker); padding: 15px; text-align: center;">
-                            <div style="font-family: 'Bebas Neue'; font-size: 1.8rem; color: var(--smash-orange);">138</div>
-                            <div style="font-size: 0.7rem; color: var(--text-dim);">WINS VS #1</div>
-                        </div>
-                        <div style="background: var(--smash-darker); padding: 15px; text-align: center;">
-                            <div style="font-family: 'Bebas Neue'; font-size: 1.8rem; color: var(--danger);">95</div>
-                            <div style="font-size: 0.7rem; color: var(--text-dim);">TOTAL SDS</div>
-                        </div>
-                        <div style="background: var(--smash-darker); padding: 15px; text-align: center;">
-                            <div style="font-family: 'Bebas Neue'; font-size: 1.8rem; color: var(--success);">1,046</div>
-                            <div style="font-size: 0.7rem; color: var(--text-dim);">LATE GAMES</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- heidy -->
-                <div class="deep-dive-card" style="margin-bottom: 0;">
-                    <div class="deep-dive-header" style="margin-bottom: 20px;">
-                        <div class="deep-dive-avatar">💪</div>
-                        <div>
-                            <h3 class="deep-dive-name" style="font-size: 2rem;">HEIDY</h3>
-                            <p class="deep-dive-subtitle">The Underdog Legend</p>
-                        </div>
-                    </div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                        <div style="background: var(--smash-darker); padding: 15px; text-align: center;">
-                            <div style="font-family: 'Bebas Neue'; font-size: 1.8rem; color: var(--danger);">14.6%</div>
-                            <div style="font-size: 0.7rem; color: var(--text-dim);">WIN RATE</div>
-                        </div>
-                        <div style="background: var(--smash-darker); padding: 15px; text-align: center;">
-                            <div style="font-family: 'Bebas Neue'; font-size: 1.8rem; color: var(--smash-orange);">40</div>
-                            <div style="font-size: 0.7rem; color: var(--text-dim);">LOSS STREAK</div>
-                        </div>
-                        <div style="background: var(--smash-darker); padding: 15px; text-align: center;">
-                            <div style="font-family: 'Bebas Neue'; font-size: 1.8rem; color: var(--smash-yellow);">137</div>
-                            <div style="font-size: 0.7rem; color: var(--text-dim);">GAMES PLAYED</div>
-                        </div>
-                        <div style="background: var(--smash-darker); padding: 15px; text-align: center;">
-                            <div style="font-family: 'Bebas Neue'; font-size: 1.8rem; color: var(--success);">29</div>
-                            <div style="font-size: 0.7rem; color: var(--text-dim);">CHARACTERS</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- kento -->
-                <div class="deep-dive-card" style="margin-bottom: 0;">
-                    <div class="deep-dive-header" style="margin-bottom: 20px;">
-                        <div class="deep-dive-avatar">✨</div>
-                        <div>
-                            <h3 class="deep-dive-name" style="font-size: 2rem;">KENTO</h3>
-                            <p class="deep-dive-subtitle">The Precision Master</p>
-                        </div>
-                    </div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                        <div style="background: var(--smash-darker); padding: 15px; text-align: center;">
-                            <div style="font-family: 'Bebas Neue'; font-size: 1.8rem; color: var(--success);">0</div>
-                            <div style="font-size: 0.7rem; color: var(--text-dim);">TOTAL SDS</div>
-                        </div>
-                        <div style="background: var(--smash-darker); padding: 15px; text-align: center;">
-                            <div style="font-family: 'Bebas Neue'; font-size: 1.8rem; color: var(--smash-yellow);">61.7%</div>
-                            <div style="font-size: 0.7rem; color: var(--text-dim);">WIN RATE</div>
-                        </div>
-                        <div style="background: var(--smash-darker); padding: 15px; text-align: center;">
-                            <div style="font-family: 'Bebas Neue'; font-size: 1.8rem; color: var(--smash-orange);">94</div>
-                            <div style="font-size: 0.7rem; color: var(--text-dim);">GAMES</div>
-                        </div>
-                        <div style="background: var(--smash-darker); padding: 15px; text-align: center;">
-                            <div style="font-family: 'Bebas Neue'; font-size: 1.8rem; color: var(--text-white);">LUCINA</div>
-                            <div style="font-size: 0.7rem; color: var(--text-dim);">MAIN</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- pat -->
-                <div class="deep-dive-card" style="margin-bottom: 0;">
-                    <div class="deep-dive-header" style="margin-bottom: 20px;">
-                        <div class="deep-dive-avatar">📈</div>
-                        <div>
-                            <h3 class="deep-dive-name" style="font-size: 2rem;">PAT</h3>
-                            <p class="deep-dive-subtitle">Most Improved Player</p>
-                        </div>
-                    </div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                        <div style="background: var(--smash-darker); padding: 15px; text-align: center;">
-                            <div style="font-family: 'Bebas Neue'; font-size: 1.8rem; color: var(--danger);">20%</div>
-                            <div style="font-size: 0.7rem; color: var(--text-dim);">FIRST 50 GAMES</div>
-                        </div>
-                        <div style="background: var(--smash-darker); padding: 15px; text-align: center;">
-                            <div style="font-family: 'Bebas Neue'; font-size: 1.8rem; color: var(--success);">46%</div>
-                            <div style="font-size: 0.7rem; color: var(--text-dim);">LAST 50 GAMES</div>
-                        </div>
-                        <div style="background: var(--smash-darker); padding: 15px; text-align: center; grid-column: span 2;">
-                            <div style="font-family: 'Bebas Neue'; font-size: 2rem; color: var(--smash-yellow);">+26% IMPROVEMENT</div>
-                            <div style="font-size: 0.7rem; color: var(--text-dim);">THE TRAINING PAID OFF</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- lag -->
-                <div class="deep-dive-card" style="margin-bottom: 0;">
-                    <div class="deep-dive-header" style="margin-bottom: 20px;">
-                        <div class="deep-dive-avatar">🎯</div>
-                        <div>
-                            <h3 class="deep-dive-name" style="font-size: 2rem;">LAG</h3>
-                            <p class="deep-dive-subtitle">The Ultimate One-Trick</p>
-                        </div>
-                    </div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                        <div style="background: var(--smash-darker); padding: 15px; text-align: center;">
-                            <div style="font-family: 'Bebas Neue'; font-size: 1.8rem; color: var(--smash-orange);">99.1%</div>
-                            <div style="font-size: 0.7rem; color: var(--text-dim);">NESS PICK RATE</div>
-                        </div>
-                        <div style="background: var(--smash-darker); padding: 15px; text-align: center;">
-                            <div style="font-family: 'Bebas Neue'; font-size: 1.8rem; color: var(--success);">+18.8%</div>
-                            <div style="font-size: 0.7rem; color: var(--text-dim);">WEEKEND BOOST</div>
-                        </div>
-                        <div style="background: var(--smash-darker); padding: 15px; text-align: center; grid-column: span 2;">
-                            <div style="font-family: 'Bebas Neue'; font-size: 1.5rem; color: var(--text-white);">PK FIRE IS LIFE</div>
-                            <div style="font-size: 0.7rem; color: var(--text-dim);">106 GAMES, BASICALLY ALL NESS</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- shafaq -->
-                <div class="deep-dive-card" style="margin-bottom: 0;">
-                    <div class="deep-dive-header" style="margin-bottom: 20px;">
-                        <div class="deep-dive-avatar">💪</div>
-                        <div>
-                            <h3 class="deep-dive-name" style="font-size: 2rem;">SHAFAQ</h3>
-                            <p class="deep-dive-subtitle">The Comeback King</p>
-                        </div>
-                    </div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                        <div style="background: var(--smash-darker); padding: 15px; text-align: center;">
-                            <div style="font-family: 'Bebas Neue'; font-size: 1.8rem; color: var(--success);">65.5%</div>
-                            <div style="font-size: 0.7rem; color: var(--text-dim);">WIN RATE W/ SDS</div>
-                        </div>
-                        <div style="background: var(--smash-darker); padding: 15px; text-align: center;">
-                            <div style="font-family: 'Bebas Neue'; font-size: 1.8rem; color: var(--smash-orange);">9</div>
-                            <div style="font-size: 0.7rem; color: var(--text-dim);">MAX KOS IN 1 GAME</div>
-                        </div>
-                        <div style="background: var(--smash-darker); padding: 15px; text-align: center; grid-column: span 2;">
-                            <div style="font-family: 'Bebas Neue'; font-size: 1.5rem; color: var(--smash-yellow);">NEVER COUNT THEM OUT</div>
-                            <div style="font-size: 0.7rem; color: var(--text-dim);">STILL WINS AFTER SELF-DESTRUCTING</div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Character Stats -->
-    <section class="characters-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Fighter Analysis</span>
-                <h2 class="section-title">Most Played Characters</h2>
-            </div>
-            <div class="character-grid" id="character-grid"></div>
-        </div>
-    </section>
-
-
-    <!-- Charts -->
-    <section class="charts-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Activity Data</span>
-                <h2 class="section-title">Match Trends</h2>
-            </div>
-            <div class="charts-grid">
+            <div class="chart-row">
                 <div class="chart-card">
-                    <h3 class="chart-title">Matches by Day of Week</h3>
+                    <h3>📊 Games by Hour</h3>
                     <div class="chart-container">
-                        <canvas id="weekdayChart"></canvas>
+                        <canvas id="hourlyChart"></canvas>
                     </div>
                 </div>
                 <div class="chart-card">
-                    <h3 class="chart-title">Monthly Activity</h3>
+                    <h3>📅 Games by Day</h3>
+                    <div class="chart-container">
+                        <canvas id="dailyChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-row">
+                <div class="chart-card">
+                    <h3>📈 Cumulative Games Over Time</h3>
+                    <div class="chart-container">
+                        <canvas id="cumulativeChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>📆 Monthly Activity</h3>
                     <div class="chart-container">
                         <canvas id="monthlyChart"></canvas>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Fun Facts -->
-    <section class="facts-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Did You Know?</span>
-                <h2 class="section-title">Season Highlights</h2>
-            </div>
-            <div class="facts-grid">
-                <div class="fact-card">
-                    <div class="fact-icon">💯</div>
-                    <div class="fact-title">Perfect Games</div>
-                    <div class="fact-value">1,185</div>
-                    <div class="fact-detail">Flawless 3-0 victories</div>
+            <div class="expandable" id="heatmap-expand">
+                <div class="expand-header" onclick="toggleExpand('heatmap-expand')">
+                    <span class="expand-title">🔥 Activity Heatmap (Hour × Day)</span>
+                    <span class="expand-arrow">▼</span>
                 </div>
-                <div class="fact-card">
-                    <div class="fact-icon">💀</div>
-                    <div class="fact-title">Most Self-Destructs</div>
-                    <div class="fact-value">habeas</div>
-                    <div class="fact-detail">95 total SDs</div>
-                </div>
-                <div class="fact-card">
-                    <div class="fact-icon">🎭</div>
-                    <div class="fact-title">Most Diverse</div>
-                    <div class="fact-value">jmoon</div>
-                    <div class="fact-detail">69 different characters</div>
-                </div>
-                <div class="fact-card">
-                    <div class="fact-icon">🔥</div>
-                    <div class="fact-title">Win Streak</div>
-                    <div class="fact-value">28 wins</div>
-                    <div class="fact-detail">jmoon unstoppable</div>
+                <div class="expand-content">
+                    <div class="expand-inner">
+                        <div class="heatmap-container">
+                            <div class="heatmap" id="heatmap"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- One Trick Ponies -->
-    <section class="ponies-section">
+    <!-- Player Performance Section -->
+    <section style="background: var(--smash-black);">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Character Loyalty</span>
-                <h2 class="section-title">One-Trick Ponies</h2>
+                <span class="section-tag">Player Deep Dive</span>
+                <h2 class="section-title">Performance Metrics</h2>
             </div>
-            <div class="ponies-grid" id="ponies-grid"></div>
+
+            <!-- Outliers -->
+            <div class="outlier-grid">
+                <div class="outlier-card">
+                    <div class="outlier-icon">🎮</div>
+                    <div class="outlier-title">Most Games Played</div>
+                    <div class="outlier-value">habeas: 2,213</div>
+                    <div class="outlier-detail">9.9 games per day average</div>
+                </div>
+                <div class="outlier-card">
+                    <div class="outlier-icon">👑</div>
+                    <div class="outlier-title">Highest Win Rate</div>
+                    <div class="outlier-value">jmoon: 77.7%</div>
+                    <div class="outlier-detail">740W - 212L (952 games)</div>
+                </div>
+                <div class="outlier-card">
+                    <div class="outlier-icon">😅</div>
+                    <div class="outlier-title">Lowest Win Rate (50+ games)</div>
+                    <div class="outlier-value">heidy: 14.6%</div>
+                    <div class="outlier-detail">Still played 137 games. Respect.</div>
+                </div>
+                <div class="outlier-card">
+                    <div class="outlier-icon">💀</div>
+                    <div class="outlier-title">Best K/D Ratio</div>
+                    <div class="outlier-value">jmoon: 1.59</div>
+                    <div class="outlier-detail">2,303 KOs / 1,449 deaths</div>
+                </div>
+                <div class="outlier-card">
+                    <div class="outlier-icon">🪦</div>
+                    <div class="outlier-title">Worst K/D Ratio</div>
+                    <div class="outlier-value">mizan: 0.44</div>
+                    <div class="outlier-detail">Gets KO'd 2x more than they KO</div>
+                </div>
+                <div class="outlier-card">
+                    <div class="outlier-icon">🎭</div>
+                    <div class="outlier-title">Most Characters Played</div>
+                    <div class="outlier-value">jmoon: 69</div>
+                    <div class="outlier-detail">70% of all characters in the game</div>
+                </div>
+            </div>
+
+            <!-- Charts -->
+            <div class="chart-row">
+                <div class="chart-card">
+                    <h3>📊 Win Rate Distribution (20+ games)</h3>
+                    <div class="chart-container">
+                        <canvas id="winRateDistChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>⚔️ K/D Ratio by Player</h3>
+                    <div class="chart-container">
+                        <canvas id="kdChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-row">
+                <div class="chart-card">
+                    <h3>🎮 Games Played (Top 20)</h3>
+                    <div class="chart-container">
+                        <canvas id="gamesChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>🎭 Character Diversity</h3>
+                    <div class="chart-container">
+                        <canvas id="diversityChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full Player Table -->
+            <div class="expandable" id="players-expand">
+                <div class="expand-header" onclick="toggleExpand('players-expand')">
+                    <span class="expand-title">📋 Full Player Stats Table (Click headers to sort)</span>
+                    <span class="expand-arrow">▼</span>
+                </div>
+                <div class="expand-content">
+                    <div class="expand-inner" style="overflow-x: auto;">
+                        <table class="data-table" id="players-table">
+                            <thead>
+                                <tr>
+                                    <th onclick="sortTable('players-table', 0)">Player</th>
+                                    <th onclick="sortTable('players-table', 1)">Games</th>
+                                    <th onclick="sortTable('players-table', 2)">Wins</th>
+                                    <th onclick="sortTable('players-table', 3)">Losses</th>
+                                    <th onclick="sortTable('players-table', 4)">Win%</th>
+                                    <th onclick="sortTable('players-table', 5)">KOs</th>
+                                    <th onclick="sortTable('players-table', 6)">Falls</th>
+                                    <th onclick="sortTable('players-table', 7)">K/D</th>
+                                    <th onclick="sortTable('players-table', 8)">SDs</th>
+                                    <th onclick="sortTable('players-table', 9)">Chars</th>
+                                </tr>
+                            </thead>
+                            <tbody id="players-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Countries -->
-    <section class="countries-section">
+    <!-- Momentum & Psychology -->
+    <section style="background: var(--smash-darker);">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Global Reach</span>
-                <h2 class="section-title">Nations Represented</h2>
+                <span class="section-tag">Psychology</span>
+                <h2 class="section-title">Momentum & Mental Game</h2>
             </div>
-            <div class="countries-grid" id="countries-grid"></div>
+
+            <div class="outlier-grid">
+                <div class="outlier-card">
+                    <div class="outlier-icon">🔥</div>
+                    <div class="outlier-title">Average Momentum Effect</div>
+                    <div class="outlier-value">+16.4% after winning</div>
+                    <div class="outlier-detail">Players perform better after a win</div>
+                </div>
+                <div class="outlier-card">
+                    <div class="outlier-icon">🎰</div>
+                    <div class="outlier-title">Biggest Momentum Swing</div>
+                    <div class="outlier-value">lag: +33.3%</div>
+                    <div class="outlier-detail">55.9% after win vs 22.5% after loss</div>
+                </div>
+                <div class="outlier-card">
+                    <div class="outlier-icon">😤</div>
+                    <div class="outlier-title">Revenge Specialist</div>
+                    <div class="outlier-value">ryy: +38.3%</div>
+                    <div class="outlier-detail">45% normal → 83.3% in rematches</div>
+                </div>
+                <div class="outlier-card">
+                    <div class="outlier-icon">🎯</div>
+                    <div class="outlier-title">Most Clutch</div>
+                    <div class="outlier-value">lando: +43.3%</div>
+                    <div class="outlier-detail">Thrives in close games</div>
+                </div>
+                <div class="outlier-card">
+                    <div class="outlier-icon">😰</div>
+                    <div class="outlier-title">Biggest Choker</div>
+                    <div class="outlier-value">amar: -31.9%</div>
+                    <div class="outlier-detail">Struggles in close games</div>
+                </div>
+                <div class="outlier-card">
+                    <div class="outlier-icon">☕</div>
+                    <div class="outlier-title">Needs Warmup Most</div>
+                    <div class="outlier-value">pat: +19.8%</div>
+                    <div class="outlier-detail">22.2% → 42% after warmup</div>
+                </div>
+            </div>
+
+            <div class="chart-row">
+                <div class="chart-card">
+                    <h3>📈 Momentum by Player (Win Rate Boost After Winning)</h3>
+                    <div class="chart-container tall">
+                        <canvas id="momentumChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>🔥 Win Streak Distribution</h3>
+                    <div class="chart-container">
+                        <canvas id="streakChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Character Section -->
+    <section style="background: var(--smash-black);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Fighter Analysis</span>
+                <h2 class="section-title">Character Stats</h2>
+            </div>
+
+            <div class="outlier-grid">
+                <div class="outlier-card">
+                    <div class="outlier-icon">🎮</div>
+                    <div class="outlier-title">Most Played</div>
+                    <div class="outlier-value">MR. GAME & WATCH</div>
+                    <div class="outlier-detail">891 games played</div>
+                </div>
+                <div class="outlier-card">
+                    <div class="outlier-icon">💀</div>
+                    <div class="outlier-title">Most Cursed (20+ games)</div>
+                    <div class="outlier-value">GRENINJA: 21.3%</div>
+                    <div class="outlier-detail">108 games, terrible win rate</div>
+                </div>
+                <div class="outlier-card">
+                    <div class="outlier-icon">✨</div>
+                    <div class="outlier-title">Most Blessed (20+ games)</div>
+                    <div class="outlier-value">MARTH: 84.6%</div>
+                    <div class="outlier-detail">The secret weapon</div>
+                </div>
+                <div class="outlier-card">
+                    <div class="outlier-icon">🎯</div>
+                    <div class="outlier-title">Ultimate One-Trick</div>
+                    <div class="outlier-value">lag: 99.1% NESS</div>
+                    <div class="outlier-detail">106 games, basically only Ness</div>
+                </div>
+            </div>
+
+            <div class="chart-row">
+                <div class="chart-card">
+                    <h3>🎮 Character Popularity (Top 20)</h3>
+                    <div class="chart-container tall">
+                        <canvas id="charPopChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>📊 Character Win Rates (Top 20)</h3>
+                    <div class="chart-container tall">
+                        <canvas id="charWinRateChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="expandable" id="chars-expand">
+                <div class="expand-header" onclick="toggleExpand('chars-expand')">
+                    <span class="expand-title">📋 Full Character Stats Table</span>
+                    <span class="expand-arrow">▼</span>
+                </div>
+                <div class="expand-content">
+                    <div class="expand-inner" style="overflow-x: auto;">
+                        <table class="data-table" id="chars-table">
+                            <thead>
+                                <tr>
+                                    <th onclick="sortTable('chars-table', 0)">Character</th>
+                                    <th onclick="sortTable('chars-table', 1)">Games</th>
+                                    <th onclick="sortTable('chars-table', 2)">Wins</th>
+                                    <th onclick="sortTable('chars-table', 3)">Win%</th>
+                                    <th onclick="sortTable('chars-table', 4)">Players</th>
+                                </tr>
+                            </thead>
+                            <tbody id="chars-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Head to Head -->
+    <section style="background: var(--smash-darker);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Rivalries</span>
+                <h2 class="section-title">Head to Head Records</h2>
+            </div>
+
+            <div class="outlier-grid">
+                <div class="outlier-card">
+                    <div class="outlier-icon">⚔️</div>
+                    <div class="outlier-title">Most Matches Played</div>
+                    <div class="outlier-value">habeas vs jmoon: 583</div>
+                    <div class="outlier-detail">The legendary rivalry</div>
+                </div>
+                <div class="outlier-card">
+                    <div class="outlier-icon">💯</div>
+                    <div class="outlier-title">Perfect Record (15+ games)</div>
+                    <div class="outlier-value">subby vs ya: 22-0</div>
+                    <div class="outlier-detail">100% win rate</div>
+                </div>
+                <div class="outlier-card">
+                    <div class="outlier-icon">🗡️</div>
+                    <div class="outlier-title">Giant Killer</div>
+                    <div class="outlier-value">habeas: 138 wins vs jmoon</div>
+                    <div class="outlier-detail">Only real threat to #1</div>
+                </div>
+            </div>
+
+            <div class="expandable open" id="h2h-expand">
+                <div class="expand-header" onclick="toggleExpand('h2h-expand')">
+                    <span class="expand-title">🎯 Head-to-Head Matrix (Top 10 Players)</span>
+                    <span class="expand-arrow">▼</span>
+                </div>
+                <div class="expand-content">
+                    <div class="expand-inner">
+                        <p style="color: var(--text-gray); margin-bottom: 15px; font-size: 0.85rem;">
+                            Green = winning record, Red = losing record. Shows win rate of row player vs column player.
+                        </p>
+                        <div class="h2h-container" id="h2h-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Self Destructs -->
+    <section style="background: var(--smash-black);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Oops</span>
+                <h2 class="section-title">Self Destructs</h2>
+            </div>
+
+            <div class="outlier-grid">
+                <div class="outlier-card">
+                    <div class="outlier-icon">💥</div>
+                    <div class="outlier-title">Most Total SDs</div>
+                    <div class="outlier-value">habeas: 95</div>
+                    <div class="outlier-detail">1 SD every 23 games</div>
+                </div>
+                <div class="outlier-card">
+                    <div class="outlier-icon">🤦</div>
+                    <div class="outlier-title">Most SD-Prone</div>
+                    <div class="outlier-value">strike: 0.216/game</div>
+                    <div class="outlier-detail">25 SDs in 116 games</div>
+                </div>
+                <div class="outlier-card">
+                    <div class="outlier-icon">✨</div>
+                    <div class="outlier-title">Cleanest Player (50+ games)</div>
+                    <div class="outlier-value">kento: 0 SDs</div>
+                    <div class="outlier-detail">94 games, zero self destructs</div>
+                </div>
+            </div>
+
+            <div class="chart-row">
+                <div class="chart-card">
+                    <h3>💥 SD Rate by Player (SDs per Game)</h3>
+                    <div class="chart-container tall">
+                        <canvas id="sdChart"></canvas>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer>
-        <div class="footer-logo">SUPER SMASH OFFICE</div>
-        <p class="footer-text">Season 1 · June 2025 - January 2026 · Everyone is Here!</p>
+        <div class="footer-title">SUPER SMASH OFFICE</div>
+        <p class="footer-text">Season 1 • June 2025 - January 2026 • Everyone is Here!</p>
     </footer>
 
     <script>
-        // Data
-        const characterData = [
-            { name: "MR. GAME & WATCH", plays: 891, winRate: 46.8 },
-            { name: "DONKEY KONG", plays: 799, winRate: 49.2 },
-            { name: "ZELDA", plays: 791, winRate: 54.9 },
-            { name: "JOKER", plays: 709, winRate: 52.8 },
-            { name: "SAMUS", plays: 618, winRate: 44.2 },
-            { name: "CAPTAIN FALCON", plays: 456, winRate: 47.4 },
-            { name: "YOSHI", plays: 398, winRate: 48.2 },
-            { name: "LUCINA", plays: 312, winRate: 55.1 },
-            { name: "KING K. ROOL", plays: 287, winRate: 43.9 },
-            { name: "WOLF", plays: 245, winRate: 51.0 },
-            { name: "KIRBY", plays: 231, winRate: 42.4 },
-            { name: "LINK", plays: 218, winRate: 49.5 },
-        ];
+        // Chart.js defaults
+        Chart.defaults.color = '#a0a0a0';
+        Chart.defaults.borderColor = 'rgba(230, 0, 18, 0.2)';
 
-        const weekdayData = {
-            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-            data: [478, 612, 589, 687, 741, 456, 361]
+        const chartColors = {
+            red: '#e60012',
+            orange: '#ff6b00',
+            yellow: '#ffd700',
+            green: '#00ff88',
+            blue: '#0066cc'
         };
 
-        const monthlyData = {
-            labels: ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan'],
-            data: [312, 489, 567, 621, 534, 478, 512, 411]
-        };
+        // Data (will be populated)
+        let chartData = null;
 
-        const oneTrickData = [
-            { name: "lag", character: "NESS", percent: 100, games: 106 },
-            { name: "messi", character: "GRENINJA", percent: 93.1, games: 102 },
-            { name: "caleb", character: "PIRANHA PLANT", percent: 87.0, games: 46 },
-            { name: "niki <3", character: "KIRBY", percent: 81.5, games: 27 },
-            { name: "shafaq", character: "ZELDA", percent: 78.4, games: 612 },
-            { name: "keneru", character: "DONKEY KONG", percent: 76.2, games: 747 },
-        ];
+        // Load data and initialize
+        async function init() {
+            const response = await fetch('chart_data.json');
+            chartData = await response.json();
 
-        const countryData = [
-            { code: "US", flag: "🇺🇸" },
-            { code: "CA", flag: "🇨🇦" },
-            { code: "JP", flag: "🇯🇵" },
-            { code: "FR", flag: "🇫🇷" },
-            { code: "AU", flag: "🇦🇺" },
-            { code: "IN", flag: "🇮🇳" },
-            { code: "UK", flag: "🇬🇧" },
-            { code: "PH", flag: "🇵🇭" },
-            { code: "BD", flag: "🇧🇩" },
-            { code: "TN", flag: "🇹🇳" },
-            { code: "NG", flag: "🇳🇬" },
-        ];
-
-        // Generate fire particles
-        function createFireParticles() {
-            const container = document.getElementById('fire-particles');
-            const colors = ['red', 'orange', 'yellow'];
-            for (let i = 0; i < 40; i++) {
-                const particle = document.createElement('div');
-                particle.className = `fire-particle ${colors[Math.floor(Math.random() * colors.length)]}`;
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 4 + 's';
-                particle.style.animationDuration = (3 + Math.random() * 3) + 's';
-                container.appendChild(particle);
-            }
+            createHourlyChart();
+            createDailyChart();
+            createMonthlyChart();
+            createCumulativeChart();
+            createWinRateDistChart();
+            createKDChart();
+            createGamesChart();
+            createDiversityChart();
+            createMomentumChart();
+            createStreakChart();
+            createCharPopChart();
+            createCharWinRateChart();
+            createSDChart();
+            createHeatmap();
+            createH2HMatrix();
+            populatePlayersTable();
+            populateCharsTable();
         }
 
-        // Populate characters
-        function populateCharacters() {
-            const grid = document.getElementById('character-grid');
-            characterData.forEach((char, i) => {
-                const card = document.createElement('div');
-                card.className = 'character-card';
-                card.innerHTML = `
-                    <span class="character-rank">#${i + 1}</span>
-                    <h3 class="character-name">${char.name}</h3>
-                    <div class="character-stats">
-                        <div class="character-stat">
-                            <div class="character-stat-value plays">${char.plays}</div>
-                            <div class="character-stat-label">Plays</div>
-                        </div>
-                        <div class="character-stat">
-                            <div class="character-stat-value wr">${char.winRate}%</div>
-                            <div class="character-stat-label">Win Rate</div>
-                        </div>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-        }
-
-        // Populate one-tricks
-        function populateOneTricks() {
-            const grid = document.getElementById('ponies-grid');
-            oneTrickData.forEach(pony => {
-                const card = document.createElement('div');
-                card.className = 'pony-card';
-                card.innerHTML = `
-                    <div class="pony-percent">${pony.percent}%</div>
-                    <div class="pony-info">
-                        <h3>${pony.name.toUpperCase()}</h3>
-                        <div class="character">${pony.character}</div>
-                        <div class="games">${pony.games} games</div>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-        }
-
-        // Populate countries
-        function populateCountries() {
-            const grid = document.getElementById('countries-grid');
-            countryData.forEach(country => {
-                const badge = document.createElement('div');
-                badge.className = 'country-badge';
-                badge.innerHTML = `
-                    <span class="country-flag">${country.flag}</span>
-                    <span class="country-code">${country.code}</span>
-                `;
-                grid.appendChild(badge);
-            });
-        }
-
-        // Create charts
-        function createCharts() {
-            const chartOptions = {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { display: false }
-                },
-                scales: {
-                    x: {
-                        grid: { color: 'rgba(230, 0, 18, 0.1)' },
-                        ticks: { color: '#a0a0a0', font: { family: 'JetBrains Mono', size: 10 } }
-                    },
-                    y: {
-                        grid: { color: 'rgba(230, 0, 18, 0.1)' },
-                        ticks: { color: '#a0a0a0', font: { family: 'JetBrains Mono', size: 10 } }
-                    }
-                }
-            };
-
-            // Weekday chart
-            new Chart(document.getElementById('weekdayChart'), {
+        function createHourlyChart() {
+            new Chart(document.getElementById('hourlyChart'), {
                 type: 'bar',
                 data: {
-                    labels: weekdayData.labels,
+                    labels: chartData.hourlyActivity.labels,
                     datasets: [{
-                        data: weekdayData.data,
-                        backgroundColor: [
-                            'rgba(230, 0, 18, 0.8)',
-                            'rgba(230, 0, 18, 0.8)',
-                            'rgba(230, 0, 18, 0.8)',
-                            'rgba(230, 0, 18, 0.8)',
-                            'rgba(255, 107, 0, 0.8)',
-                            'rgba(255, 215, 0, 0.6)',
-                            'rgba(255, 215, 0, 0.6)',
-                        ],
-                        borderColor: '#e60012',
-                        borderWidth: 2,
-                        borderRadius: 4,
+                        label: 'Games',
+                        data: chartData.hourlyActivity.games,
+                        backgroundColor: chartData.hourlyActivity.games.map((g, i) =>
+                            i >= 22 || i <= 4 ? chartColors.orange : chartColors.red
+                        ),
+                        borderRadius: 3
                     }]
                 },
-                options: chartOptions
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, title: { display: true, text: 'Games' } }
+                    }
+                }
             });
+        }
 
-            // Monthly chart
+        function createDailyChart() {
+            new Chart(document.getElementById('dailyChart'), {
+                type: 'bar',
+                data: {
+                    labels: chartData.dailyActivity.labels,
+                    datasets: [{
+                        label: 'Games',
+                        data: chartData.dailyActivity.data,
+                        backgroundColor: chartData.dailyActivity.data.map((_, i) =>
+                            i >= 5 ? chartColors.yellow : chartColors.red
+                        ),
+                        borderRadius: 3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+
+        function createMonthlyChart() {
             new Chart(document.getElementById('monthlyChart'), {
                 type: 'line',
                 data: {
-                    labels: monthlyData.labels,
+                    labels: chartData.monthlyActivity.labels.map(l => l.slice(5)),
                     datasets: [{
-                        data: monthlyData.data,
-                        borderColor: '#ff6b00',
+                        label: 'Games',
+                        data: chartData.monthlyActivity.data,
+                        borderColor: chartColors.orange,
                         backgroundColor: 'rgba(255, 107, 0, 0.1)',
-                        borderWidth: 3,
                         fill: true,
-                        tension: 0.4,
-                        pointBackgroundColor: '#ff6b00',
-                        pointBorderColor: '#fff',
-                        pointRadius: 6,
-                        pointHoverRadius: 10,
+                        tension: 0.3
                     }]
                 },
-                options: chartOptions
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } }
+                }
             });
         }
 
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            createFireParticles();
-            populateCharacters();
-            populateOneTricks();
-            populateCountries();
-            createCharts();
-        });
+        function createCumulativeChart() {
+            new Chart(document.getElementById('cumulativeChart'), {
+                type: 'line',
+                data: {
+                    labels: chartData.cumulativeGames.labels.map(l => l.slice(5)),
+                    datasets: [{
+                        label: 'Total Games',
+                        data: chartData.cumulativeGames.data,
+                        borderColor: chartColors.green,
+                        backgroundColor: 'rgba(0, 255, 136, 0.1)',
+                        fill: true,
+                        tension: 0.1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+
+        function createWinRateDistChart() {
+            new Chart(document.getElementById('winRateDistChart'), {
+                type: 'bar',
+                data: {
+                    labels: chartData.winRateDistribution.labels,
+                    datasets: [{
+                        label: 'Players',
+                        data: chartData.winRateDistribution.data,
+                        backgroundColor: chartData.winRateDistribution.data.map((_, i) => {
+                            if (i < 3) return chartColors.red;
+                            if (i < 5) return chartColors.orange;
+                            if (i < 7) return chartColors.yellow;
+                            return chartColors.green;
+                        }),
+                        borderRadius: 3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, title: { display: true, text: '# Players' } }
+                    }
+                }
+            });
+        }
+
+        function createKDChart() {
+            const data = chartData.kdByPlayer;
+            new Chart(document.getElementById('kdChart'), {
+                type: 'bar',
+                data: {
+                    labels: data.labels,
+                    datasets: [{
+                        label: 'K/D',
+                        data: data.data,
+                        backgroundColor: data.data.map(kd =>
+                            kd >= 1.2 ? chartColors.green : kd >= 0.8 ? chartColors.yellow : chartColors.red
+                        ),
+                        borderRadius: 3
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+
+        function createGamesChart() {
+            const data = chartData.gamesDistribution;
+            new Chart(document.getElementById('gamesChart'), {
+                type: 'bar',
+                data: {
+                    labels: data.labels.slice(0, 20),
+                    datasets: [{
+                        label: 'Games',
+                        data: data.data.slice(0, 20),
+                        backgroundColor: chartColors.orange,
+                        borderRadius: 3
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+
+        function createDiversityChart() {
+            const data = chartData.diversityByPlayer;
+            new Chart(document.getElementById('diversityChart'), {
+                type: 'bar',
+                data: {
+                    labels: data.labels,
+                    datasets: [{
+                        label: 'Characters',
+                        data: data.data,
+                        backgroundColor: chartColors.yellow,
+                        borderRadius: 3
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+
+        function createMomentumChart() {
+            const data = chartData.momentumByPlayer;
+            new Chart(document.getElementById('momentumChart'), {
+                type: 'bar',
+                data: {
+                    labels: data.labels,
+                    datasets: [{
+                        label: 'Momentum Boost %',
+                        data: data.data,
+                        backgroundColor: data.data.map(m =>
+                            m > 20 ? chartColors.green : m > 0 ? chartColors.yellow : chartColors.red
+                        ),
+                        borderRadius: 3
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { title: { display: true, text: 'Win Rate Boost After Win (%)' } }
+                    }
+                }
+            });
+        }
+
+        function createStreakChart() {
+            new Chart(document.getElementById('streakChart'), {
+                type: 'bar',
+                data: {
+                    labels: chartData.streakDistribution.labels,
+                    datasets: [{
+                        label: 'Count',
+                        data: chartData.streakDistribution.data,
+                        backgroundColor: chartData.streakDistribution.labels.map((_, i) =>
+                            i < 3 ? chartColors.yellow : i < 6 ? chartColors.orange : chartColors.red
+                        ),
+                        borderRadius: 3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { title: { display: true, text: 'Number of Streaks' } },
+                        x: { title: { display: true, text: 'Streak Length' } }
+                    }
+                }
+            });
+        }
+
+        function createCharPopChart() {
+            const data = chartData.topCharacters;
+            new Chart(document.getElementById('charPopChart'), {
+                type: 'bar',
+                data: {
+                    labels: data.labels,
+                    datasets: [{
+                        label: 'Games',
+                        data: data.plays,
+                        backgroundColor: chartColors.red,
+                        borderRadius: 3
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+
+        function createCharWinRateChart() {
+            const data = chartData.topCharacters;
+            new Chart(document.getElementById('charWinRateChart'), {
+                type: 'bar',
+                data: {
+                    labels: data.labels,
+                    datasets: [{
+                        label: 'Win Rate',
+                        data: data.winRates,
+                        backgroundColor: data.winRates.map(wr =>
+                            wr >= 55 ? chartColors.green : wr >= 45 ? chartColors.yellow : chartColors.red
+                        ),
+                        borderRadius: 3
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: { x: { min: 0, max: 100 } }
+                }
+            });
+        }
+
+        function createSDChart() {
+            const data = chartData.sdRateByPlayer;
+            new Chart(document.getElementById('sdChart'), {
+                type: 'bar',
+                data: {
+                    labels: data.labels,
+                    datasets: [{
+                        label: 'SDs per Game',
+                        data: data.data,
+                        backgroundColor: data.data.map(sd =>
+                            sd > 0.15 ? chartColors.red : sd > 0.08 ? chartColors.orange : chartColors.green
+                        ),
+                        borderRadius: 3
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+
+        function createHeatmap() {
+            const container = document.getElementById('heatmap');
+            const data = chartData.activityHeatmap;
+            const maxVal = Math.max(...data.data.flat());
+
+            // Header row
+            container.innerHTML = '<div class="heatmap-label"></div>';
+            for (let h = 0; h < 24; h++) {
+                container.innerHTML += `<div class="heatmap-label">${h}</div>`;
+            }
+
+            // Data rows
+            data.days.forEach((day, dayIdx) => {
+                container.innerHTML += `<div class="heatmap-label">${day}</div>`;
+                data.data[dayIdx].forEach(val => {
+                    const intensity = val / maxVal;
+                    const color = `rgba(230, 0, 18, ${intensity * 0.8 + 0.1})`;
+                    container.innerHTML += `<div class="heatmap-cell" style="background: ${color};" title="${val} games">${val > 20 ? val : ''}</div>`;
+                });
+            });
+        }
+
+        function createH2HMatrix() {
+            const container = document.getElementById('h2h-container');
+            const data = chartData.headToHead;
+
+            let html = '<table class="h2h-table"><thead><tr><th></th>';
+            data.players.forEach(p => html += `<th>${p}</th>`);
+            html += '</tr></thead><tbody>';
+
+            data.players.forEach((p1, i) => {
+                html += `<tr><th>${p1}</th>`;
+                data.matrix[i].forEach((cell, j) => {
+                    if (i === j) {
+                        html += '<td class="h2h-cell h2h-self">-</td>';
+                    } else if (cell && cell.total > 0) {
+                        const cls = cell.wr > 55 ? 'h2h-win' : cell.wr < 45 ? 'h2h-loss' : 'h2h-even';
+                        html += `<td class="h2h-cell ${cls}" title="${cell.wins}/${cell.total}">${cell.wr}%</td>`;
+                    } else {
+                        html += '<td class="h2h-cell">-</td>';
+                    }
+                });
+                html += '</tr>';
+            });
+
+            html += '</tbody></table>';
+            container.innerHTML = html;
+        }
+
+        function populatePlayersTable() {
+            const tbody = document.getElementById('players-tbody');
+            const maxGames = Math.max(...chartData.allPlayers.map(p => p.games));
+
+            chartData.allPlayers.forEach(p => {
+                const wrClass = p.winRate >= 55 ? 'color: #00ff88' : p.winRate < 40 ? 'color: #ff4757' : '';
+                const highlight = p.winRate >= 70 || p.winRate <= 20 || p.games >= 1000 ? 'highlight-row' : '';
+                tbody.innerHTML += `
+                    <tr class="${highlight}">
+                        <td><strong>${p.name}</strong></td>
+                        <td class="bar-cell">
+                            <div class="bar-bg" style="width: ${p.games / maxGames * 100}%"></div>
+                            <span class="bar-value">${p.games}</span>
+                        </td>
+                        <td>${p.wins}</td>
+                        <td>${p.losses}</td>
+                        <td style="${wrClass}"><strong>${p.winRate}%</strong></td>
+                        <td>${p.kos}</td>
+                        <td>${p.falls}</td>
+                        <td>${p.kd}</td>
+                        <td>${p.sds}</td>
+                        <td>${p.charsPlayed}</td>
+                    </tr>
+                `;
+            });
+        }
+
+        function populateCharsTable() {
+            const tbody = document.getElementById('chars-tbody');
+            const maxPlays = Math.max(...chartData.allCharacters.map(c => c.plays));
+
+            chartData.allCharacters.forEach(c => {
+                const wrClass = c.winRate >= 55 ? 'color: #00ff88' : c.winRate < 40 ? 'color: #ff4757' : '';
+                const highlight = c.winRate >= 70 || c.winRate <= 25 ? 'highlight-row' : '';
+                tbody.innerHTML += `
+                    <tr class="${highlight}">
+                        <td><strong>${c.name}</strong></td>
+                        <td class="bar-cell">
+                            <div class="bar-bg" style="width: ${c.plays / maxPlays * 100}%"></div>
+                            <span class="bar-value">${c.plays}</span>
+                        </td>
+                        <td>${c.wins}</td>
+                        <td style="${wrClass}"><strong>${c.winRate}%</strong></td>
+                        <td>${c.uniquePlayers}</td>
+                    </tr>
+                `;
+            });
+        }
+
+        function toggleExpand(id) {
+            document.getElementById(id).classList.toggle('open');
+        }
+
+        function sortTable(tableId, colIdx) {
+            const table = document.getElementById(tableId);
+            const tbody = table.querySelector('tbody');
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+
+            const isNumeric = colIdx > 0;
+            rows.sort((a, b) => {
+                let aVal = a.cells[colIdx].textContent.replace('%', '');
+                let bVal = b.cells[colIdx].textContent.replace('%', '');
+                if (isNumeric) {
+                    return parseFloat(bVal) - parseFloat(aVal);
+                }
+                return aVal.localeCompare(bVal);
+            });
+
+            rows.forEach(row => tbody.appendChild(row));
+        }
+
+        // Initialize on load
+        init();
     </script>
 </body>
 </html>
