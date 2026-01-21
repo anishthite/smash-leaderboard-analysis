@@ -28,8 +28,8 @@ def get_yesterday_matches(participants_df, matches_df, player_lookup, reset_hour
     end_utc = today_reset - PST_OFFSET
 
     # Filter matches in the time window
-    matches_df['created_at'] = pd.to_datetime(matches_df['created_at'])
-    participants_df['created_at'] = pd.to_datetime(participants_df['created_at'])
+    matches_df['created_at'] = pd.to_datetime(matches_df['created_at'], format='mixed')
+    participants_df['created_at'] = pd.to_datetime(participants_df['created_at'], format='mixed')
 
     yesterday_matches = matches_df[
         (matches_df['created_at'] >= start_utc) &
