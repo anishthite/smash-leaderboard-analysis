@@ -61,6 +61,12 @@ jobs:
         run: |
           python generate_daily_report.py
 
+      - name: Backfill past week reports (if needed)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python backfill_reports.py
+
       - name: Update HTML files with new data
         run: |
           # Inline chart data into index.html (if needed)
