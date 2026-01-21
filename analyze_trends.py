@@ -8,11 +8,19 @@ import numpy as np
 from datetime import datetime, timedelta
 from collections import defaultdict, Counter
 import json
+import glob
+
+# Find the latest data files
+def get_latest_file(pattern):
+    files = sorted(glob.glob(pattern))
+    if not files:
+        raise FileNotFoundError(f"No files found matching {pattern}")
+    return files[-1]
 
 # Load the data
-players_df = pd.read_csv('data/public_players_export_2026-01-19_214745.csv')
-matches_df = pd.read_csv('data/public_matches_export_2026-01-19_214740.csv')
-participants_df = pd.read_csv('data/public_match_participants_export_2026-01-19_214731.csv')
+players_df = pd.read_csv(get_latest_file('data/public_players_export_*.csv'))
+matches_df = pd.read_csv(get_latest_file('data/public_matches_export_*.csv'))
+participants_df = pd.read_csv(get_latest_file('data/public_match_participants_export_*.csv'))
 
 participants_df['created_at'] = pd.to_datetime(participants_df['created_at'], format='mixed')
 matches_df['created_at'] = pd.to_datetime(matches_df['created_at'], format='mixed')
