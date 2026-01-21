@@ -66,6 +66,7 @@ jobs:
           # Inline chart data into index.html (if needed)
           python -c "
           import json
+          import re
 
           # Load chart data
           with open('chart_data.json', 'r') as f:
@@ -75,13 +76,12 @@ jobs:
           with open('index.html', 'r') as f:
               html = f.read()
 
-          # Find and replace the chartData variable
-          import re
+          # Find and replace the chartData variable using a function to avoid escape issues
           pattern = r'const chartData = \{[^;]*\};'
-          replacement = f'const chartData = {json.dumps(chart_data)};'
+          new_data = 'const chartData = ' + json.dumps(chart_data) + ';'
 
           if re.search(pattern, html, re.DOTALL):
-              html = re.sub(pattern, replacement, html, flags=re.DOTALL)
+              html = re.sub(pattern, lambda m: new_data, html, flags=re.DOTALL)
               with open('index.html', 'w') as f:
                   f.write(html)
               print('Updated index.html with new chart data')
