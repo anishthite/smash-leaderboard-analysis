@@ -488,11 +488,11 @@
       "times_played": 5
     },
     {
-      "character": "PAC-MAN",
+      "character": "CHROM",
       "times_played": 5
     },
     {
-      "character": "CHROM",
+      "character": "PAC-MAN",
       "times_played": 5
     },
     {
@@ -504,7 +504,7 @@
       "times_played": 4
     },
     {
-      "character": "BAYONETTA",
+      "character": "VILLAGER",
       "times_played": 4
     },
     {
@@ -512,15 +512,15 @@
       "times_played": 4
     },
     {
-      "character": "VILLAGER",
-      "times_played": 4
-    },
-    {
       "character": "JIGGLYPUFF",
       "times_played": 4
     },
     {
-      "character": "MII GUNNER",
+      "character": "BAYONETTA",
+      "times_played": 4
+    },
+    {
+      "character": "KEN",
       "times_played": 3
     }
   ],
