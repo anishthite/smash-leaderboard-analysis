@@ -30,16 +30,16 @@
     },
     {
       "name": "jmoon",
-      "games": 952,
-      "wins": 740,
+      "games": 963,
+      "wins": 751,
       "losses": 212,
-      "winRate": 77.7,
-      "kos": 2303,
-      "falls": 1449,
+      "winRate": 78.0,
+      "kos": 2327,
+      "falls": 1467,
       "sds": 30,
       "kd": 1.59,
-      "sdRate": 0.032,
-      "momentum": 14.4,
+      "sdRate": 0.031,
+      "momentum": 14.7,
       "charsPlayed": 69
     },
     {
@@ -197,6 +197,20 @@
       "charsPlayed": 10
     },
     {
+      "name": "amar",
+      "games": 115,
+      "wins": 63,
+      "losses": 52,
+      "winRate": 54.8,
+      "kos": 266,
+      "falls": 223,
+      "sds": 2,
+      "kd": 1.19,
+      "sdRate": 0.017,
+      "momentum": 31.0,
+      "charsPlayed": 4
+    },
+    {
       "name": "lag",
       "games": 106,
       "wins": 35,
@@ -209,20 +223,6 @@
       "sdRate": 0.066,
       "momentum": 33.3,
       "charsPlayed": 2
-    },
-    {
-      "name": "amar",
-      "games": 104,
-      "wins": 63,
-      "losses": 41,
-      "winRate": 60.6,
-      "kos": 248,
-      "falls": 199,
-      "sds": 2,
-      "kd": 1.25,
-      "sdRate": 0.019,
-      "momentum": 19.0,
-      "charsPlayed": 4
     },
     {
       "name": "messi",
@@ -720,8 +720,8 @@
       6,
       6,
       9,
-      5,
-      2,
+      6,
+      1,
       1,
       0,
       0
@@ -757,16 +757,16 @@
       },
       {
         "name": "jmoon",
-        "games": 952,
-        "wins": 740,
+        "games": 963,
+        "wins": 751,
         "losses": 212,
-        "winRate": 77.7,
-        "kos": 2303,
-        "falls": 1449,
+        "winRate": 78.0,
+        "kos": 2327,
+        "falls": 1467,
         "sds": 30,
         "kd": 1.59,
-        "sdRate": 0.032,
-        "momentum": 14.4,
+        "sdRate": 0.031,
+        "momentum": 14.7,
         "charsPlayed": 69
       },
       {
@@ -924,6 +924,20 @@
         "charsPlayed": 10
       },
       {
+        "name": "amar",
+        "games": 115,
+        "wins": 63,
+        "losses": 52,
+        "winRate": 54.8,
+        "kos": 266,
+        "falls": 223,
+        "sds": 2,
+        "kd": 1.19,
+        "sdRate": 0.017,
+        "momentum": 31.0,
+        "charsPlayed": 4
+      },
+      {
         "name": "lag",
         "games": 106,
         "wins": 35,
@@ -936,20 +950,6 @@
         "sdRate": 0.066,
         "momentum": 33.3,
         "charsPlayed": 2
-      },
-      {
-        "name": "amar",
-        "games": 104,
-        "wins": 63,
-        "losses": 41,
-        "winRate": 60.6,
-        "kos": 248,
-        "falls": 199,
-        "sds": 2,
-        "kd": 1.25,
-        "sdRate": 0.019,
-        "momentum": 19.0,
-        "charsPlayed": 4
       },
       {
         "name": "messi",
@@ -1477,7 +1477,7 @@
       970,
       871,
       844,
-      806,
+      828,
       770,
       653,
       619
@@ -1503,7 +1503,7 @@
       48.1,
       49.8,
       46.0,
-      43.8,
+      44.0,
       45.6,
       49.0,
       48.6
@@ -1527,7 +1527,7 @@
       1697,
       1368,
       1610,
-      940
+      962
     ]
   },
   "monthlyActivity": {
@@ -1549,7 +1549,7 @@
       908,
       2070,
       582,
-      297
+      319
     ]
   },
   "allCharacters": [
@@ -1576,9 +1576,9 @@
     },
     {
       "name": "JOKER",
-      "plays": 709,
-      "wins": 374,
-      "winRate": 52.8,
+      "plays": 712,
+      "wins": 377,
+      "winRate": 52.9,
       "uniquePlayers": 9
     },
     {
@@ -1590,16 +1590,23 @@
     },
     {
       "name": "CAPTAIN FALCON",
-      "plays": 517,
-      "wins": 237,
-      "winRate": 45.8,
+      "plays": 518,
+      "wins": 238,
+      "winRate": 45.9,
       "uniquePlayers": 14
     },
     {
       "name": "INCINEROAR",
-      "plays": 418,
-      "wins": 215,
-      "winRate": 51.4,
+      "plays": 424,
+      "wins": 221,
+      "winRate": 52.1,
+      "uniquePlayers": 5
+    },
+    {
+      "name": "ENDERMAN",
+      "plays": 400,
+      "wins": 202,
+      "winRate": 50.5,
       "uniquePlayers": 5
     },
     {
@@ -1608,13 +1615,6 @@
       "wins": 215,
       "winRate": 55.1,
       "uniquePlayers": 10
-    },
-    {
-      "name": "ENDERMAN",
-      "plays": 389,
-      "wins": 202,
-      "winRate": 51.9,
-      "uniquePlayers": 5
     },
     {
       "name": "CLOUD",
@@ -1716,9 +1716,9 @@
     },
     {
       "name": "PALUTENA",
-      "plays": 85,
-      "wins": 48,
-      "winRate": 56.5,
+      "plays": 86,
+      "wins": 49,
+      "winRate": 57.0,
       "uniquePlayers": 6
     },
     {
@@ -2039,8 +2039,8 @@
       "SAMUS",
       "CAPTAIN FALCON",
       "INCINEROAR",
-      "GANONDORF",
       "ENDERMAN",
+      "GANONDORF",
       "CLOUD",
       "KING K. ROOL",
       "LUCINA",
@@ -2057,12 +2057,12 @@
       891,
       799,
       791,
-      709,
+      712,
       618,
-      517,
-      418,
+      518,
+      424,
+      400,
       390,
-      389,
       342,
       334,
       244,
@@ -2079,12 +2079,12 @@
       46.8,
       49.2,
       54.9,
-      52.8,
+      52.9,
       44.2,
-      45.8,
-      51.4,
+      45.9,
+      52.1,
+      50.5,
       55.1,
-      51.9,
       43.3,
       48.5,
       51.6,
@@ -2103,6 +2103,7 @@
       "gatmo",
       "lag",
       "messi",
+      "amar",
       "mmmmm",
       "joguo",
       "kento",
@@ -2111,7 +2112,6 @@
       "ya",
       "caleb",
       "heidy",
-      "amar",
       "lando",
       "mizan",
       "keneru",
@@ -2132,6 +2132,7 @@
       48.4,
       33.3,
       32.4,
+      31.0,
       30.6,
       25.1,
       25.0,
@@ -2140,13 +2141,12 @@
       20.7,
       20.4,
       19.6,
-      19.0,
       18.9,
       18.4,
       17.9,
       17.5,
       16.3,
-      14.4,
+      14.7,
       12.1,
       7.5,
       7.4,
@@ -2190,7 +2190,7 @@
     ],
     "data": [
       1.59,
-      1.25,
+      1.19,
       1.1,
       1.1,
       1.07,
@@ -2234,8 +2234,8 @@
       "pat",
       "heidy",
       "strike",
-      "lag",
       "amar",
+      "lag",
       "messi",
       "kento",
       "mmmmm",
@@ -2254,7 +2254,7 @@
     "data": [
       2213,
       1083,
-      952,
+      963,
       747,
       612,
       494,
@@ -2266,8 +2266,8 @@
       186,
       137,
       116,
+      115,
       106,
-      104,
       102,
       94,
       91,
@@ -2994,7 +2994,7 @@
         60,
         97,
         85,
-        58,
+        80,
         60,
         43,
         24
@@ -3016,9 +3016,9 @@
       "10+"
     ],
     "data": [
-      825,
-      397,
-      207,
+      823,
+      398,
+      206,
       116,
       57,
       46,
@@ -3026,7 +3026,7 @@
       25,
       14,
       5,
-      38
+      39
     ]
   },
   "sdRateByPlayer": {
@@ -3081,9 +3081,9 @@
       0.043,
       0.038,
       0.036,
-      0.032,
+      0.031,
       0.029,
-      0.019,
+      0.017,
       0.015,
       0.0,
       0.0

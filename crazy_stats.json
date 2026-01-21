@@ -62,8 +62,8 @@
     }
   ],
   "jmoon_deep_dive": {
-    "total_games": 952,
-    "total_wins": 740,
+    "total_games": 963,
+    "total_wins": 751,
     "winrate_Late Night (10PM-4AM)": {
       "games": 379,
       "win_rate": 80.5
@@ -77,8 +77,8 @@
       "win_rate": 77.8
     },
     "winrate_Evening (6PM-9PM)": {
-      "games": 210,
-      "win_rate": 72.4
+      "games": 221,
+      "win_rate": 73.8
     },
     "by_day": {
       "Monday": {
@@ -106,8 +106,8 @@
         "win_rate": 75.6
       },
       "Sunday": {
-        "games": 94,
-        "win_rate": 86.2
+        "games": 105,
+        "win_rate": 87.6
       }
     },
     "best_character": {
@@ -122,8 +122,8 @@
     },
     "most_played_character": {
       "character": "JOKER",
-      "games": 266,
-      "win_rate": 80.5
+      "games": 269,
+      "win_rate": 80.7
     }
   },
   "weekend_warriors": [
@@ -145,6 +145,14 @@
     }
   ],
   "weekday_warriors": [
+    {
+      "player": "amar",
+      "weekend_wr": 0.0,
+      "weekday_wr": 60.6,
+      "diff": 60.6,
+      "weekend_games": 11,
+      "weekday_games": 104
+    },
     {
       "player": "mizan",
       "weekend_wr": 4.5,
@@ -480,19 +488,15 @@
       "times_played": 5
     },
     {
-      "character": "CHROM",
-      "times_played": 5
-    },
-    {
       "character": "PAC-MAN",
       "times_played": 5
     },
     {
-      "character": "BAYONETTA",
-      "times_played": 4
+      "character": "CHROM",
+      "times_played": 5
     },
     {
-      "character": "BANJO & KAZOOIE",
+      "character": "WII FIT TRAINER",
       "times_played": 4
     },
     {
@@ -500,7 +504,11 @@
       "times_played": 4
     },
     {
-      "character": "WII FIT TRAINER",
+      "character": "BAYONETTA",
+      "times_played": 4
+    },
+    {
+      "character": "BANJO & KAZOOIE",
       "times_played": 4
     },
     {
@@ -512,7 +520,7 @@
       "times_played": 4
     },
     {
-      "character": "PICHU",
+      "character": "MII GUNNER",
       "times_played": 3
     }
   ],
@@ -561,9 +569,9 @@
     },
     "2026-01": {
       "player": "jmoon",
-      "games": 21,
-      "wins": 18,
-      "win_rate": 85.7
+      "games": 32,
+      "wins": 29,
+      "win_rate": 90.6
     }
   },
   "busiest_hour": {
