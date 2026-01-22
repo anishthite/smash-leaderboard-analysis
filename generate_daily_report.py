@@ -27,10 +27,10 @@ def get_yesterday_matches(participants_df, matches_df, player_lookup, reset_hour
     start_utc = yesterday_reset - PST_OFFSET
     end_utc = today_reset - PST_OFFSET
 
-    # Filter matches in the time window
-    matches_df['created_at'] = pd.to_datetime(matches_df['created_at'], format='mixed')
-    participants_df['created_at'] = pd.to_datetime(participants_df['created_at'], format='mixed')
+    print(f"Searching for matches between {start_utc} and {end_utc} UTC")
+    print(f"(That's {yesterday_reset} to {today_reset} PST)")
 
+    # Filter matches in the time window
     yesterday_matches = matches_df[
         (matches_df['created_at'] >= start_utc) &
         (matches_df['created_at'] < end_utc)
@@ -376,6 +376,10 @@ def main():
     matches_df = pd.read_csv(sorted(matches_files)[-1])
     participants_df = pd.read_csv(sorted(participants_files)[-1])
 
+    # Convert timestamps to datetime (matching backfill_reports.py pattern)
+    matches_df['created_at'] = pd.to_datetime(matches_df['created_at'], format='mixed')
+    participants_df['created_at'] = pd.to_datetime(participants_df['created_at'], format='mixed')
+
     # Create player lookup
     player_lookup = players_df.set_index('id')['display_name'].to_dict()
 
@@ -387,6 +391,9 @@ def main():
     )
 
     print(f"Found {len(yesterday_matches)} matches for {date_str}")
+    if len(matches_df) > 0:
+        print(f"Total matches in database: {len(matches_df)}")
+        print(f"Date range in database: {matches_df['created_at'].min()} to {matches_df['created_at'].max()}")
 
     # Analyze stats
     stats = analyze_daily_stats(yesterday_matches, yesterday_participants, player_lookup)
