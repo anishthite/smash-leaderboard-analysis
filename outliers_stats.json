@@ -2,7 +2,7 @@
   "biggest_grinder": {
     "stat": "Most Games Played",
     "player": "habeas",
-    "value": "2,213 games",
+    "value": "2,223 games",
     "detail": "That's 9.9 games per day on average",
     "runner_up": "subby (1,083)"
   },
@@ -45,8 +45,8 @@
   "most_sds_total": {
     "stat": "Most Self-Destructs (Total)",
     "player": "habeas",
-    "value": "95 SDs",
-    "detail": "That's 1 SD every 23.3 games"
+    "value": "96 SDs",
+    "detail": "That's 1 SD every 23.2 games"
   },
   "most_sd_prone": {
     "stat": "Most SD-Prone Player",
@@ -88,7 +88,7 @@
     "stat": "Biggest Night Owl",
     "player": "habeas",
     "value": "1046 late-night games",
-    "detail": "That's 47.3% of their games after 10PM"
+    "detail": "That's 47.1% of their games after 10PM"
   },
   "late_night_specialist": {
     "stat": "Best After 10PM",
@@ -146,9 +146,9 @@
   },
   "fallen_off": {
     "stat": "Biggest Decline",
-    "player": "own",
+    "player": "keneru",
     "value": "-24.0%",
-    "detail": "First 50: 52.0% \u2192 Last 50: 28.0%"
+    "detail": "First 50: 54.0% \u2192 Last 50: 30.0%"
   },
   "friday_king": {
     "stat": "Friday King",
