@@ -67,13 +67,6 @@ jobs:
         run: |
           python backfill_reports.py
 
-      - name: Send newsletter to Beehiiv
-        env:
-          BEEHIIV_API_KEY: ${{ secrets.BEEHIIV_API_KEY }}
-          BEEHIIV_PUBLICATION_ID: ${{ secrets.BEEHIIV_PUBLICATION_ID }}
-        run: |
-          python send_to_beehiiv.py
-
       - name: Update HTML files with new data
         run: |
           # Inline chart data into index.html (if needed)
