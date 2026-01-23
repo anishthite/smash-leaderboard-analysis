@@ -2,7 +2,7 @@
   "biggest_grinder": {
     "stat": "Most Games Played",
     "player": "habeas",
-    "value": "2,223 games",
+    "value": "2,224 games",
     "detail": "That's 9.9 games per day on average",
     "runner_up": "subby (1,083)"
   },
@@ -88,7 +88,7 @@
     "stat": "Biggest Night Owl",
     "player": "habeas",
     "value": "1046 late-night games",
-    "detail": "That's 47.1% of their games after 10PM"
+    "detail": "That's 47.0% of their games after 10PM"
   },
   "late_night_specialist": {
     "stat": "Best After 10PM",
@@ -135,8 +135,8 @@
   "comeback_king": {
     "stat": "Comeback King",
     "player": "shafaq",
-    "value": "65.5% win rate with SDs",
-    "detail": "Still wins 65% of the time after self-destructing"
+    "value": "69.2% win rate with SDs",
+    "detail": "Still wins 69% of the time after self-destructing"
   },
   "most_improved": {
     "stat": "Most Improved Player",
@@ -146,9 +146,9 @@
   },
   "fallen_off": {
     "stat": "Biggest Decline",
-    "player": "keneru",
+    "player": "own",
     "value": "-24.0%",
-    "detail": "First 50: 54.0% \u2192 Last 50: 30.0%"
+    "detail": "First 50: 52.0% \u2192 Last 50: 28.0%"
   },
   "friday_king": {
     "stat": "Friday King",
