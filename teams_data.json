@@ -1,7 +1,7 @@
 {
-  "total_team_matches": 772,
+  "total_team_matches": 778,
   "match_formats": {
-    "1v2": 218,
+    "1v2": 224,
     "2v2": 281,
     "2v1": 60,
     "1v3": 72,
@@ -682,6 +682,19 @@
       "total_falls": 100
     },
     {
+      "team": "nish",
+      "members": [
+        "nish"
+      ],
+      "size": 1,
+      "wins": 41,
+      "losses": 6,
+      "total": 47,
+      "win_rate": 87.2,
+      "total_kos": 141,
+      "total_falls": 83
+    },
+    {
       "team": "subby",
       "members": [
         "subby"
@@ -693,19 +706,6 @@
       "win_rate": 95.7,
       "total_kos": 168,
       "total_falls": 78
-    },
-    {
-      "team": "nish",
-      "members": [
-        "nish"
-      ],
-      "size": 1,
-      "wins": 37,
-      "losses": 6,
-      "total": 43,
-      "win_rate": 86.0,
-      "total_kos": 126,
-      "total_falls": 81
     },
     {
       "team": "nish & subby",
@@ -1100,6 +1100,15 @@
       "games_with_best": 52
     },
     {
+      "player": "nish",
+      "team_wins": 134,
+      "team_losses": 185,
+      "team_games": 319,
+      "team_win_rate": 42.0,
+      "best_teammate": "subby",
+      "games_with_best": 58
+    },
+    {
       "player": "subby",
       "team_wins": 186,
       "team_losses": 260,
@@ -1134,15 +1143,6 @@
       "team_win_rate": 41.6,
       "best_teammate": "subby",
       "games_with_best": 53
-    },
-    {
-      "player": "nish",
-      "team_wins": 130,
-      "team_losses": 183,
-      "team_games": 313,
-      "team_win_rate": 41.5,
-      "best_teammate": "subby",
-      "games_with_best": 58
     },
     {
       "player": "lag",
@@ -1190,15 +1190,6 @@
       "games_with_best": 2
     },
     {
-      "player": "lando",
-      "team_wins": 9,
-      "team_losses": 22,
-      "team_games": 31,
-      "team_win_rate": 29.0,
-      "best_teammate": "jmoon",
-      "games_with_best": 15
-    },
-    {
       "player": "Raulito",
       "team_wins": 8,
       "team_losses": 20,
@@ -1206,6 +1197,15 @@
       "team_win_rate": 28.6,
       "best_teammate": "nish",
       "games_with_best": 17
+    },
+    {
+      "player": "lando",
+      "team_wins": 9,
+      "team_losses": 28,
+      "team_games": 37,
+      "team_win_rate": 24.3,
+      "best_teammate": "jmoon",
+      "games_with_best": 15
     },
     {
       "player": "mmmmm",
@@ -1253,6 +1253,15 @@
       "games_with_best": 11
     },
     {
+      "player": "gapam",
+      "team_wins": 3,
+      "team_losses": 14,
+      "team_games": 17,
+      "team_win_rate": 17.6,
+      "best_teammate": "jean",
+      "games_with_best": 10
+    },
+    {
       "player": "messi",
       "team_wins": 9,
       "team_losses": 46,
@@ -1287,15 +1296,6 @@
       "team_win_rate": 10.2,
       "best_teammate": "jmoon",
       "games_with_best": 21
-    },
-    {
-      "player": "gapam",
-      "team_wins": 1,
-      "team_losses": 10,
-      "team_games": 11,
-      "team_win_rate": 9.1,
-      "best_teammate": "jean",
-      "games_with_best": 10
     },
     {
       "player": "joguo",
@@ -1668,10 +1668,10 @@
     }
   ],
   "summary": {
-    "total_team_matches": 772,
+    "total_team_matches": 778,
     "true_2v2_matches": 281,
-    "total_unique_teams": 270,
+    "total_unique_teams": 272,
     "total_unique_duos": 80,
-    "total_partnerships": 222
+    "total_partnerships": 223
   }
 }

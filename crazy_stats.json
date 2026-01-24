@@ -250,9 +250,9 @@
       "sd_win_rate": 59.3
     },
     {
-      "player": "lando",
-      "sd_games": 7,
-      "sd_win_rate": 57.1
+      "player": "fateen",
+      "sd_games": 38,
+      "sd_win_rate": 52.6
     }
   ],
   "top_matchup_by_day": {
@@ -289,14 +289,14 @@
       "win_rate": 23.5
     },
     {
-      "character": "POK\u00c9MON TRAINER",
-      "plays": 38,
-      "win_rate": 23.7
+      "character": "FOX",
+      "plays": 42,
+      "win_rate": 23.8
     },
     {
-      "character": "FOX",
-      "plays": 40,
-      "win_rate": 25.0
+      "character": "POK\u00c9MON TRAINER",
+      "plays": 39,
+      "win_rate": 25.6
     },
     {
       "character": "SONIC",
@@ -311,14 +311,14 @@
       "win_rate": 84.6
     },
     {
-      "character": "BOWSER",
-      "plays": 108,
-      "win_rate": 63.9
-    },
-    {
       "character": "LUIGI",
       "plays": 47,
       "win_rate": 63.8
+    },
+    {
+      "character": "BOWSER",
+      "plays": 111,
+      "win_rate": 63.1
     },
     {
       "character": "KING DEDEDE",
@@ -395,8 +395,8 @@
     },
     {
       "player": "nish",
-      "games": 218,
-      "win_rate": 42.7
+      "games": 219,
+      "win_rate": 42.9
     },
     {
       "player": "keneru",

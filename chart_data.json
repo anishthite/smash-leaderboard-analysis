@@ -72,16 +72,16 @@
     },
     {
       "name": "nish",
-      "games": 527,
-      "wins": 223,
-      "losses": 304,
-      "winRate": 42.3,
-      "kos": 985,
-      "falls": 1134,
+      "games": 538,
+      "wins": 231,
+      "losses": 307,
+      "winRate": 42.9,
+      "kos": 1019,
+      "falls": 1150,
       "sds": 67,
-      "kd": 0.87,
-      "sdRate": 0.127,
-      "momentum": 26.4,
+      "kd": 0.89,
+      "sdRate": 0.125,
+      "momentum": 25.9,
       "charsPlayed": 12
     },
     {
@@ -295,6 +295,20 @@
       "charsPlayed": 7
     },
     {
+      "name": "lando",
+      "games": 65,
+      "wins": 13,
+      "losses": 52,
+      "winRate": 20.0,
+      "kos": 79,
+      "falls": 171,
+      "sds": 9,
+      "kd": 0.46,
+      "sdRate": 0.138,
+      "momentum": 22.8,
+      "charsPlayed": 9
+    },
+    {
       "name": "joguo",
       "games": 65,
       "wins": 19,
@@ -307,20 +321,6 @@
       "sdRate": 0.015,
       "momentum": 25.1,
       "charsPlayed": 11
-    },
-    {
-      "name": "lando",
-      "games": 59,
-      "wins": 13,
-      "losses": 46,
-      "winRate": 22.0,
-      "kos": 71,
-      "falls": 156,
-      "sds": 8,
-      "kd": 0.46,
-      "sdRate": 0.136,
-      "momentum": 20.7,
-      "charsPlayed": 9
     },
     {
       "name": "caleb",
@@ -351,6 +351,20 @@
       "charsPlayed": 5
     },
     {
+      "name": "jean",
+      "games": 37,
+      "wins": 9,
+      "losses": 28,
+      "winRate": 24.3,
+      "kos": 46,
+      "falls": 90,
+      "sds": 6,
+      "kd": 0.51,
+      "sdRate": 0.162,
+      "momentum": -29.6,
+      "charsPlayed": 12
+    },
+    {
       "name": "aadil",
       "games": 35,
       "wins": 14,
@@ -365,18 +379,18 @@
       "charsPlayed": 7
     },
     {
-      "name": "jean",
-      "games": 34,
-      "wins": 8,
+      "name": "gapam",
+      "games": 31,
+      "wins": 5,
       "losses": 26,
-      "winRate": 23.5,
-      "kos": 41,
-      "falls": 85,
-      "sds": 6,
-      "kd": 0.48,
-      "sdRate": 0.176,
-      "momentum": -28.0,
-      "charsPlayed": 9
+      "winRate": 16.1,
+      "kos": 42,
+      "falls": 81,
+      "sds": 5,
+      "kd": 0.52,
+      "sdRate": 0.161,
+      "momentum": -20.0,
+      "charsPlayed": 7
     },
     {
       "name": "gatmo",
@@ -461,20 +475,6 @@
       "sdRate": 0.333,
       "momentum": 28.3,
       "charsPlayed": 16
-    },
-    {
-      "name": "gapam",
-      "games": 19,
-      "wins": 1,
-      "losses": 18,
-      "winRate": 5.3,
-      "kos": 16,
-      "falls": 52,
-      "sds": 5,
-      "kd": 0.31,
-      "sdRate": 0.263,
-      "momentum": 0,
-      "charsPlayed": 5
     },
     {
       "name": "daniel l",
@@ -758,7 +758,7 @@
     ],
     "data": [
       0,
-      2,
+      3,
       6,
       7,
       9,
@@ -841,16 +841,16 @@
       },
       {
         "name": "nish",
-        "games": 527,
-        "wins": 223,
-        "losses": 304,
-        "winRate": 42.3,
-        "kos": 985,
-        "falls": 1134,
+        "games": 538,
+        "wins": 231,
+        "losses": 307,
+        "winRate": 42.9,
+        "kos": 1019,
+        "falls": 1150,
         "sds": 67,
-        "kd": 0.87,
-        "sdRate": 0.127,
-        "momentum": 26.4,
+        "kd": 0.89,
+        "sdRate": 0.125,
+        "momentum": 25.9,
         "charsPlayed": 12
       },
       {
@@ -1064,6 +1064,20 @@
         "charsPlayed": 7
       },
       {
+        "name": "lando",
+        "games": 65,
+        "wins": 13,
+        "losses": 52,
+        "winRate": 20.0,
+        "kos": 79,
+        "falls": 171,
+        "sds": 9,
+        "kd": 0.46,
+        "sdRate": 0.138,
+        "momentum": 22.8,
+        "charsPlayed": 9
+      },
+      {
         "name": "joguo",
         "games": 65,
         "wins": 19,
@@ -1076,20 +1090,6 @@
         "sdRate": 0.015,
         "momentum": 25.1,
         "charsPlayed": 11
-      },
-      {
-        "name": "lando",
-        "games": 59,
-        "wins": 13,
-        "losses": 46,
-        "winRate": 22.0,
-        "kos": 71,
-        "falls": 156,
-        "sds": 8,
-        "kd": 0.46,
-        "sdRate": 0.136,
-        "momentum": 20.7,
-        "charsPlayed": 9
       },
       {
         "name": "caleb",
@@ -1120,6 +1120,20 @@
         "charsPlayed": 5
       },
       {
+        "name": "jean",
+        "games": 37,
+        "wins": 9,
+        "losses": 28,
+        "winRate": 24.3,
+        "kos": 46,
+        "falls": 90,
+        "sds": 6,
+        "kd": 0.51,
+        "sdRate": 0.162,
+        "momentum": -29.6,
+        "charsPlayed": 12
+      },
+      {
         "name": "aadil",
         "games": 35,
         "wins": 14,
@@ -1134,18 +1148,18 @@
         "charsPlayed": 7
       },
       {
-        "name": "jean",
-        "games": 34,
-        "wins": 8,
+        "name": "gapam",
+        "games": 31,
+        "wins": 5,
         "losses": 26,
-        "winRate": 23.5,
-        "kos": 41,
-        "falls": 85,
-        "sds": 6,
-        "kd": 0.48,
-        "sdRate": 0.176,
-        "momentum": -28.0,
-        "charsPlayed": 9
+        "winRate": 16.1,
+        "kos": 42,
+        "falls": 81,
+        "sds": 5,
+        "kd": 0.52,
+        "sdRate": 0.161,
+        "momentum": -20.0,
+        "charsPlayed": 7
       },
       {
         "name": "gatmo",
@@ -1230,20 +1244,6 @@
         "sdRate": 0.333,
         "momentum": 28.3,
         "charsPlayed": 16
-      },
-      {
-        "name": "gapam",
-        "games": 19,
-        "wins": 1,
-        "losses": 18,
-        "winRate": 5.3,
-        "kos": 16,
-        "falls": 52,
-        "sds": 5,
-        "kd": 0.31,
-        "sdRate": 0.263,
-        "momentum": 0,
-        "charsPlayed": 5
       },
       {
         "name": "daniel l",
@@ -1559,11 +1559,11 @@
       520,
       806,
       1002,
-      921,
+      947,
       888,
       828,
-      784,
-      653,
+      786,
+      657,
       619
     ],
     "winRates": [
@@ -1585,7 +1585,7 @@
       49.4,
       48.1,
       47.9,
-      49.5,
+      49.2,
       45.3,
       44.0,
       45.7,
@@ -1609,7 +1609,7 @@
       891,
       1729,
       1841,
-      1368,
+      1400,
       1610,
       962
     ]
@@ -1633,7 +1633,7 @@
       908,
       2070,
       600,
-      539
+      571
     ]
   },
   "allCharacters": [
@@ -1667,17 +1667,17 @@
     },
     {
       "name": "SAMUS",
-      "plays": 652,
-      "wins": 291,
-      "winRate": 44.6,
+      "plays": 663,
+      "wins": 299,
+      "winRate": 45.1,
       "uniquePlayers": 9
     },
     {
       "name": "CAPTAIN FALCON",
-      "plays": 549,
+      "plays": 551,
       "wins": 254,
-      "winRate": 46.3,
-      "uniquePlayers": 15
+      "winRate": 46.1,
+      "uniquePlayers": 16
     },
     {
       "name": "INCINEROAR",
@@ -1702,9 +1702,9 @@
     },
     {
       "name": "CLOUD",
-      "plays": 349,
+      "plays": 351,
       "wins": 149,
-      "winRate": 42.7,
+      "winRate": 42.5,
       "uniquePlayers": 17
     },
     {
@@ -1737,10 +1737,10 @@
     },
     {
       "name": "NESS",
-      "plays": 162,
+      "plays": 163,
       "wins": 61,
-      "winRate": 37.7,
-      "uniquePlayers": 10
+      "winRate": 37.4,
+      "uniquePlayers": 11
     },
     {
       "name": "SORA",
@@ -1758,9 +1758,9 @@
     },
     {
       "name": "BOWSER",
-      "plays": 108,
-      "wins": 69,
-      "winRate": 63.9,
+      "plays": 111,
+      "wins": 70,
+      "winRate": 63.1,
       "uniquePlayers": 11
     },
     {
@@ -1821,10 +1821,10 @@
     },
     {
       "name": "WOLF",
-      "plays": 73,
-      "wins": 28,
-      "winRate": 38.4,
-      "uniquePlayers": 9
+      "plays": 74,
+      "wins": 29,
+      "winRate": 39.2,
+      "uniquePlayers": 10
     },
     {
       "name": "PYRA",
@@ -1862,6 +1862,13 @@
       "uniquePlayers": 9
     },
     {
+      "name": "SEPHIROTH",
+      "plays": 56,
+      "wins": 22,
+      "winRate": 39.3,
+      "uniquePlayers": 12
+    },
+    {
       "name": "LUCAS",
       "plays": 56,
       "wins": 21,
@@ -1874,13 +1881,6 @@
       "wins": 16,
       "winRate": 30.2,
       "uniquePlayers": 11
-    },
-    {
-      "name": "SEPHIROTH",
-      "plays": 49,
-      "wins": 20,
-      "winRate": 40.8,
-      "uniquePlayers": 12
     },
     {
       "name": "LUIGI",
@@ -1897,6 +1897,13 @@
       "uniquePlayers": 6
     },
     {
+      "name": "FOX",
+      "plays": 42,
+      "wins": 10,
+      "winRate": 23.8,
+      "uniquePlayers": 9
+    },
+    {
       "name": "FALCO",
       "plays": 42,
       "wins": 17,
@@ -1911,24 +1918,17 @@
       "uniquePlayers": 6
     },
     {
-      "name": "FOX",
-      "plays": 40,
-      "wins": 10,
-      "winRate": 25.0,
-      "uniquePlayers": 9
-    },
-    {
       "name": "POK\u00c9MON TRAINER",
-      "plays": 38,
-      "wins": 9,
-      "winRate": 23.7,
-      "uniquePlayers": 5
+      "plays": 39,
+      "wins": 10,
+      "winRate": 25.6,
+      "uniquePlayers": 6
     },
     {
       "name": "KAZUYA",
-      "plays": 36,
+      "plays": 37,
       "wins": 15,
-      "winRate": 41.7,
+      "winRate": 40.5,
       "uniquePlayers": 6
     },
     {
@@ -2017,10 +2017,10 @@
     },
     {
       "name": "META KNIGHT",
-      "plays": 9,
+      "plays": 10,
       "wins": 2,
-      "winRate": 22.2,
-      "uniquePlayers": 6
+      "winRate": 20.0,
+      "uniquePlayers": 7
     },
     {
       "name": "R.O.B.",
@@ -2149,20 +2149,20 @@
       824,
       813,
       721,
-      652,
-      549,
+      663,
+      551,
       424,
       406,
       400,
-      349,
+      351,
       337,
       244,
       242,
       172,
-      162,
+      163,
       141,
       111,
-      108,
+      111,
       108,
       102
     ],
@@ -2171,20 +2171,20 @@
       48.7,
       55.6,
       52.4,
-      44.6,
-      46.3,
+      45.1,
+      46.1,
       52.1,
       55.4,
       50.5,
-      42.7,
+      42.5,
       48.1,
       51.6,
       44.2,
       60.5,
-      37.7,
+      37.4,
       41.8,
       47.7,
-      63.9,
+      63.1,
       21.3,
       57.8
     ]
@@ -2200,8 +2200,8 @@
       "joguo",
       "kento",
       "habeas",
-      "ya",
       "lando",
+      "ya",
       "caleb",
       "heidy",
       "mizan",
@@ -2218,6 +2218,7 @@
       "own",
       "strike",
       "ryy",
+      "gapam",
       "jean"
     ],
     "data": [
@@ -2226,12 +2227,12 @@
       32.4,
       31.0,
       30.6,
-      26.4,
+      25.9,
       25.1,
       25.0,
       23.1,
+      22.8,
       21.3,
-      20.7,
       20.4,
       19.6,
       18.4,
@@ -2248,7 +2249,8 @@
       2.6,
       -0.2,
       -0.3,
-      -28.0
+      -20.0,
+      -29.6
     ]
   },
   "kdByPlayer": {
@@ -2263,8 +2265,8 @@
       "keneru",
       "mmmmm",
       "subby",
-      "ryy",
       "nish",
+      "ryy",
       "pat",
       "fateen",
       "aadil",
@@ -2276,9 +2278,10 @@
       "Raulito",
       "heidy",
       "gatmo",
+      "gapam",
+      "jean",
       "messi",
       "ya",
-      "jean",
       "lando",
       "mizan"
     ],
@@ -2293,8 +2296,8 @@
       0.95,
       0.94,
       0.89,
+      0.89,
       0.88,
-      0.87,
       0.87,
       0.85,
       0.85,
@@ -2306,8 +2309,9 @@
       0.65,
       0.53,
       0.53,
+      0.52,
+      0.51,
       0.49,
-      0.48,
       0.48,
       0.46,
       0.44
@@ -2336,15 +2340,15 @@
       "mmmmm",
       "mizan",
       "ryy",
-      "joguo",
       "lando",
+      "joguo",
       "caleb",
       "Raulito",
-      "aadil",
       "jean",
+      "aadil",
+      "gapam",
       "gatmo",
-      "audrey",
-      "niki <3"
+      "audrey"
     ],
     "data": [
       2224,
@@ -2352,7 +2356,7 @@
       963,
       767,
       668,
-      527,
+      538,
       364,
       308,
       302,
@@ -2369,14 +2373,14 @@
       72,
       70,
       65,
-      59,
+      65,
       46,
       43,
+      37,
       35,
-      34,
       31,
-      29,
-      27
+      31,
+      29
     ]
   },
   "headToHead": {
@@ -3035,11 +3039,11 @@
         71,
         175,
         178,
-        163,
+        189,
         147,
         101,
-        83,
-        89,
+        85,
+        93,
         97
       ],
       [
@@ -3111,15 +3115,15 @@
       "10+"
     ],
     "data": [
-      846,
-      403,
+      851,
+      406,
       209,
       117,
       59,
       48,
-      34,
+      33,
       24,
-      15,
+      16,
       5,
       41
     ]
@@ -3130,11 +3134,12 @@
       "strike",
       "aadil",
       "jean",
+      "gapam",
       "fateen",
       "lando",
       "samin",
-      "nish",
       "messi",
+      "nish",
       "pat",
       "caleb",
       "mizan",
@@ -3159,12 +3164,13 @@
       0.233,
       0.216,
       0.2,
-      0.176,
+      0.162,
+      0.161,
       0.151,
-      0.136,
+      0.138,
       0.13,
       0.127,
-      0.127,
+      0.125,
       0.118,
       0.109,
       0.097,
@@ -3200,14 +3206,15 @@
       "samin",
       "mizan",
       "nish",
+      "jean",
       "mmmmm",
       "joguo",
       "strike",
       "lando",
-      "jean",
       "fateen",
       "ryy",
       "aadil",
+      "gapam",
       "kento",
       "pat",
       "Raulito",
@@ -3230,11 +3237,12 @@
       16,
       13,
       12,
+      12,
       11,
       11,
       10,
       9,
-      9,
+      7,
       7,
       7,
       7,
