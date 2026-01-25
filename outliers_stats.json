@@ -2,7 +2,7 @@
   "biggest_grinder": {
     "stat": "Most Games Played",
     "player": "habeas",
-    "value": "2,213 games",
+    "value": "2,224 games",
     "detail": "That's 9.9 games per day on average",
     "runner_up": "subby (1,083)"
   },
@@ -45,8 +45,8 @@
   "most_sds_total": {
     "stat": "Most Self-Destructs (Total)",
     "player": "habeas",
-    "value": "95 SDs",
-    "detail": "That's 1 SD every 23.3 games"
+    "value": "96 SDs",
+    "detail": "That's 1 SD every 23.2 games"
   },
   "most_sd_prone": {
     "stat": "Most SD-Prone Player",
@@ -74,9 +74,9 @@
   },
   "weekend_warrior": {
     "stat": "Weekend Warrior",
-    "player": "lag",
-    "value": "+18.8% on weekends",
-    "detail": "Weekend: 50.0% vs Weekday: 31.2%"
+    "player": "gapam",
+    "value": "+28.1% on weekends",
+    "detail": "Weekend: 33.3% vs Weekday: 5.3%"
   },
   "weekday_grinder": {
     "stat": "Weekday Warrior",
@@ -88,7 +88,7 @@
     "stat": "Biggest Night Owl",
     "player": "habeas",
     "value": "1046 late-night games",
-    "detail": "That's 47.3% of their games after 10PM"
+    "detail": "That's 47.0% of their games after 10PM"
   },
   "late_night_specialist": {
     "stat": "Best After 10PM",
@@ -135,8 +135,8 @@
   "comeback_king": {
     "stat": "Comeback King",
     "player": "shafaq",
-    "value": "65.5% win rate with SDs",
-    "detail": "Still wins 65% of the time after self-destructing"
+    "value": "69.2% win rate with SDs",
+    "detail": "Still wins 69% of the time after self-destructing"
   },
   "most_improved": {
     "stat": "Most Improved Player",

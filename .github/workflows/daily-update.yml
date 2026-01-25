@@ -37,7 +37,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pandas numpy psycopg2-binary anthropic
+          pip install pandas numpy psycopg2-binary anthropic requests
 
       - name: Export data from PostgreSQL
         env:
@@ -105,6 +105,7 @@ jobs:
           - Exported fresh data from database
           - Regenerated all analysis files
           - Generated daily sports report
+          - Sent newsletter via Beehiiv
 
           [skip ci]"
           git push
