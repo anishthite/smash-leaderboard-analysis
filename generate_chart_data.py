@@ -349,6 +349,113 @@ chart_data['cumulativeGames'] = {
 }
 
 # ============================================================
+# 16. PLAYER NETWORK (who plays with whom)
+# ============================================================
+print("Generating player network data...")
+# Count partnerships from matches (2 players)
+match_groups = participants_df.groupby('match_id')
+partnerships = defaultdict(lambda: {'count': 0, 'p1_wins': 0, 'p2_wins': 0})
+
+for match_id, group in match_groups:
+    players_in_match = list(group['player'].unique())
+    if len(players_in_match) == 2:
+        # For 1v1 matches, track who won
+        p1, p2 = players_in_match[0], players_in_match[1]
+        key = tuple(sorted([p1, p2]))
+        partnerships[key]['count'] += 1
+        
+        # Check who won
+        p1_won = group[group['player'] == p1]['has_won'].iloc[0]
+        if p1_won:
+            if p1 < p2:  # p1 is first in sorted tuple
+                partnerships[key]['p1_wins'] += 1
+            else:
+                partnerships[key]['p2_wins'] += 1
+        else:
+            if p1 < p2:  # p1 is first in sorted tuple
+                partnerships[key]['p2_wins'] += 1
+            else:
+                partnerships[key]['p1_wins'] += 1
+    elif len(players_in_match) >= 2:
+        # For multi-player matches, just count co-occurrence
+        for i, p1 in enumerate(players_in_match):
+            for p2 in players_in_match[i+1:]:
+                key = tuple(sorted([p1, p2]))
+                partnerships[key]['count'] += 1
+
+# Convert to network format - filter for players with at least 10 games and partnerships >= 3
+min_games = 10
+min_partnerships = 3
+active_player_ids = [p for p in participants_df['player'].unique() 
+                     if p in player_lookup and 
+                     len(participants_df[participants_df['player'] == p]) >= min_games]
+
+nodes = []
+edges = []
+added_players = set()
+player_partnerships = defaultdict(list)  # Store partnerships for each player
+
+# Create edges first to know which players to include
+filtered_partnerships = []
+for (p1, p2), data in partnerships.items():
+    count = data['count']
+    if count >= min_partnerships and p1 in active_player_ids and p2 in active_player_ids:
+        p1_wins = data['p1_wins']
+        p2_wins = data['p2_wins']
+        p1_wr = round(p1_wins / count * 100, 1) if count > 0 else 50
+        p2_wr = round(p2_wins / count * 100, 1) if count > 0 else 50
+        
+        filtered_partnerships.append((p1, p2, count, p1_wr, p2_wr))
+        added_players.add(p1)
+        added_players.add(p2)
+        
+        # Store partnership info for each player
+        player_partnerships[p1].append({
+            'partner': player_lookup[p2],
+            'games': int(count),
+            'winRate': p1_wr
+        })
+        player_partnerships[p2].append({
+            'partner': player_lookup[p1],
+            'games': int(count),
+            'winRate': p2_wr
+        })
+
+# Create nodes for players who have partnerships
+for player_id in added_players:
+    player_name = player_lookup[player_id]
+    player_data = participants_df[participants_df['player'] == player_id]
+    games = len(player_data)
+    wins = player_data['has_won'].sum()
+    win_rate = wins / games * 100 if games > 0 else 50
+    
+    # Sort partnerships by games played
+    partnerships_list = sorted(player_partnerships[player_id], key=lambda x: x['games'], reverse=True)
+    
+    nodes.append({
+        'id': player_name,
+        'label': player_name,
+        'games': int(games),
+        'winRate': round(win_rate, 1),
+        'size': min(50, 10 + games / 30),  # Scale node size by games
+        'partnerships': partnerships_list
+    })
+
+# Create edges with weights
+for p1, p2, count, p1_wr, p2_wr in filtered_partnerships:
+    edges.append({
+        'from': player_lookup[p1],
+        'to': player_lookup[p2],
+        'value': int(count),
+        'title': f'{count} games together'
+    })
+
+chart_data['playerNetwork'] = {
+    'nodes': nodes,
+    'edges': edges
+}
+
+# ============================================================
 # SAVE
 # ============================================================
 with open('chart_data.json', 'w') as f:

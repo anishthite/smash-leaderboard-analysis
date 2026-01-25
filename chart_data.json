@@ -30,16 +30,16 @@
     },
     {
       "name": "jmoon",
-      "games": 963,
-      "wins": 751,
+      "games": 952,
+      "wins": 740,
       "losses": 212,
-      "winRate": 78.0,
-      "kos": 2327,
-      "falls": 1467,
+      "winRate": 77.7,
+      "kos": 2303,
+      "falls": 1449,
       "sds": 30,
       "kd": 1.59,
-      "sdRate": 0.031,
-      "momentum": 14.7,
+      "sdRate": 0.032,
+      "momentum": 14.4,
       "charsPlayed": 69
     },
     {
@@ -197,20 +197,6 @@
       "charsPlayed": 10
     },
     {
-      "name": "amar",
-      "games": 115,
-      "wins": 63,
-      "losses": 52,
-      "winRate": 54.8,
-      "kos": 266,
-      "falls": 223,
-      "sds": 2,
-      "kd": 1.19,
-      "sdRate": 0.017,
-      "momentum": 31.0,
-      "charsPlayed": 4
-    },
-    {
       "name": "lag",
       "games": 106,
       "wins": 35,
@@ -223,6 +209,20 @@
       "sdRate": 0.066,
       "momentum": 33.3,
       "charsPlayed": 2
+    },
+    {
+      "name": "amar",
+      "games": 104,
+      "wins": 63,
+      "losses": 41,
+      "winRate": 60.6,
+      "kos": 248,
+      "falls": 199,
+      "sds": 2,
+      "kd": 1.25,
+      "sdRate": 0.019,
+      "momentum": 19.0,
+      "charsPlayed": 4
     },
     {
       "name": "messi",
@@ -720,8 +720,8 @@
       6,
       6,
       9,
-      6,
-      1,
+      5,
+      2,
       1,
       0,
       0
@@ -757,16 +757,16 @@
       },
       {
         "name": "jmoon",
-        "games": 963,
-        "wins": 751,
+        "games": 952,
+        "wins": 740,
         "losses": 212,
-        "winRate": 78.0,
-        "kos": 2327,
-        "falls": 1467,
+        "winRate": 77.7,
+        "kos": 2303,
+        "falls": 1449,
         "sds": 30,
         "kd": 1.59,
-        "sdRate": 0.031,
-        "momentum": 14.7,
+        "sdRate": 0.032,
+        "momentum": 14.4,
         "charsPlayed": 69
       },
       {
@@ -924,20 +924,6 @@
         "charsPlayed": 10
       },
       {
-        "name": "amar",
-        "games": 115,
-        "wins": 63,
-        "losses": 52,
-        "winRate": 54.8,
-        "kos": 266,
-        "falls": 223,
-        "sds": 2,
-        "kd": 1.19,
-        "sdRate": 0.017,
-        "momentum": 31.0,
-        "charsPlayed": 4
-      },
-      {
         "name": "lag",
         "games": 106,
         "wins": 35,
@@ -950,6 +936,20 @@
         "sdRate": 0.066,
         "momentum": 33.3,
         "charsPlayed": 2
+      },
+      {
+        "name": "amar",
+        "games": 104,
+        "wins": 63,
+        "losses": 41,
+        "winRate": 60.6,
+        "kos": 248,
+        "falls": 199,
+        "sds": 2,
+        "kd": 1.25,
+        "sdRate": 0.019,
+        "momentum": 19.0,
+        "charsPlayed": 4
       },
       {
         "name": "messi",
@@ -1477,7 +1477,7 @@
       970,
       871,
       844,
-      828,
+      806,
       770,
       653,
       619
@@ -1503,7 +1503,7 @@
       48.1,
       49.8,
       46.0,
-      44.0,
+      43.8,
       45.6,
       49.0,
       48.6
@@ -1527,7 +1527,7 @@
       1697,
       1368,
       1610,
-      962
+      940
     ]
   },
   "monthlyActivity": {
@@ -1549,7 +1549,7 @@
       908,
       2070,
       582,
-      319
+      297
     ]
   },
   "allCharacters": [
@@ -1576,9 +1576,9 @@
     },
     {
       "name": "JOKER",
-      "plays": 712,
-      "wins": 377,
-      "winRate": 52.9,
+      "plays": 709,
+      "wins": 374,
+      "winRate": 52.8,
       "uniquePlayers": 9
     },
     {
@@ -1590,23 +1590,16 @@
     },
     {
       "name": "CAPTAIN FALCON",
-      "plays": 518,
-      "wins": 238,
-      "winRate": 45.9,
+      "plays": 517,
+      "wins": 237,
+      "winRate": 45.8,
       "uniquePlayers": 14
     },
     {
       "name": "INCINEROAR",
-      "plays": 424,
-      "wins": 221,
-      "winRate": 52.1,
-      "uniquePlayers": 5
-    },
-    {
-      "name": "ENDERMAN",
-      "plays": 400,
-      "wins": 202,
-      "winRate": 50.5,
+      "plays": 418,
+      "wins": 215,
+      "winRate": 51.4,
       "uniquePlayers": 5
     },
     {
@@ -1615,6 +1608,13 @@
       "wins": 215,
       "winRate": 55.1,
       "uniquePlayers": 10
+    },
+    {
+      "name": "ENDERMAN",
+      "plays": 389,
+      "wins": 202,
+      "winRate": 51.9,
+      "uniquePlayers": 5
     },
     {
       "name": "CLOUD",
@@ -1716,9 +1716,9 @@
     },
     {
       "name": "PALUTENA",
-      "plays": 86,
-      "wins": 49,
-      "winRate": 57.0,
+      "plays": 85,
+      "wins": 48,
+      "winRate": 56.5,
       "uniquePlayers": 6
     },
     {
@@ -2039,8 +2039,8 @@
       "SAMUS",
       "CAPTAIN FALCON",
       "INCINEROAR",
-      "ENDERMAN",
       "GANONDORF",
+      "ENDERMAN",
       "CLOUD",
       "KING K. ROOL",
       "LUCINA",
@@ -2057,12 +2057,12 @@
       891,
       799,
       791,
-      712,
+      709,
       618,
-      518,
-      424,
-      400,
+      517,
+      418,
       390,
+      389,
       342,
       334,
       244,
@@ -2079,12 +2079,12 @@
       46.8,
       49.2,
       54.9,
-      52.9,
+      52.8,
       44.2,
-      45.9,
-      52.1,
-      50.5,
+      45.8,
+      51.4,
       55.1,
+      51.9,
       43.3,
       48.5,
       51.6,
@@ -2103,7 +2103,6 @@
       "gatmo",
       "lag",
       "messi",
-      "amar",
       "mmmmm",
       "joguo",
       "kento",
@@ -2112,6 +2111,7 @@
       "ya",
       "caleb",
       "heidy",
+      "amar",
       "lando",
       "mizan",
       "keneru",
@@ -2132,7 +2132,6 @@
       48.4,
       33.3,
       32.4,
-      31.0,
       30.6,
       25.1,
       25.0,
@@ -2141,12 +2140,13 @@
       20.7,
       20.4,
       19.6,
+      19.0,
       18.9,
       18.4,
       17.9,
       17.5,
       16.3,
-      14.7,
+      14.4,
       12.1,
       7.5,
       7.4,
@@ -2190,7 +2190,7 @@
     ],
     "data": [
       1.59,
-      1.19,
+      1.25,
       1.1,
       1.1,
       1.07,
@@ -2234,8 +2234,8 @@
       "pat",
       "heidy",
       "strike",
-      "amar",
       "lag",
+      "amar",
       "messi",
       "kento",
       "mmmmm",
@@ -2254,7 +2254,7 @@
     "data": [
       2213,
       1083,
-      963,
+      952,
       747,
       612,
       494,
@@ -2266,8 +2266,8 @@
       186,
       137,
       116,
-      115,
       106,
+      104,
       102,
       94,
       91,
@@ -2994,7 +2994,7 @@
         60,
         97,
         85,
-        80,
+        58,
         60,
         43,
         24
@@ -3016,9 +3016,9 @@
       "10+"
     ],
     "data": [
-      823,
-      398,
-      206,
+      825,
+      397,
+      207,
       116,
       57,
       46,
@@ -3026,7 +3026,7 @@
       25,
       14,
       5,
-      39
+      38
     ]
   },
   "sdRateByPlayer": {
@@ -3081,9 +3081,9 @@
       0.043,
       0.038,
       0.036,
-      0.031,
+      0.032,
       0.029,
-      0.017,
+      0.019,
       0.015,
       0.0,
       0.0
@@ -3195,6 +3195,3545 @@
       8533,
       8939,
       9106
+    ]
+  },
+  "playerNetwork": {
+    "nodes": [
+      {
+        "id": "fateen",
+        "label": "fateen",
+        "games": 292,
+        "winRate": 44.5,
+        "size": 19.733333333333334,
+        "partnerships": [
+          {
+            "partner": "subby",
+            "games": 219,
+            "winRate": 5.9
+          },
+          {
+            "partner": "nish",
+            "games": 121,
+            "winRate": 2.5
+          },
+          {
+            "partner": "habeas",
+            "games": 70,
+            "winRate": 1.4
+          },
+          {
+            "partner": "keneru",
+            "games": 62,
+            "winRate": 0.0
+          },
+          {
+            "partner": "strike",
+            "games": 55,
+            "winRate": 0.0
+          },
+          {
+            "partner": "pat",
+            "games": 36,
+            "winRate": 0.0
+          },
+          {
+            "partner": "Raulito",
+            "games": 30,
+            "winRate": 0.0
+          },
+          {
+            "partner": "own",
+            "games": 29,
+            "winRate": 10.3
+          },
+          {
+            "partner": "messi",
+            "games": 27,
+            "winRate": 0.0
+          },
+          {
+            "partner": "samin",
+            "games": 23,
+            "winRate": 0.0
+          },
+          {
+            "partner": "ya",
+            "games": 15,
+            "winRate": 40.0
+          },
+          {
+            "partner": "aadil",
+            "games": 12,
+            "winRate": 0.0
+          },
+          {
+            "partner": "caleb",
+            "games": 10,
+            "winRate": 10.0
+          },
+          {
+            "partner": "jmoon",
+            "games": 6,
+            "winRate": 0.0
+          },
+          {
+            "partner": "will",
+            "games": 5,
+            "winRate": 40.0
+          },
+          {
+            "partner": "shafaq",
+            "games": 4,
+            "winRate": 0.0
+          }
+        ]
+      },
+      {
+        "id": "own",
+        "label": "own",
+        "games": 364,
+        "winRate": 38.7,
+        "size": 22.133333333333333,
+        "partnerships": [
+          {
+            "partner": "habeas",
+            "games": 165,
+            "winRate": 18.8
+          },
+          {
+            "partner": "subby",
+            "games": 144,
+            "winRate": 8.3
+          },
+          {
+            "partner": "will",
+            "games": 68,
+            "winRate": 20.6
+          },
+          {
+            "partner": "nish",
+            "games": 56,
+            "winRate": 5.4
+          },
+          {
+            "partner": "samin",
+            "games": 53,
+            "winRate": 3.8
+          },
+          {
+            "partner": "keneru",
+            "games": 33,
+            "winRate": 0.0
+          },
+          {
+            "partner": "fateen",
+            "games": 29,
+            "winRate": 3.4
+          },
+          {
+            "partner": "jmoon",
+            "games": 25,
+            "winRate": 0.0
+          },
+          {
+            "partner": "ryy",
+            "games": 23,
+            "winRate": 0.0
+          },
+          {
+            "partner": "pat",
+            "games": 21,
+            "winRate": 4.8
+          },
+          {
+            "partner": "strike",
+            "games": 20,
+            "winRate": 0.0
+          },
+          {
+            "partner": "messi",
+            "games": 17,
+            "winRate": 17.6
+          },
+          {
+            "partner": "shafaq",
+            "games": 13,
+            "winRate": 0.0
+          },
+          {
+            "partner": "ya",
+            "games": 10,
+            "winRate": 50.0
+          },
+          {
+            "partner": "lag",
+            "games": 8,
+            "winRate": 0.0
+          },
+          {
+            "partner": "mmmmm",
+            "games": 7,
+            "winRate": 0.0
+          },
+          {
+            "partner": "lando",
+            "games": 6,
+            "winRate": 66.7
+          },
+          {
+            "partner": "amar",
+            "games": 3,
+            "winRate": 0.0
+          }
+        ]
+      },
+      {
+        "id": "Raulito",
+        "label": "Raulito",
+        "games": 43,
+        "winRate": 32.6,
+        "size": 11.433333333333334,
+        "partnerships": [
+          {
+            "partner": "fateen",
+            "games": 30,
+            "winRate": 6.7
+          },
+          {
+            "partner": "subby",
+            "games": 29,
+            "winRate": 10.3
+          },
+          {
+            "partner": "nish",
+            "games": 29,
+            "winRate": 3.4
+          },
+          {
+            "partner": "strike",
+            "games": 25,
+            "winRate": 0.0
+          },
+          {
+            "partner": "habeas",
+            "games": 13,
+            "winRate": 0.0
+          },
+          {
+            "partner": "keneru",
+            "games": 8,
+            "winRate": 0.0
+          }
+        ]
+      },
+      {
+        "id": "daniel l",
+        "label": "daniel l",
+        "games": 16,
+        "winRate": 56.2,
+        "size": 10.533333333333333,
+        "partnerships": [
+          {
+            "partner": "heidy",
+            "games": 11,
+            "winRate": 27.3
+          },
+          {
+            "partner": "joguo",
+            "games": 9,
+            "winRate": 11.1
+          }
+        ]
+      },
+      {
+        "id": "caleb",
+        "label": "caleb",
+        "games": 46,
+        "winRate": 39.1,
+        "size": 11.533333333333333,
+        "partnerships": [
+          {
+            "partner": "subby",
+            "games": 21,
+            "winRate": 0.0
+          },
+          {
+            "partner": "pat",
+            "games": 18,
+            "winRate": 0.0
+          },
+          {
+            "partner": "samin",
+            "games": 13,
+            "winRate": 0.0
+          },
+          {
+            "partner": "nish",
+            "games": 10,
+            "winRate": 0.0
+          },
+          {
+            "partner": "fateen",
+            "games": 10,
+            "winRate": 20.0
+          },
+          {
+            "partner": "habeas",
+            "games": 9,
+            "winRate": 0.0
+          },
+          {
+            "partner": "keneru",
+            "games": 5,
+            "winRate": 20.0
+          },
+          {
+            "partner": "messi",
+            "games": 4,
+            "winRate": 100.0
+          },
+          {
+            "partner": "ya",
+            "games": 3,
+            "winRate": 33.3
+          }
+        ]
+      },
+      {
+        "id": "niki <3",
+        "label": "niki <3",
+        "games": 27,
+        "winRate": 51.9,
+        "size": 10.9,
+        "partnerships": [
+          {
+            "partner": "shafaq",
+            "games": 13,
+            "winRate": 30.8
+          },
+          {
+            "partner": "keneru",
+            "games": 6,
+            "winRate": 33.3
+          },
+          {
+            "partner": "ya",
+            "games": 6,
+            "winRate": 33.3
+          },
+          {
+            "partner": "will",
+            "games": 3,
+            "winRate": 33.3
+          }
+        ]
+      },
+      {
+        "id": "habeas",
+        "label": "habeas",
+        "games": 2213,
+        "winRate": 50.7,
+        "size": 50,
+        "partnerships": [
+          {
+            "partner": "jmoon",
+            "games": 649,
+            "winRate": 18.0
+          },
+          {
+            "partner": "subby",
+            "games": 498,
+            "winRate": 43.0
+          },
+          {
+            "partner": "shafaq",
+            "games": 296,
+            "winRate": 49.0
+          },
+          {
+            "partner": "keneru",
+            "games": 293,
+            "winRate": 44.0
+          },
+          {
+            "partner": "own",
+            "games": 165,
+            "winRate": 41.8
+          },
+          {
+            "partner": "will",
+            "games": 128,
+            "winRate": 37.5
+          },
+          {
+            "partner": "nish",
+            "games": 121,
+            "winRate": 16.5
+          },
+          {
+            "partner": "samin",
+            "games": 115,
+            "winRate": 32.2
+          },
+          {
+            "partner": "fateen",
+            "games": 70,
+            "winRate": 2.9
+          },
+          {
+            "partner": "amar",
+            "games": 68,
+            "winRate": 38.2
+          },
+          {
+            "partner": "strike",
+            "games": 59,
+            "winRate": 1.7
+          },
+          {
+            "partner": "ya",
+            "games": 58,
+            "winRate": 50.0
+          },
+          {
+            "partner": "lag",
+            "games": 51,
+            "winRate": 45.1
+          },
+          {
+            "partner": "kento",
+            "games": 41,
+            "winRate": 22.0
+          },
+          {
+            "partner": "pat",
+            "games": 39,
+            "winRate": 61.5
+          },
+          {
+            "partner": "heidy",
+            "games": 34,
+            "winRate": 14.7
+          },
+          {
+            "partner": "ryy",
+            "games": 29,
+            "winRate": 13.8
+          },
+          {
+            "partner": "lando",
+            "games": 25,
+            "winRate": 4.0
+          },
+          {
+            "partner": "mizan",
+            "games": 19,
+            "winRate": 73.7
+          },
+          {
+            "partner": "Raulito",
+            "games": 13,
+            "winRate": 15.4
+          },
+          {
+            "partner": "gatmo",
+            "games": 13,
+            "winRate": 100.0
+          },
+          {
+            "partner": "messi",
+            "games": 9,
+            "winRate": 44.4
+          },
+          {
+            "partner": "caleb",
+            "games": 9,
+            "winRate": 77.8
+          },
+          {
+            "partner": "safi",
+            "games": 8,
+            "winRate": 62.5
+          },
+          {
+            "partner": "mmmmm",
+            "games": 5,
+            "winRate": 40.0
+          }
+        ]
+      },
+      {
+        "id": "subby",
+        "label": "subby",
+        "games": 1083,
+        "winRate": 44.7,
+        "size": 46.1,
+        "partnerships": [
+          {
+            "partner": "habeas",
+            "games": 498,
+            "winRate": 21.9
+          },
+          {
+            "partner": "nish",
+            "games": 258,
+            "winRate": 12.8
+          },
+          {
+            "partner": "fateen",
+            "games": 219,
+            "winRate": 15.5
+          },
+          {
+            "partner": "keneru",
+            "games": 149,
+            "winRate": 4.7
+          },
+          {
+            "partner": "own",
+            "games": 144,
+            "winRate": 10.4
+          },
+          {
+            "partner": "pat",
+            "games": 125,
+            "winRate": 8.8
+          },
+          {
+            "partner": "samin",
+            "games": 105,
+            "winRate": 0.0
+          },
+          {
+            "partner": "strike",
+            "games": 101,
+            "winRate": 6.9
+          },
+          {
+            "partner": "ya",
+            "games": 72,
+            "winRate": 50.0
+          },
+          {
+            "partner": "messi",
+            "games": 51,
+            "winRate": 9.8
+          },
+          {
+            "partner": "jmoon",
+            "games": 47,
+            "winRate": 0.0
+          },
+          {
+            "partner": "mmmmm",
+            "games": 45,
+            "winRate": 28.9
+          },
+          {
+            "partner": "will",
+            "games": 36,
+            "winRate": 2.8
+          },
+          {
+            "partner": "aadil",
+            "games": 32,
+            "winRate": 43.8
+          },
+          {
+            "partner": "Raulito",
+            "games": 29,
+            "winRate": 13.8
+          },
+          {
+            "partner": "ryy",
+            "games": 23,
+            "winRate": 0.0
+          },
+          {
+            "partner": "caleb",
+            "games": 21,
+            "winRate": 0.0
+          },
+          {
+            "partner": "shafaq",
+            "games": 17,
+            "winRate": 5.9
+          },
+          {
+            "partner": "kento",
+            "games": 9,
+            "winRate": 11.1
+          },
+          {
+            "partner": "lando",
+            "games": 7,
+            "winRate": 0.0
+          },
+          {
+            "partner": "stav",
+            "games": 5,
+            "winRate": 0.0
+          },
+          {
+            "partner": "safi",
+            "games": 3,
+            "winRate": 0.0
+          }
+        ]
+      },
+      {
+        "id": "nish",
+        "label": "nish",
+        "games": 494,
+        "winRate": 41.7,
+        "size": 26.466666666666665,
+        "partnerships": [
+          {
+            "partner": "subby",
+            "games": 258,
+            "winRate": 3.1
+          },
+          {
+            "partner": "habeas",
+            "games": 121,
+            "winRate": 5.0
+          },
+          {
+            "partner": "fateen",
+            "games": 121,
+            "winRate": 3.3
+          },
+          {
+            "partner": "keneru",
+            "games": 114,
+            "winRate": 5.3
+          },
+          {
+            "partner": "ya",
+            "games": 84,
+            "winRate": 38.1
+          },
+          {
+            "partner": "own",
+            "games": 56,
+            "winRate": 1.8
+          },
+          {
+            "partner": "strike",
+            "games": 46,
+            "winRate": 0.0
+          },
+          {
+            "partner": "pat",
+            "games": 39,
+            "winRate": 0.0
+          },
+          {
+            "partner": "Raulito",
+            "games": 29,
+            "winRate": 3.4
+          },
+          {
+            "partner": "samin",
+            "games": 27,
+            "winRate": 0.0
+          },
+          {
+            "partner": "mmmmm",
+            "games": 24,
+            "winRate": 8.3
+          },
+          {
+            "partner": "messi",
+            "games": 24,
+            "winRate": 0.0
+          },
+          {
+            "partner": "shafaq",
+            "games": 23,
+            "winRate": 0.0
+          },
+          {
+            "partner": "heidy",
+            "games": 19,
+            "winRate": 47.4
+          },
+          {
+            "partner": "jmoon",
+            "games": 15,
+            "winRate": 0.0
+          },
+          {
+            "partner": "joguo",
+            "games": 12,
+            "winRate": 66.7
+          },
+          {
+            "partner": "lag",
+            "games": 11,
+            "winRate": 45.5
+          },
+          {
+            "partner": "caleb",
+            "games": 10,
+            "winRate": 0.0
+          },
+          {
+            "partner": "audrey",
+            "games": 9,
+            "winRate": 0.0
+          },
+          {
+            "partner": "jeni",
+            "games": 6,
+            "winRate": 0.0
+          },
+          {
+            "partner": "stav",
+            "games": 4,
+            "winRate": 0.0
+          },
+          {
+            "partner": "lando",
+            "games": 4,
+            "winRate": 0.0
+          },
+          {
+            "partner": "will",
+            "games": 4,
+            "winRate": 0.0
+          },
+          {
+            "partner": "gatmo",
+            "games": 4,
+            "winRate": 0.0
+          },
+          {
+            "partner": "kento",
+            "games": 3,
+            "winRate": 0.0
+          }
+        ]
+      },
+      {
+        "id": "safi",
+        "label": "safi",
+        "games": 15,
+        "winRate": 40.0,
+        "size": 10.5,
+        "partnerships": [
+          {
+            "partner": "habeas",
+            "games": 8,
+            "winRate": 37.5
+          },
+          {
+            "partner": "subby",
+            "games": 3,
+            "winRate": 66.7
+          }
+        ]
+      },
+      {
+        "id": "gatmo",
+        "label": "gatmo",
+        "games": 31,
+        "winRate": 22.6,
+        "size": 11.033333333333333,
+        "partnerships": [
+          {
+            "partner": "habeas",
+            "games": 13,
+            "winRate": 0.0
+          },
+          {
+            "partner": "joguo",
+            "games": 8,
+            "winRate": 37.5
+          },
+          {
+            "partner": "jmoon",
+            "games": 5,
+            "winRate": 0.0
+          },
+          {
+            "partner": "nish",
+            "games": 4,
+            "winRate": 0.0
+          },
+          {
+            "partner": "keneru",
+            "games": 4,
+            "winRate": 25.0
+          }
+        ]
+      },
+      {
+        "id": "joguo",
+        "label": "joguo",
+        "games": 65,
+        "winRate": 29.2,
+        "size": 12.166666666666666,
+        "partnerships": [
+          {
+            "partner": "heidy",
+            "games": 31,
+            "winRate": 29.0
+          },
+          {
+            "partner": "nish",
+            "games": 12,
+            "winRate": 0.0
+          },
+          {
+            "partner": "messi",
+            "games": 9,
+            "winRate": 55.6
+          },
+          {
+            "partner": "daniel l",
+            "games": 9,
+            "winRate": 22.2
+          },
+          {
+            "partner": "gatmo",
+            "games": 8,
+            "winRate": 0.0
+          },
+          {
+            "partner": "keneru",
+            "games": 7,
+            "winRate": 14.3
+          },
+          {
+            "partner": "samin",
+            "games": 7,
+            "winRate": 0.0
+          },
+          {
+            "partner": "jmoon",
+            "games": 4,
+            "winRate": 0.0
+          }
+        ]
+      },
+      {
+        "id": "amar",
+        "label": "amar",
+        "games": 104,
+        "winRate": 60.6,
+        "size": 13.466666666666667,
+        "partnerships": [
+          {
+            "partner": "habeas",
+            "games": 68,
+            "winRate": 61.8
+          },
+          {
+            "partner": "jmoon",
+            "games": 24,
+            "winRate": 54.2
+          },
+          {
+            "partner": "own",
+            "games": 3,
+            "winRate": 100.0
+          },
+          {
+            "partner": "pat",
+            "games": 3,
+            "winRate": 33.3
+          }
+        ]
+      },
+      {
+        "id": "heidy",
+        "label": "heidy",
+        "games": 137,
+        "winRate": 14.6,
+        "size": 14.566666666666666,
+        "partnerships": [
+          {
+            "partner": "jmoon",
+            "games": 68,
+            "winRate": 0.0
+          },
+          {
+            "partner": "habeas",
+            "games": 34,
+            "winRate": 2.9
+          },
+          {
+            "partner": "joguo",
+            "games": 31,
+            "winRate": 22.6
+          },
+          {
+            "partner": "samin",
+            "games": 30,
+            "winRate": 0.0
+          },
+          {
+            "partner": "nish",
+            "games": 19,
+            "winRate": 10.5
+          },
+          {
+            "partner": "keneru",
+            "games": 15,
+            "winRate": 0.0
+          },
+          {
+            "partner": "daniel l",
+            "games": 11,
+            "winRate": 18.2
+          },
+          {
+            "partner": "asma",
+            "games": 9,
+            "winRate": 0.0
+          },
+          {
+            "partner": "lag",
+            "games": 7,
+            "winRate": 0.0
+          }
+        ]
+      },
+      {
+        "id": "jmoon",
+        "label": "jmoon",
+        "games": 952,
+        "winRate": 77.7,
+        "size": 41.733333333333334,
+        "partnerships": [
+          {
+            "partner": "habeas",
+            "games": 649,
+            "winRate": 71.8
+          },
+          {
+            "partner": "shafaq",
+            "games": 71,
+            "winRate": 56.3
+          },
+          {
+            "partner": "heidy",
+            "games": 68,
+            "winRate": 50.0
+          },
+          {
+            "partner": "keneru",
+            "games": 61,
+            "winRate": 62.3
+          },
+          {
+            "partner": "subby",
+            "games": 47,
+            "winRate": 19.1
+          },
+          {
+            "partner": "lando",
+            "games": 33,
+            "winRate": 45.5
+          },
+          {
+            "partner": "will",
+            "games": 30,
+            "winRate": 40.0
+          },
+          {
+            "partner": "samin",
+            "games": 27,
+            "winRate": 7.4
+          },
+          {
+            "partner": "own",
+            "games": 25,
+            "winRate": 28.0
+          },
+          {
+            "partner": "amar",
+            "games": 24,
+            "winRate": 45.8
+          },
+          {
+            "partner": "kento",
+            "games": 22,
+            "winRate": 50.0
+          },
+          {
+            "partner": "ryy",
+            "games": 18,
+            "winRate": 11.1
+          },
+          {
+            "partner": "nish",
+            "games": 15,
+            "winRate": 6.7
+          },
+          {
+            "partner": "ya",
+            "games": 14,
+            "winRate": 78.6
+          },
+          {
+            "partner": "strike",
+            "games": 13,
+            "winRate": 7.7
+          },
+          {
+            "partner": "pat",
+            "games": 10,
+            "winRate": 20.0
+          },
+          {
+            "partner": "lag",
+            "games": 9,
+            "winRate": 77.8
+          },
+          {
+            "partner": "fateen",
+            "games": 6,
+            "winRate": 0.0
+          },
+          {
+            "partner": "gatmo",
+            "games": 5,
+            "winRate": 80.0
+          },
+          {
+            "partner": "unknown",
+            "games": 5,
+            "winRate": 100.0
+          },
+          {
+            "partner": "joguo",
+            "games": 4,
+            "winRate": 0.0
+          },
+          {
+            "partner": "asma",
+            "games": 3,
+            "winRate": 33.3
+          }
+        ]
+      },
+      {
+        "id": "keneru",
+        "label": "keneru",
+        "games": 747,
+        "winRate": 47.0,
+        "size": 34.9,
+        "partnerships": [
+          {
+            "partner": "habeas",
+            "games": 293,
+            "winRate": 25.3
+          },
+          {
+            "partner": "subby",
+            "games": 149,
+            "winRate": 16.8
+          },
+          {
+            "partner": "shafaq",
+            "games": 129,
+            "winRate": 20.2
+          },
+          {
+            "partner": "nish",
+            "games": 114,
+            "winRate": 21.9
+          },
+          {
+            "partner": "ya",
+            "games": 66,
+            "winRate": 53.0
+          },
+          {
+            "partner": "samin",
+            "games": 63,
+            "winRate": 9.5
+          },
+          {
+            "partner": "fateen",
+            "games": 62,
+            "winRate": 3.2
+          },
+          {
+            "partner": "jmoon",
+            "games": 61,
+            "winRate": 8.2
+          },
+          {
+            "partner": "mizan",
+            "games": 36,
+            "winRate": 50.0
+          },
+          {
+            "partner": "strike",
+            "games": 35,
+            "winRate": 0.0
+          },
+          {
+            "partner": "own",
+            "games": 33,
+            "winRate": 6.1
+          },
+          {
+            "partner": "kento",
+            "games": 17,
+            "winRate": 17.6
+          },
+          {
+            "partner": "heidy",
+            "games": 15,
+            "winRate": 20.0
+          },
+          {
+            "partner": "will",
+            "games": 14,
+            "winRate": 14.3
+          },
+          {
+            "partner": "lag",
+            "games": 14,
+            "winRate": 7.1
+          },
+          {
+            "partner": "pat",
+            "games": 11,
+            "winRate": 9.1
+          },
+          {
+            "partner": "aadil",
+            "games": 11,
+            "winRate": 0.0
+          },
+          {
+            "partner": "audrey",
+            "games": 9,
+            "winRate": 0.0
+          },
+          {
+            "partner": "mmmmm",
+            "games": 9,
+            "winRate": 0.0
+          },
+          {
+            "partner": "Raulito",
+            "games": 8,
+            "winRate": 0.0
+          },
+          {
+            "partner": "gino",
+            "games": 7,
+            "winRate": 0.0
+          },
+          {
+            "partner": "joguo",
+            "games": 7,
+            "winRate": 14.3
+          },
+          {
+            "partner": "jeni",
+            "games": 6,
+            "winRate": 0.0
+          },
+          {
+            "partner": "niki <3",
+            "games": 6,
+            "winRate": 0.0
+          },
+          {
+            "partner": "caleb",
+            "games": 5,
+            "winRate": 80.0
+          },
+          {
+            "partner": "gatmo",
+            "games": 4,
+            "winRate": 75.0
+          },
+          {
+            "partner": "lando",
+            "games": 3,
+            "winRate": 33.3
+          },
+          {
+            "partner": "messi",
+            "games": 3,
+            "winRate": 0.0
+          },
+          {
+            "partner": "stav",
+            "games": 3,
+            "winRate": 66.7
+          }
+        ]
+      },
+      {
+        "id": "mmmmm",
+        "label": "mmmmm",
+        "games": 91,
+        "winRate": 39.6,
+        "size": 13.033333333333333,
+        "partnerships": [
+          {
+            "partner": "subby",
+            "games": 45,
+            "winRate": 6.7
+          },
+          {
+            "partner": "nish",
+            "games": 24,
+            "winRate": 29.2
+          },
+          {
+            "partner": "ya",
+            "games": 20,
+            "winRate": 50.0
+          },
+          {
+            "partner": "lag",
+            "games": 15,
+            "winRate": 46.7
+          },
+          {
+            "partner": "keneru",
+            "games": 9,
+            "winRate": 0.0
+          },
+          {
+            "partner": "pat",
+            "games": 8,
+            "winRate": 12.5
+          },
+          {
+            "partner": "own",
+            "games": 7,
+            "winRate": 0.0
+          },
+          {
+            "partner": "messi",
+            "games": 6,
+            "winRate": 0.0
+          },
+          {
+            "partner": "habeas",
+            "games": 5,
+            "winRate": 0.0
+          },
+          {
+            "partner": "stav",
+            "games": 4,
+            "winRate": 0.0
+          },
+          {
+            "partner": "ryy",
+            "games": 3,
+            "winRate": 0.0
+          }
+        ]
+      },
+      {
+        "id": "pat",
+        "label": "pat",
+        "games": 186,
+        "winRate": 38.2,
+        "size": 16.2,
+        "partnerships": [
+          {
+            "partner": "subby",
+            "games": 125,
+            "winRate": 12.0
+          },
+          {
+            "partner": "samin",
+            "games": 57,
+            "winRate": 0.0
+          },
+          {
+            "partner": "habeas",
+            "games": 39,
+            "winRate": 5.1
+          },
+          {
+            "partner": "nish",
+            "games": 39,
+            "winRate": 0.0
+          },
+          {
+            "partner": "fateen",
+            "games": 36,
+            "winRate": 0.0
+          },
+          {
+            "partner": "will",
+            "games": 27,
+            "winRate": 3.7
+          },
+          {
+            "partner": "own",
+            "games": 21,
+            "winRate": 9.5
+          },
+          {
+            "partner": "messi",
+            "games": 19,
+            "winRate": 0.0
+          },
+          {
+            "partner": "caleb",
+            "games": 18,
+            "winRate": 0.0
+          },
+          {
+            "partner": "ryy",
+            "games": 15,
+            "winRate": 0.0
+          },
+          {
+            "partner": "keneru",
+            "games": 11,
+            "winRate": 9.1
+          },
+          {
+            "partner": "jmoon",
+            "games": 10,
+            "winRate": 0.0
+          },
+          {
+            "partner": "mmmmm",
+            "games": 8,
+            "winRate": 25.0
+          },
+          {
+            "partner": "shafaq",
+            "games": 7,
+            "winRate": 0.0
+          },
+          {
+            "partner": "ya",
+            "games": 7,
+            "winRate": 0.0
+          },
+          {
+            "partner": "strike",
+            "games": 3,
+            "winRate": 0.0
+          },
+          {
+            "partner": "amar",
+            "games": 3,
+            "winRate": 66.7
+          }
+        ]
+      },
+      {
+        "id": "gino",
+        "label": "gino",
+        "games": 14,
+        "winRate": 42.9,
+        "size": 10.466666666666667,
+        "partnerships": [
+          {
+            "partner": "shafaq",
+            "games": 14,
+            "winRate": 0.0
+          },
+          {
+            "partner": "keneru",
+            "games": 7,
+            "winRate": 0.0
+          },
+          {
+            "partner": "sky",
+            "games": 3,
+            "winRate": 0.0
+          },
+          {
+            "partner": "ya",
+            "games": 3,
+            "winRate": 0.0
+          }
+        ]
+      },
+      {
+        "id": "will",
+        "label": "will",
+        "games": 291,
+        "winRate": 52.2,
+        "size": 19.7,
+        "partnerships": [
+          {
+            "partner": "habeas",
+            "games": 128,
+            "winRate": 28.9
+          },
+          {
+            "partner": "own",
+            "games": 68,
+            "winRate": 36.8
+          },
+          {
+            "partner": "ryy",
+            "games": 45,
+            "winRate": 2.2
+          },
+          {
+            "partner": "shafaq",
+            "games": 44,
+            "winRate": 20.5
+          },
+          {
+            "partner": "subby",
+            "games": 36,
+            "winRate": 19.4
+          },
+          {
+            "partner": "jmoon",
+            "games": 30,
+            "winRate": 10.0
+          },
+          {
+            "partner": "pat",
+            "games": 27,
+            "winRate": 25.9
+          },
+          {
+            "partner": "lag",
+            "games": 16,
+            "winRate": 12.5
+          },
+          {
+            "partner": "keneru",
+            "games": 14,
+            "winRate": 64.3
+          },
+          {
+            "partner": "messi",
+            "games": 9,
+            "winRate": 11.1
+          },
+          {
+            "partner": "fateen",
+            "games": 5,
+            "winRate": 60.0
+          },
+          {
+            "partner": "ya",
+            "games": 5,
+            "winRate": 100.0
+          },
+          {
+            "partner": "nish",
+            "games": 4,
+            "winRate": 0.0
+          },
+          {
+            "partner": "niki <3",
+            "games": 3,
+            "winRate": 66.7
+          }
+        ]
+      },
+      {
+        "id": "unknown",
+        "label": "unknown",
+        "games": 12,
+        "winRate": 0.0,
+        "size": 10.4,
+        "partnerships": [
+          {
+            "partner": "jmoon",
+            "games": 5,
+            "winRate": 0.0
+          }
+        ]
+      },
+      {
+        "id": "ryy",
+        "label": "ryy",
+        "games": 70,
+        "winRate": 55.7,
+        "size": 12.333333333333334,
+        "partnerships": [
+          {
+            "partner": "will",
+            "games": 45,
+            "winRate": 2.2
+          },
+          {
+            "partner": "habeas",
+            "games": 29,
+            "winRate": 6.9
+          },
+          {
+            "partner": "subby",
+            "games": 23,
+            "winRate": 0.0
+          },
+          {
+            "partner": "own",
+            "games": 23,
+            "winRate": 8.7
+          },
+          {
+            "partner": "jmoon",
+            "games": 18,
+            "winRate": 0.0
+          },
+          {
+            "partner": "pat",
+            "games": 15,
+            "winRate": 0.0
+          },
+          {
+            "partner": "samin",
+            "games": 7,
+            "winRate": 42.9
+          },
+          {
+            "partner": "messi",
+            "games": 6,
+            "winRate": 0.0
+          },
+          {
+            "partner": "mmmmm",
+            "games": 3,
+            "winRate": 100.0
+          }
+        ]
+      },
+      {
+        "id": "kento",
+        "label": "kento",
+        "games": 94,
+        "winRate": 61.7,
+        "size": 13.133333333333333,
+        "partnerships": [
+          {
+            "partner": "habeas",
+            "games": 41,
+            "winRate": 70.7
+          },
+          {
+            "partner": "jmoon",
+            "games": 22,
+            "winRate": 13.6
+          },
+          {
+            "partner": "keneru",
+            "games": 17,
+            "winRate": 35.3
+          },
+          {
+            "partner": "shafaq",
+            "games": 16,
+            "winRate": 37.5
+          },
+          {
+            "partner": "subby",
+            "games": 9,
+            "winRate": 88.9
+          },
+          {
+            "partner": "ya",
+            "games": 4,
+            "winRate": 0.0
+          },
+          {
+            "partner": "nish",
+            "games": 3,
+            "winRate": 0.0
+          }
+        ]
+      },
+      {
+        "id": "lando",
+        "label": "lando",
+        "games": 52,
+        "winRate": 21.2,
+        "size": 11.733333333333334,
+        "partnerships": [
+          {
+            "partner": "jmoon",
+            "games": 33,
+            "winRate": 0.0
+          },
+          {
+            "partner": "habeas",
+            "games": 25,
+            "winRate": 0.0
+          },
+          {
+            "partner": "shafaq",
+            "games": 17,
+            "winRate": 0.0
+          },
+          {
+            "partner": "subby",
+            "games": 7,
+            "winRate": 0.0
+          },
+          {
+            "partner": "own",
+            "games": 6,
+            "winRate": 33.3
+          },
+          {
+            "partner": "nish",
+            "games": 4,
+            "winRate": 0.0
+          },
+          {
+            "partner": "ya",
+            "games": 4,
+            "winRate": 0.0
+          },
+          {
+            "partner": "keneru",
+            "games": 3,
+            "winRate": 33.3
+          }
+        ]
+      },
+      {
+        "id": "messi",
+        "label": "messi",
+        "games": 102,
+        "winRate": 22.5,
+        "size": 13.4,
+        "partnerships": [
+          {
+            "partner": "subby",
+            "games": 51,
+            "winRate": 0.0
+          },
+          {
+            "partner": "fateen",
+            "games": 27,
+            "winRate": 0.0
+          },
+          {
+            "partner": "nish",
+            "games": 24,
+            "winRate": 0.0
+          },
+          {
+            "partner": "pat",
+            "games": 19,
+            "winRate": 0.0
+          },
+          {
+            "partner": "own",
+            "games": 17,
+            "winRate": 0.0
+          },
+          {
+            "partner": "samin",
+            "games": 10,
+            "winRate": 0.0
+          },
+          {
+            "partner": "habeas",
+            "games": 9,
+            "winRate": 0.0
+          },
+          {
+            "partner": "will",
+            "games": 9,
+            "winRate": 0.0
+          },
+          {
+            "partner": "joguo",
+            "games": 9,
+            "winRate": 44.4
+          },
+          {
+            "partner": "ya",
+            "games": 8,
+            "winRate": 0.0
+          },
+          {
+            "partner": "mmmmm",
+            "games": 6,
+            "winRate": 0.0
+          },
+          {
+            "partner": "ryy",
+            "games": 6,
+            "winRate": 0.0
+          },
+          {
+            "partner": "caleb",
+            "games": 4,
+            "winRate": 0.0
+          },
+          {
+            "partner": "shafaq",
+            "games": 3,
+            "winRate": 0.0
+          },
+          {
+            "partner": "keneru",
+            "games": 3,
+            "winRate": 0.0
+          }
+        ]
+      },
+      {
+        "id": "sky",
+        "label": "sky",
+        "games": 10,
+        "winRate": 40.0,
+        "size": 10.333333333333334,
+        "partnerships": [
+          {
+            "partner": "shafaq",
+            "games": 10,
+            "winRate": 0.0
+          },
+          {
+            "partner": "ya",
+            "games": 10,
+            "winRate": 0.0
+          },
+          {
+            "partner": "audrey",
+            "games": 7,
+            "winRate": 0.0
+          },
+          {
+            "partner": "gino",
+            "games": 3,
+            "winRate": 0.0
+          }
+        ]
+      },
+      {
+        "id": "mizan",
+        "label": "mizan",
+        "games": 72,
+        "winRate": 27.8,
+        "size": 12.4,
+        "partnerships": [
+          {
+            "partner": "keneru",
+            "games": 36,
+            "winRate": 5.6
+          },
+          {
+            "partner": "habeas",
+            "games": 19,
+            "winRate": 0.0
+          },
+          {
+            "partner": "shafaq",
+            "games": 18,
+            "winRate": 11.1
+          },
+          {
+            "partner": "ya",
+            "games": 15,
+            "winRate": 20.0
+          }
+        ]
+      },
+      {
+        "id": "strike",
+        "label": "strike",
+        "games": 116,
+        "winRate": 44.8,
+        "size": 13.866666666666667,
+        "partnerships": [
+          {
+            "partner": "subby",
+            "games": 101,
+            "winRate": 5.0
+          },
+          {
+            "partner": "habeas",
+            "games": 59,
+            "winRate": 0.0
+          },
+          {
+            "partner": "fateen",
+            "games": 55,
+            "winRate": 3.6
+          },
+          {
+            "partner": "nish",
+            "games": 46,
+            "winRate": 0.0
+          },
+          {
+            "partner": "keneru",
+            "games": 35,
+            "winRate": 0.0
+          },
+          {
+            "partner": "Raulito",
+            "games": 25,
+            "winRate": 0.0
+          },
+          {
+            "partner": "own",
+            "games": 20,
+            "winRate": 0.0
+          },
+          {
+            "partner": "samin",
+            "games": 18,
+            "winRate": 0.0
+          },
+          {
+            "partner": "jmoon",
+            "games": 13,
+            "winRate": 0.0
+          },
+          {
+            "partner": "pat",
+            "games": 3,
+            "winRate": 0.0
+          }
+        ]
+      },
+      {
+        "id": "ya",
+        "label": "ya",
+        "games": 299,
+        "winRate": 20.1,
+        "size": 19.96666666666667,
+        "partnerships": [
+          {
+            "partner": "nish",
+            "games": 84,
+            "winRate": 11.9
+          },
+          {
+            "partner": "subby",
+            "games": 72,
+            "winRate": 0.0
+          },
+          {
+            "partner": "keneru",
+            "games": 66,
+            "winRate": 4.5
+          },
+          {
+            "partner": "habeas",
+            "games": 58,
+            "winRate": 1.7
+          },
+          {
+            "partner": "shafaq",
+            "games": 29,
+            "winRate": 0.0
+          },
+          {
+            "partner": "mmmmm",
+            "games": 20,
+            "winRate": 5.0
+          },
+          {
+            "partner": "audrey",
+            "games": 17,
+            "winRate": 0.0
+          },
+          {
+            "partner": "mizan",
+            "games": 15,
+            "winRate": 40.0
+          },
+          {
+            "partner": "fateen",
+            "games": 15,
+            "winRate": 0.0
+          },
+          {
+            "partner": "jmoon",
+            "games": 14,
+            "winRate": 0.0
+          },
+          {
+            "partner": "sky",
+            "games": 10,
+            "winRate": 0.0
+          },
+          {
+            "partner": "own",
+            "games": 10,
+            "winRate": 0.0
+          },
+          {
+            "partner": "messi",
+            "games": 8,
+            "winRate": 75.0
+          },
+          {
+            "partner": "pat",
+            "games": 7,
+            "winRate": 0.0
+          },
+          {
+            "partner": "stav",
+            "games": 6,
+            "winRate": 16.7
+          },
+          {
+            "partner": "jeni",
+            "games": 6,
+            "winRate": 0.0
+          },
+          {
+            "partner": "samin",
+            "games": 6,
+            "winRate": 0.0
+          },
+          {
+            "partner": "niki <3",
+            "games": 6,
+            "winRate": 0.0
+          },
+          {
+            "partner": "will",
+            "games": 5,
+            "winRate": 0.0
+          },
+          {
+            "partner": "kento",
+            "games": 4,
+            "winRate": 0.0
+          },
+          {
+            "partner": "lando",
+            "games": 4,
+            "winRate": 0.0
+          },
+          {
+            "partner": "gino",
+            "games": 3,
+            "winRate": 0.0
+          },
+          {
+            "partner": "caleb",
+            "games": 3,
+            "winRate": 33.3
+          }
+        ]
+      },
+      {
+        "id": "samin",
+        "label": "samin",
+        "games": 253,
+        "winRate": 44.7,
+        "size": 18.433333333333334,
+        "partnerships": [
+          {
+            "partner": "habeas",
+            "games": 115,
+            "winRate": 12.2
+          },
+          {
+            "partner": "subby",
+            "games": 105,
+            "winRate": 1.0
+          },
+          {
+            "partner": "keneru",
+            "games": 63,
+            "winRate": 7.9
+          },
+          {
+            "partner": "pat",
+            "games": 57,
+            "winRate": 0.0
+          },
+          {
+            "partner": "own",
+            "games": 53,
+            "winRate": 1.9
+          },
+          {
+            "partner": "shafaq",
+            "games": 32,
+            "winRate": 12.5
+          },
+          {
+            "partner": "heidy",
+            "games": 30,
+            "winRate": 0.0
+          },
+          {
+            "partner": "nish",
+            "games": 27,
+            "winRate": 3.7
+          },
+          {
+            "partner": "jmoon",
+            "games": 27,
+            "winRate": 0.0
+          },
+          {
+            "partner": "fateen",
+            "games": 23,
+            "winRate": 0.0
+          },
+          {
+            "partner": "strike",
+            "games": 18,
+            "winRate": 0.0
+          },
+          {
+            "partner": "caleb",
+            "games": 13,
+            "winRate": 0.0
+          },
+          {
+            "partner": "messi",
+            "games": 10,
+            "winRate": 0.0
+          },
+          {
+            "partner": "ryy",
+            "games": 7,
+            "winRate": 57.1
+          },
+          {
+            "partner": "joguo",
+            "games": 7,
+            "winRate": 0.0
+          },
+          {
+            "partner": "ya",
+            "games": 6,
+            "winRate": 0.0
+          }
+        ]
+      },
+      {
+        "id": "lag",
+        "label": "lag",
+        "games": 106,
+        "winRate": 33.0,
+        "size": 13.533333333333333,
+        "partnerships": [
+          {
+            "partner": "habeas",
+            "games": 51,
+            "winRate": 3.9
+          },
+          {
+            "partner": "shafaq",
+            "games": 22,
+            "winRate": 4.5
+          },
+          {
+            "partner": "will",
+            "games": 16,
+            "winRate": 6.2
+          },
+          {
+            "partner": "mmmmm",
+            "games": 15,
+            "winRate": 46.7
+          },
+          {
+            "partner": "keneru",
+            "games": 14,
+            "winRate": 21.4
+          },
+          {
+            "partner": "nish",
+            "games": 11,
+            "winRate": 54.5
+          },
+          {
+            "partner": "jmoon",
+            "games": 9,
+            "winRate": 0.0
+          },
+          {
+            "partner": "own",
+            "games": 8,
+            "winRate": 0.0
+          },
+          {
+            "partner": "heidy",
+            "games": 7,
+            "winRate": 14.3
+          }
+        ]
+      },
+      {
+        "id": "asma",
+        "label": "asma",
+        "games": 10,
+        "winRate": 10.0,
+        "size": 10.333333333333334,
+        "partnerships": [
+          {
+            "partner": "heidy",
+            "games": 9,
+            "winRate": 0.0
+          },
+          {
+            "partner": "jmoon",
+            "games": 3,
+            "winRate": 0.0
+          }
+        ]
+      },
+      {
+        "id": "stav",
+        "label": "stav",
+        "games": 11,
+        "winRate": 36.4,
+        "size": 10.366666666666667,
+        "partnerships": [
+          {
+            "partner": "ya",
+            "games": 6,
+            "winRate": 16.7
+          },
+          {
+            "partner": "subby",
+            "games": 5,
+            "winRate": 0.0
+          },
+          {
+            "partner": "nish",
+            "games": 4,
+            "winRate": 0.0
+          },
+          {
+            "partner": "mmmmm",
+            "games": 4,
+            "winRate": 0.0
+          },
+          {
+            "partner": "keneru",
+            "games": 3,
+            "winRate": 0.0
+          }
+        ]
+      },
+      {
+        "id": "shafaq",
+        "label": "shafaq",
+        "games": 612,
+        "winRate": 53.9,
+        "size": 30.4,
+        "partnerships": [
+          {
+            "partner": "habeas",
+            "games": 296,
+            "winRate": 36.5
+          },
+          {
+            "partner": "keneru",
+            "games": 129,
+            "winRate": 48.1
+          },
+          {
+            "partner": "jmoon",
+            "games": 71,
+            "winRate": 14.1
+          },
+          {
+            "partner": "will",
+            "games": 44,
+            "winRate": 47.7
+          },
+          {
+            "partner": "samin",
+            "games": 32,
+            "winRate": 46.9
+          },
+          {
+            "partner": "ya",
+            "games": 29,
+            "winRate": 0.0
+          },
+          {
+            "partner": "nish",
+            "games": 23,
+            "winRate": 30.4
+          },
+          {
+            "partner": "lag",
+            "games": 22,
+            "winRate": 31.8
+          },
+          {
+            "partner": "mizan",
+            "games": 18,
+            "winRate": 0.0
+          },
+          {
+            "partner": "subby",
+            "games": 17,
+            "winRate": 35.3
+          },
+          {
+            "partner": "lando",
+            "games": 17,
+            "winRate": 5.9
+          },
+          {
+            "partner": "kento",
+            "games": 16,
+            "winRate": 31.2
+          },
+          {
+            "partner": "gino",
+            "games": 14,
+            "winRate": 28.6
+          },
+          {
+            "partner": "own",
+            "games": 13,
+            "winRate": 7.7
+          },
+          {
+            "partner": "niki <3",
+            "games": 13,
+            "winRate": 69.2
+          },
+          {
+            "partner": "audrey",
+            "games": 12,
+            "winRate": 0.0
+          },
+          {
+            "partner": "sky",
+            "games": 10,
+            "winRate": 0.0
+          },
+          {
+            "partner": "pat",
+            "games": 7,
+            "winRate": 71.4
+          },
+          {
+            "partner": "jeni",
+            "games": 4,
+            "winRate": 0.0
+          },
+          {
+            "partner": "fateen",
+            "games": 4,
+            "winRate": 0.0
+          },
+          {
+            "partner": "messi",
+            "games": 3,
+            "winRate": 0.0
+          }
+        ]
+      },
+      {
+        "id": "jeni",
+        "label": "jeni",
+        "games": 21,
+        "winRate": 42.9,
+        "size": 10.7,
+        "partnerships": [
+          {
+            "partner": "audrey",
+            "games": 17,
+            "winRate": 17.6
+          },
+          {
+            "partner": "keneru",
+            "games": 6,
+            "winRate": 0.0
+          },
+          {
+            "partner": "nish",
+            "games": 6,
+            "winRate": 0.0
+          },
+          {
+            "partner": "ya",
+            "games": 6,
+            "winRate": 0.0
+          },
+          {
+            "partner": "shafaq",
+            "games": 4,
+            "winRate": 0.0
+          }
+        ]
+      },
+      {
+        "id": "audrey",
+        "label": "audrey",
+        "games": 29,
+        "winRate": 48.3,
+        "size": 10.966666666666667,
+        "partnerships": [
+          {
+            "partner": "jeni",
+            "games": 17,
+            "winRate": 11.8
+          },
+          {
+            "partner": "ya",
+            "games": 17,
+            "winRate": 0.0
+          },
+          {
+            "partner": "shafaq",
+            "games": 12,
+            "winRate": 0.0
+          },
+          {
+            "partner": "keneru",
+            "games": 9,
+            "winRate": 0.0
+          },
+          {
+            "partner": "nish",
+            "games": 9,
+            "winRate": 0.0
+          },
+          {
+            "partner": "sky",
+            "games": 7,
+            "winRate": 0.0
+          }
+        ]
+      },
+      {
+        "id": "aadil",
+        "label": "aadil",
+        "games": 35,
+        "winRate": 40.0,
+        "size": 11.166666666666666,
+        "partnerships": [
+          {
+            "partner": "subby",
+            "games": 32,
+            "winRate": 18.8
+          },
+          {
+            "partner": "fateen",
+            "games": 12,
+            "winRate": 0.0
+          },
+          {
+            "partner": "keneru",
+            "games": 11,
+            "winRate": 0.0
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "from": "habeas",
+        "to": "subby",
+        "value": 498,
+        "title": "498 games together"
+      },
+      {
+        "from": "habeas",
+        "to": "nish",
+        "value": 121,
+        "title": "121 games together"
+      },
+      {
+        "from": "subby",
+        "to": "nish",
+        "value": 258,
+        "title": "258 games together"
+      },
+      {
+        "from": "subby",
+        "to": "jmoon",
+        "value": 47,
+        "title": "47 games together"
+      },
+      {
+        "from": "jmoon",
+        "to": "keneru",
+        "value": 61,
+        "title": "61 games together"
+      },
+      {
+        "from": "subby",
+        "to": "keneru",
+        "value": 149,
+        "title": "149 games together"
+      },
+      {
+        "from": "subby",
+        "to": "pat",
+        "value": 125,
+        "title": "125 games together"
+      },
+      {
+        "from": "jmoon",
+        "to": "pat",
+        "value": 10,
+        "title": "10 games together"
+      },
+      {
+        "from": "keneru",
+        "to": "pat",
+        "value": 11,
+        "title": "11 games together"
+      },
+      {
+        "from": "jmoon",
+        "to": "will",
+        "value": 30,
+        "title": "30 games together"
+      },
+      {
+        "from": "jmoon",
+        "to": "ryy",
+        "value": 18,
+        "title": "18 games together"
+      },
+      {
+        "from": "habeas",
+        "to": "strike",
+        "value": 59,
+        "title": "59 games together"
+      },
+      {
+        "from": "subby",
+        "to": "ya",
+        "value": 72,
+        "title": "72 games together"
+      },
+      {
+        "from": "habeas",
+        "to": "samin",
+        "value": 115,
+        "title": "115 games together"
+      },
+      {
+        "from": "subby",
+        "to": "samin",
+        "value": 105,
+        "title": "105 games together"
+      },
+      {
+        "from": "ya",
+        "to": "stav",
+        "value": 6,
+        "title": "6 games together"
+      },
+      {
+        "from": "subby",
+        "to": "shafaq",
+        "value": 17,
+        "title": "17 games together"
+      },
+      {
+        "from": "habeas",
+        "to": "ya",
+        "value": 58,
+        "title": "58 games together"
+      },
+      {
+        "from": "habeas",
+        "to": "shafaq",
+        "value": 296,
+        "title": "296 games together"
+      },
+      {
+        "from": "habeas",
+        "to": "keneru",
+        "value": 293,
+        "title": "293 games together"
+      },
+      {
+        "from": "keneru",
+        "to": "shafaq",
+        "value": 129,
+        "title": "129 games together"
+      },
+      {
+        "from": "ya",
+        "to": "kento",
+        "value": 4,
+        "title": "4 games together"
+      },
+      {
+        "from": "shafaq",
+        "to": "kento",
+        "value": 16,
+        "title": "16 games together"
+      },
+      {
+        "from": "habeas",
+        "to": "kento",
+        "value": 41,
+        "title": "41 games together"
+      },
+      {
+        "from": "nish",
+        "to": "kento",
+        "value": 3,
+        "title": "3 games together"
+      },
+      {
+        "from": "keneru",
+        "to": "kento",
+        "value": 17,
+        "title": "17 games together"
+      },
+      {
+        "from": "nish",
+        "to": "keneru",
+        "value": 114,
+        "title": "114 games together"
+      },
+      {
+        "from": "habeas",
+        "to": "fateen",
+        "value": 70,
+        "title": "70 games together"
+      },
+      {
+        "from": "subby",
+        "to": "fateen",
+        "value": 219,
+        "title": "219 games together"
+      },
+      {
+        "from": "keneru",
+        "to": "fateen",
+        "value": 62,
+        "title": "62 games together"
+      },
+      {
+        "from": "jmoon",
+        "to": "shafaq",
+        "value": 71,
+        "title": "71 games together"
+      },
+      {
+        "from": "jmoon",
+        "to": "kento",
+        "value": 22,
+        "title": "22 games together"
+      },
+      {
+        "from": "jeni",
+        "to": "audrey",
+        "value": 17,
+        "title": "17 games together"
+      },
+      {
+        "from": "keneru",
+        "to": "jeni",
+        "value": 6,
+        "title": "6 games together"
+      },
+      {
+        "from": "keneru",
+        "to": "audrey",
+        "value": 9,
+        "title": "9 games together"
+      },
+      {
+        "from": "habeas",
+        "to": "jmoon",
+        "value": 649,
+        "title": "649 games together"
+      },
+      {
+        "from": "keneru",
+        "to": "mizan",
+        "value": 36,
+        "title": "36 games together"
+      },
+      {
+        "from": "shafaq",
+        "to": "mizan",
+        "value": 18,
+        "title": "18 games together"
+      },
+      {
+        "from": "habeas",
+        "to": "will",
+        "value": 128,
+        "title": "128 games together"
+      },
+      {
+        "from": "habeas",
+        "to": "mizan",
+        "value": 19,
+        "title": "19 games together"
+      },
+      {
+        "from": "subby",
+        "to": "aadil",
+        "value": 32,
+        "title": "32 games together"
+      },
+      {
+        "from": "keneru",
+        "to": "aadil",
+        "value": 11,
+        "title": "11 games together"
+      },
+      {
+        "from": "fateen",
+        "to": "aadil",
+        "value": 12,
+        "title": "12 games together"
+      },
+      {
+        "from": "keneru",
+        "to": "ya",
+        "value": 66,
+        "title": "66 games together"
+      },
+      {
+        "from": "subby",
+        "to": "mmmmm",
+        "value": 45,
+        "title": "45 games together"
+      },
+      {
+        "from": "subby",
+        "to": "stav",
+        "value": 5,
+        "title": "5 games together"
+      },
+      {
+        "from": "shafaq",
+        "to": "gino",
+        "value": 14,
+        "title": "14 games together"
+      },
+      {
+        "from": "keneru",
+        "to": "gino",
+        "value": 7,
+        "title": "7 games together"
+      },
+      {
+        "from": "mmmmm",
+        "to": "lag",
+        "value": 15,
+        "title": "15 games together"
+      },
+      {
+        "from": "nish",
+        "to": "ya",
+        "value": 84,
+        "title": "84 games together"
+      },
+      {
+        "from": "ya",
+        "to": "mizan",
+        "value": 15,
+        "title": "15 games together"
+      },
+      {
+        "from": "nish",
+        "to": "fateen",
+        "value": 121,
+        "title": "121 games together"
+      },
+      {
+        "from": "jmoon",
+        "to": "ya",
+        "value": 14,
+        "title": "14 games together"
+      },
+      {
+        "from": "subby",
+        "to": "kento",
+        "value": 9,
+        "title": "9 games together"
+      },
+      {
+        "from": "subby",
+        "to": "strike",
+        "value": 101,
+        "title": "101 games together"
+      },
+      {
+        "from": "jmoon",
+        "to": "strike",
+        "value": 13,
+        "title": "13 games together"
+      },
+      {
+        "from": "will",
+        "to": "shafaq",
+        "value": 44,
+        "title": "44 games together"
+      },
+      {
+        "from": "shafaq",
+        "to": "sky",
+        "value": 10,
+        "title": "10 games together"
+      },
+      {
+        "from": "ya",
+        "to": "shafaq",
+        "value": 29,
+        "title": "29 games together"
+      },
+      {
+        "from": "gino",
+        "to": "sky",
+        "value": 3,
+        "title": "3 games together"
+      },
+      {
+        "from": "ya",
+        "to": "gino",
+        "value": 3,
+        "title": "3 games together"
+      },
+      {
+        "from": "ya",
+        "to": "sky",
+        "value": 10,
+        "title": "10 games together"
+      },
+      {
+        "from": "shafaq",
+        "to": "audrey",
+        "value": 12,
+        "title": "12 games together"
+      },
+      {
+        "from": "audrey",
+        "to": "sky",
+        "value": 7,
+        "title": "7 games together"
+      },
+      {
+        "from": "ya",
+        "to": "audrey",
+        "value": 17,
+        "title": "17 games together"
+      },
+      {
+        "from": "pat",
+        "to": "shafaq",
+        "value": 7,
+        "title": "7 games together"
+      },
+      {
+        "from": "subby",
+        "to": "will",
+        "value": 36,
+        "title": "36 games together"
+      },
+      {
+        "from": "keneru",
+        "to": "will",
+        "value": 14,
+        "title": "14 games together"
+      },
+      {
+        "from": "nish",
+        "to": "audrey",
+        "value": 9,
+        "title": "9 games together"
+      },
+      {
+        "from": "nish",
+        "to": "mmmmm",
+        "value": 24,
+        "title": "24 games together"
+      },
+      {
+        "from": "keneru",
+        "to": "mmmmm",
+        "value": 9,
+        "title": "9 games together"
+      },
+      {
+        "from": "habeas",
+        "to": "mmmmm",
+        "value": 5,
+        "title": "5 games together"
+      },
+      {
+        "from": "ya",
+        "to": "mmmmm",
+        "value": 20,
+        "title": "20 games together"
+      },
+      {
+        "from": "nish",
+        "to": "shafaq",
+        "value": 23,
+        "title": "23 games together"
+      },
+      {
+        "from": "nish",
+        "to": "jeni",
+        "value": 6,
+        "title": "6 games together"
+      },
+      {
+        "from": "ya",
+        "to": "jeni",
+        "value": 6,
+        "title": "6 games together"
+      },
+      {
+        "from": "shafaq",
+        "to": "jeni",
+        "value": 4,
+        "title": "4 games together"
+      },
+      {
+        "from": "nish",
+        "to": "stav",
+        "value": 4,
+        "title": "4 games together"
+      },
+      {
+        "from": "stav",
+        "to": "mmmmm",
+        "value": 4,
+        "title": "4 games together"
+      },
+      {
+        "from": "strike",
+        "to": "fateen",
+        "value": 55,
+        "title": "55 games together"
+      },
+      {
+        "from": "habeas",
+        "to": "pat",
+        "value": 39,
+        "title": "39 games together"
+      },
+      {
+        "from": "pat",
+        "to": "mmmmm",
+        "value": 8,
+        "title": "8 games together"
+      },
+      {
+        "from": "ryy",
+        "to": "mmmmm",
+        "value": 3,
+        "title": "3 games together"
+      },
+      {
+        "from": "will",
+        "to": "fateen",
+        "value": 5,
+        "title": "5 games together"
+      },
+      {
+        "from": "pat",
+        "to": "will",
+        "value": 27,
+        "title": "27 games together"
+      },
+      {
+        "from": "habeas",
+        "to": "safi",
+        "value": 8,
+        "title": "8 games together"
+      },
+      {
+        "from": "ya",
+        "to": "fateen",
+        "value": 15,
+        "title": "15 games together"
+      },
+      {
+        "from": "subby",
+        "to": "safi",
+        "value": 3,
+        "title": "3 games together"
+      },
+      {
+        "from": "subby",
+        "to": "Raulito",
+        "value": 29,
+        "title": "29 games together"
+      },
+      {
+        "from": "strike",
+        "to": "Raulito",
+        "value": 25,
+        "title": "25 games together"
+      },
+      {
+        "from": "fateen",
+        "to": "Raulito",
+        "value": 30,
+        "title": "30 games together"
+      },
+      {
+        "from": "nish",
+        "to": "strike",
+        "value": 46,
+        "title": "46 games together"
+      },
+      {
+        "from": "nish",
+        "to": "Raulito",
+        "value": 29,
+        "title": "29 games together"
+      },
+      {
+        "from": "keneru",
+        "to": "strike",
+        "value": 35,
+        "title": "35 games together"
+      },
+      {
+        "from": "keneru",
+        "to": "Raulito",
+        "value": 8,
+        "title": "8 games together"
+      },
+      {
+        "from": "habeas",
+        "to": "ryy",
+        "value": 29,
+        "title": "29 games together"
+      },
+      {
+        "from": "subby",
+        "to": "lando",
+        "value": 7,
+        "title": "7 games together"
+      },
+      {
+        "from": "nish",
+        "to": "lando",
+        "value": 4,
+        "title": "4 games together"
+      },
+      {
+        "from": "habeas",
+        "to": "lando",
+        "value": 25,
+        "title": "25 games together"
+      },
+      {
+        "from": "ya",
+        "to": "lando",
+        "value": 4,
+        "title": "4 games together"
+      },
+      {
+        "from": "jmoon",
+        "to": "fateen",
+        "value": 6,
+        "title": "6 games together"
+      },
+      {
+        "from": "habeas",
+        "to": "Raulito",
+        "value": 13,
+        "title": "13 games together"
+      },
+      {
+        "from": "keneru",
+        "to": "samin",
+        "value": 63,
+        "title": "63 games together"
+      },
+      {
+        "from": "pat",
+        "to": "ya",
+        "value": 7,
+        "title": "7 games together"
+      },
+      {
+        "from": "subby",
+        "to": "messi",
+        "value": 51,
+        "title": "51 games together"
+      },
+      {
+        "from": "ya",
+        "to": "messi",
+        "value": 8,
+        "title": "8 games together"
+      },
+      {
+        "from": "keneru",
+        "to": "lando",
+        "value": 3,
+        "title": "3 games together"
+      },
+      {
+        "from": "will",
+        "to": "ya",
+        "value": 5,
+        "title": "5 games together"
+      },
+      {
+        "from": "nish",
+        "to": "pat",
+        "value": 39,
+        "title": "39 games together"
+      },
+      {
+        "from": "habeas",
+        "to": "messi",
+        "value": 9,
+        "title": "9 games together"
+      },
+      {
+        "from": "nish",
+        "to": "samin",
+        "value": 27,
+        "title": "27 games together"
+      },
+      {
+        "from": "pat",
+        "to": "samin",
+        "value": 57,
+        "title": "57 games together"
+      },
+      {
+        "from": "samin",
+        "to": "messi",
+        "value": 10,
+        "title": "10 games together"
+      },
+      {
+        "from": "nish",
+        "to": "messi",
+        "value": 24,
+        "title": "24 games together"
+      },
+      {
+        "from": "pat",
+        "to": "messi",
+        "value": 19,
+        "title": "19 games together"
+      },
+      {
+        "from": "will",
+        "to": "messi",
+        "value": 9,
+        "title": "9 games together"
+      },
+      {
+        "from": "mmmmm",
+        "to": "messi",
+        "value": 6,
+        "title": "6 games together"
+      },
+      {
+        "from": "messi",
+        "to": "caleb",
+        "value": 4,
+        "title": "4 games together"
+      },
+      {
+        "from": "pat",
+        "to": "strike",
+        "value": 3,
+        "title": "3 games together"
+      },
+      {
+        "from": "ya",
+        "to": "samin",
+        "value": 6,
+        "title": "6 games together"
+      },
+      {
+        "from": "strike",
+        "to": "samin",
+        "value": 18,
+        "title": "18 games together"
+      },
+      {
+        "from": "subby",
+        "to": "caleb",
+        "value": 21,
+        "title": "21 games together"
+      },
+      {
+        "from": "samin",
+        "to": "caleb",
+        "value": 13,
+        "title": "13 games together"
+      },
+      {
+        "from": "pat",
+        "to": "caleb",
+        "value": 18,
+        "title": "18 games together"
+      },
+      {
+        "from": "nish",
+        "to": "caleb",
+        "value": 10,
+        "title": "10 games together"
+      },
+      {
+        "from": "samin",
+        "to": "fateen",
+        "value": 23,
+        "title": "23 games together"
+      },
+      {
+        "from": "pat",
+        "to": "fateen",
+        "value": 36,
+        "title": "36 games together"
+      },
+      {
+        "from": "fateen",
+        "to": "caleb",
+        "value": 10,
+        "title": "10 games together"
+      },
+      {
+        "from": "habeas",
+        "to": "caleb",
+        "value": 9,
+        "title": "9 games together"
+      },
+      {
+        "from": "subby",
+        "to": "ryy",
+        "value": 23,
+        "title": "23 games together"
+      },
+      {
+        "from": "will",
+        "to": "ryy",
+        "value": 45,
+        "title": "45 games together"
+      },
+      {
+        "from": "nish",
+        "to": "will",
+        "value": 4,
+        "title": "4 games together"
+      },
+      {
+        "from": "pat",
+        "to": "ryy",
+        "value": 15,
+        "title": "15 games together"
+      },
+      {
+        "from": "nish",
+        "to": "jmoon",
+        "value": 15,
+        "title": "15 games together"
+      },
+      {
+        "from": "gatmo",
+        "to": "joguo",
+        "value": 8,
+        "title": "8 games together"
+      },
+      {
+        "from": "jmoon",
+        "to": "gatmo",
+        "value": 5,
+        "title": "5 games together"
+      },
+      {
+        "from": "jmoon",
+        "to": "joguo",
+        "value": 4,
+        "title": "4 games together"
+      },
+      {
+        "from": "habeas",
+        "to": "gatmo",
+        "value": 13,
+        "title": "13 games together"
+      },
+      {
+        "from": "nish",
+        "to": "joguo",
+        "value": 12,
+        "title": "12 games together"
+      },
+      {
+        "from": "nish",
+        "to": "gatmo",
+        "value": 4,
+        "title": "4 games together"
+      },
+      {
+        "from": "keneru",
+        "to": "gatmo",
+        "value": 4,
+        "title": "4 games together"
+      },
+      {
+        "from": "keneru",
+        "to": "joguo",
+        "value": 7,
+        "title": "7 games together"
+      },
+      {
+        "from": "ryy",
+        "to": "messi",
+        "value": 6,
+        "title": "6 games together"
+      },
+      {
+        "from": "fateen",
+        "to": "messi",
+        "value": 27,
+        "title": "27 games together"
+      },
+      {
+        "from": "ryy",
+        "to": "samin",
+        "value": 7,
+        "title": "7 games together"
+      },
+      {
+        "from": "keneru",
+        "to": "caleb",
+        "value": 5,
+        "title": "5 games together"
+      },
+      {
+        "from": "pat",
+        "to": "own",
+        "value": 21,
+        "title": "21 games together"
+      },
+      {
+        "from": "subby",
+        "to": "own",
+        "value": 144,
+        "title": "144 games together"
+      },
+      {
+        "from": "ya",
+        "to": "own",
+        "value": 10,
+        "title": "10 games together"
+      },
+      {
+        "from": "samin",
+        "to": "shafaq",
+        "value": 32,
+        "title": "32 games together"
+      },
+      {
+        "from": "samin",
+        "to": "own",
+        "value": 53,
+        "title": "53 games together"
+      },
+      {
+        "from": "shafaq",
+        "to": "own",
+        "value": 13,
+        "title": "13 games together"
+      },
+      {
+        "from": "nish",
+        "to": "own",
+        "value": 56,
+        "title": "56 games together"
+      },
+      {
+        "from": "keneru",
+        "to": "own",
+        "value": 33,
+        "title": "33 games together"
+      },
+      {
+        "from": "ya",
+        "to": "caleb",
+        "value": 3,
+        "title": "3 games together"
+      },
+      {
+        "from": "own",
+        "to": "amar",
+        "value": 3,
+        "title": "3 games together"
+      },
+      {
+        "from": "habeas",
+        "to": "own",
+        "value": 165,
+        "title": "165 games together"
+      },
+      {
+        "from": "habeas",
+        "to": "amar",
+        "value": 68,
+        "title": "68 games together"
+      },
+      {
+        "from": "messi",
+        "to": "joguo",
+        "value": 9,
+        "title": "9 games together"
+      },
+      {
+        "from": "messi",
+        "to": "own",
+        "value": 17,
+        "title": "17 games together"
+      },
+      {
+        "from": "mmmmm",
+        "to": "own",
+        "value": 7,
+        "title": "7 games together"
+      },
+      {
+        "from": "fateen",
+        "to": "own",
+        "value": 29,
+        "title": "29 games together"
+      },
+      {
+        "from": "will",
+        "to": "own",
+        "value": 68,
+        "title": "68 games together"
+      },
+      {
+        "from": "jmoon",
+        "to": "amar",
+        "value": 24,
+        "title": "24 games together"
+      },
+      {
+        "from": "pat",
+        "to": "amar",
+        "value": 3,
+        "title": "3 games together"
+      },
+      {
+        "from": "shafaq",
+        "to": "lag",
+        "value": 22,
+        "title": "22 games together"
+      },
+      {
+        "from": "jmoon",
+        "to": "own",
+        "value": 25,
+        "title": "25 games together"
+      },
+      {
+        "from": "shafaq",
+        "to": "messi",
+        "value": 3,
+        "title": "3 games together"
+      },
+      {
+        "from": "shafaq",
+        "to": "fateen",
+        "value": 4,
+        "title": "4 games together"
+      },
+      {
+        "from": "keneru",
+        "to": "messi",
+        "value": 3,
+        "title": "3 games together"
+      },
+      {
+        "from": "jmoon",
+        "to": "samin",
+        "value": 27,
+        "title": "27 games together"
+      },
+      {
+        "from": "lando",
+        "to": "own",
+        "value": 6,
+        "title": "6 games together"
+      },
+      {
+        "from": "habeas",
+        "to": "heidy",
+        "value": 34,
+        "title": "34 games together"
+      },
+      {
+        "from": "samin",
+        "to": "heidy",
+        "value": 30,
+        "title": "30 games together"
+      },
+      {
+        "from": "joguo",
+        "to": "heidy",
+        "value": 31,
+        "title": "31 games together"
+      },
+      {
+        "from": "heidy",
+        "to": "daniel l",
+        "value": 11,
+        "title": "11 games together"
+      },
+      {
+        "from": "joguo",
+        "to": "daniel l",
+        "value": 9,
+        "title": "9 games together"
+      },
+      {
+        "from": "nish",
+        "to": "heidy",
+        "value": 19,
+        "title": "19 games together"
+      },
+      {
+        "from": "jmoon",
+        "to": "heidy",
+        "value": 68,
+        "title": "68 games together"
+      },
+      {
+        "from": "samin",
+        "to": "joguo",
+        "value": 7,
+        "title": "7 games together"
+      },
+      {
+        "from": "keneru",
+        "to": "heidy",
+        "value": 15,
+        "title": "15 games together"
+      },
+      {
+        "from": "heidy",
+        "to": "asma",
+        "value": 9,
+        "title": "9 games together"
+      },
+      {
+        "from": "jmoon",
+        "to": "asma",
+        "value": 3,
+        "title": "3 games together"
+      },
+      {
+        "from": "lag",
+        "to": "heidy",
+        "value": 7,
+        "title": "7 games together"
+      },
+      {
+        "from": "habeas",
+        "to": "lag",
+        "value": 51,
+        "title": "51 games together"
+      },
+      {
+        "from": "lag",
+        "to": "own",
+        "value": 8,
+        "title": "8 games together"
+      },
+      {
+        "from": "keneru",
+        "to": "lag",
+        "value": 14,
+        "title": "14 games together"
+      },
+      {
+        "from": "jmoon",
+        "to": "lag",
+        "value": 9,
+        "title": "9 games together"
+      },
+      {
+        "from": "jmoon",
+        "to": "lando",
+        "value": 33,
+        "title": "33 games together"
+      },
+      {
+        "from": "shafaq",
+        "to": "lando",
+        "value": 17,
+        "title": "17 games together"
+      },
+      {
+        "from": "ryy",
+        "to": "own",
+        "value": 23,
+        "title": "23 games together"
+      },
+      {
+        "from": "will",
+        "to": "lag",
+        "value": 16,
+        "title": "16 games together"
+      },
+      {
+        "from": "strike",
+        "to": "own",
+        "value": 20,
+        "title": "20 games together"
+      },
+      {
+        "from": "jmoon",
+        "to": "unknown",
+        "value": 5,
+        "title": "5 games together"
+      },
+      {
+        "from": "nish",
+        "to": "lag",
+        "value": 11,
+        "title": "11 games together"
+      },
+      {
+        "from": "keneru",
+        "to": "stav",
+        "value": 3,
+        "title": "3 games together"
+      },
+      {
+        "from": "keneru",
+        "to": "niki <3",
+        "value": 6,
+        "title": "6 games together"
+      },
+      {
+        "from": "ya",
+        "to": "niki <3",
+        "value": 6,
+        "title": "6 games together"
+      },
+      {
+        "from": "shafaq",
+        "to": "niki <3",
+        "value": 13,
+        "title": "13 games together"
+      },
+      {
+        "from": "will",
+        "to": "niki <3",
+        "value": 3,
+        "title": "3 games together"
+      }
     ]
   }
 }
