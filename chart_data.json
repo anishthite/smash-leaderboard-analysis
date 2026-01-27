@@ -16,15 +16,15 @@
     },
     {
       "name": "subby",
-      "games": 1083,
-      "wins": 484,
-      "losses": 599,
-      "winRate": 44.7,
-      "kos": 2121,
-      "falls": 2388,
+      "games": 1091,
+      "wins": 486,
+      "losses": 605,
+      "winRate": 44.5,
+      "kos": 2144,
+      "falls": 2410,
       "sds": 92,
       "kd": 0.89,
-      "sdRate": 0.085,
+      "sdRate": 0.084,
       "momentum": 17.5,
       "charsPlayed": 28
     },
@@ -72,16 +72,16 @@
     },
     {
       "name": "nish",
-      "games": 538,
-      "wins": 231,
-      "losses": 307,
-      "winRate": 42.9,
-      "kos": 1019,
-      "falls": 1150,
-      "sds": 67,
-      "kd": 0.89,
-      "sdRate": 0.125,
-      "momentum": 25.9,
+      "games": 559,
+      "wins": 247,
+      "losses": 312,
+      "winRate": 44.2,
+      "kos": 1066,
+      "falls": 1188,
+      "sds": 68,
+      "kd": 0.9,
+      "sdRate": 0.122,
+      "momentum": 26.3,
       "charsPlayed": 12
     },
     {
@@ -100,15 +100,15 @@
     },
     {
       "name": "ya",
-      "games": 308,
-      "wins": 60,
-      "losses": 248,
-      "winRate": 19.5,
-      "kos": 368,
-      "falls": 774,
-      "sds": 20,
+      "games": 329,
+      "wins": 65,
+      "losses": 264,
+      "winRate": 19.8,
+      "kos": 398,
+      "falls": 831,
+      "sds": 22,
       "kd": 0.48,
-      "sdRate": 0.065,
+      "sdRate": 0.067,
       "momentum": 21.3,
       "charsPlayed": 16
     },
@@ -128,15 +128,15 @@
     },
     {
       "name": "fateen",
-      "games": 292,
-      "wins": 130,
-      "losses": 162,
-      "winRate": 44.5,
-      "kos": 561,
-      "falls": 658,
-      "sds": 44,
-      "kd": 0.85,
-      "sdRate": 0.151,
+      "games": 300,
+      "wins": 136,
+      "losses": 164,
+      "winRate": 45.3,
+      "kos": 590,
+      "falls": 678,
+      "sds": 45,
+      "kd": 0.87,
+      "sdRate": 0.15,
       "momentum": 7.5,
       "charsPlayed": 7
     },
@@ -785,15 +785,15 @@
       },
       {
         "name": "subby",
-        "games": 1083,
-        "wins": 484,
-        "losses": 599,
-        "winRate": 44.7,
-        "kos": 2121,
-        "falls": 2388,
+        "games": 1091,
+        "wins": 486,
+        "losses": 605,
+        "winRate": 44.5,
+        "kos": 2144,
+        "falls": 2410,
         "sds": 92,
         "kd": 0.89,
-        "sdRate": 0.085,
+        "sdRate": 0.084,
         "momentum": 17.5,
         "charsPlayed": 28
       },
@@ -841,16 +841,16 @@
       },
       {
         "name": "nish",
-        "games": 538,
-        "wins": 231,
-        "losses": 307,
-        "winRate": 42.9,
-        "kos": 1019,
-        "falls": 1150,
-        "sds": 67,
-        "kd": 0.89,
-        "sdRate": 0.125,
-        "momentum": 25.9,
+        "games": 559,
+        "wins": 247,
+        "losses": 312,
+        "winRate": 44.2,
+        "kos": 1066,
+        "falls": 1188,
+        "sds": 68,
+        "kd": 0.9,
+        "sdRate": 0.122,
+        "momentum": 26.3,
         "charsPlayed": 12
       },
       {
@@ -869,15 +869,15 @@
       },
       {
         "name": "ya",
-        "games": 308,
-        "wins": 60,
-        "losses": 248,
-        "winRate": 19.5,
-        "kos": 368,
-        "falls": 774,
-        "sds": 20,
+        "games": 329,
+        "wins": 65,
+        "losses": 264,
+        "winRate": 19.8,
+        "kos": 398,
+        "falls": 831,
+        "sds": 22,
         "kd": 0.48,
-        "sdRate": 0.065,
+        "sdRate": 0.067,
         "momentum": 21.3,
         "charsPlayed": 16
       },
@@ -897,15 +897,15 @@
       },
       {
         "name": "fateen",
-        "games": 292,
-        "wins": 130,
-        "losses": 162,
-        "winRate": 44.5,
-        "kos": 561,
-        "falls": 658,
-        "sds": 44,
-        "kd": 0.85,
-        "sdRate": 0.151,
+        "games": 300,
+        "wins": 136,
+        "losses": 164,
+        "winRate": 45.3,
+        "kos": 590,
+        "falls": 678,
+        "sds": 45,
+        "kd": 0.87,
+        "sdRate": 0.15,
         "momentum": 7.5,
         "charsPlayed": 7
       },
@@ -1561,10 +1561,10 @@
       1002,
       947,
       888,
-      828,
-      786,
+      840,
+      822,
       657,
-      619
+      629
     ],
     "winRates": [
       47.7,
@@ -1588,7 +1588,7 @@
       49.2,
       45.3,
       44.0,
-      45.7,
+      45.9,
       49.0,
       48.6
     ],
@@ -1605,7 +1605,7 @@
       "Sun"
     ],
     "data": [
-      1095,
+      1153,
       891,
       1729,
       1841,
@@ -1633,7 +1633,7 @@
       908,
       2070,
       600,
-      571
+      629
     ]
   },
   "allCharacters": [
@@ -1646,8 +1646,8 @@
     },
     {
       "name": "DONKEY KONG",
-      "plays": 824,
-      "wins": 401,
+      "plays": 827,
+      "wins": 403,
       "winRate": 48.7,
       "uniquePlayers": 14
     },
@@ -1660,23 +1660,23 @@
     },
     {
       "name": "JOKER",
-      "plays": 721,
-      "wins": 378,
-      "winRate": 52.4,
+      "plays": 741,
+      "wins": 383,
+      "winRate": 51.7,
       "uniquePlayers": 10
     },
     {
       "name": "SAMUS",
-      "plays": 663,
-      "wins": 299,
-      "winRate": 45.1,
+      "plays": 684,
+      "wins": 315,
+      "winRate": 46.1,
       "uniquePlayers": 9
     },
     {
       "name": "CAPTAIN FALCON",
-      "plays": 551,
+      "plays": 554,
       "wins": 254,
-      "winRate": 46.1,
+      "winRate": 45.8,
       "uniquePlayers": 16
     },
     {
@@ -1695,9 +1695,9 @@
     },
     {
       "name": "ENDERMAN",
-      "plays": 400,
+      "plays": 402,
       "wins": 202,
-      "winRate": 50.5,
+      "winRate": 50.2,
       "uniquePlayers": 5
     },
     {
@@ -1709,9 +1709,9 @@
     },
     {
       "name": "KING K. ROOL",
-      "plays": 337,
-      "wins": 162,
-      "winRate": 48.1,
+      "plays": 345,
+      "wins": 168,
+      "winRate": 48.7,
       "uniquePlayers": 10
     },
     {
@@ -1981,18 +1981,18 @@
       "uniquePlayers": 4
     },
     {
+      "name": "PYRA/MYTHRA",
+      "plays": 15,
+      "wins": 6,
+      "winRate": 40.0,
+      "uniquePlayers": 5
+    },
+    {
       "name": "DR. MARIO",
       "plays": 14,
       "wins": 9,
       "winRate": 64.3,
       "uniquePlayers": 3
-    },
-    {
-      "name": "PYRA/MYTHRA",
-      "plays": 14,
-      "wins": 6,
-      "winRate": 42.9,
-      "uniquePlayers": 5
     },
     {
       "name": "UNKNOWN",
@@ -2146,16 +2146,16 @@
     ],
     "plays": [
       892,
-      824,
+      827,
       813,
-      721,
-      663,
-      551,
+      741,
+      684,
+      554,
       424,
       406,
-      400,
+      402,
       351,
-      337,
+      345,
       244,
       242,
       172,
@@ -2170,14 +2170,14 @@
       46.7,
       48.7,
       55.6,
-      52.4,
-      45.1,
+      51.7,
       46.1,
+      45.8,
       52.1,
       55.4,
-      50.5,
+      50.2,
       42.5,
-      48.1,
+      48.7,
       51.6,
       44.2,
       60.5,
@@ -2227,7 +2227,7 @@
       32.4,
       31.0,
       30.6,
-      25.9,
+      26.3,
       25.1,
       25.0,
       23.1,
@@ -2264,11 +2264,11 @@
       "will",
       "keneru",
       "mmmmm",
-      "subby",
       "nish",
+      "subby",
       "ryy",
-      "pat",
       "fateen",
+      "pat",
       "aadil",
       "own",
       "strike",
@@ -2295,11 +2295,11 @@
       0.96,
       0.95,
       0.94,
-      0.89,
+      0.9,
       0.89,
       0.88,
       0.87,
-      0.85,
+      0.87,
       0.85,
       0.82,
       0.76,
@@ -2352,15 +2352,15 @@
     ],
     "data": [
       2224,
-      1083,
+      1091,
       963,
       767,
       668,
-      538,
+      559,
       364,
-      308,
+      329,
       302,
-      292,
+      300,
       253,
       186,
       137,
@@ -2670,9 +2670,9 @@
           "total": 4
         },
         {
-          "wr": 80.4,
-          "wins": 41,
-          "total": 51
+          "wr": 79.7,
+          "wins": 51,
+          "total": 64
         },
         {
           "wr": 0,
@@ -2760,9 +2760,9 @@
           "total": 0
         },
         {
-          "wr": 19.6,
-          "wins": 10,
-          "total": 51
+          "wr": 20.3,
+          "wins": 13,
+          "total": 64
         },
         {
           "wr": 0.0,
@@ -2937,10 +2937,10 @@
         70,
         140,
         142,
-        175,
-        105,
+        187,
+        141,
         81,
-        103
+        113
       ],
       [
         97,
@@ -3115,15 +3115,15 @@
       "10+"
     ],
     "data": [
-      851,
-      406,
+      857,
+      408,
       209,
       117,
-      59,
+      61,
       48,
       33,
       24,
-      16,
+      17,
       5,
       41
     ]
@@ -3148,8 +3148,8 @@
       "own",
       "shafaq",
       "mmmmm",
-      "lag",
       "ya",
+      "lag",
       "habeas",
       "will",
       "heidy",
@@ -3166,21 +3166,21 @@
       0.2,
       0.162,
       0.161,
-      0.151,
+      0.15,
       0.138,
       0.13,
       0.127,
-      0.125,
+      0.122,
       0.118,
       0.109,
       0.097,
       0.086,
-      0.085,
+      0.084,
       0.082,
       0.079,
       0.077,
+      0.067,
       0.066,
-      0.065,
       0.043,
       0.036,
       0.036,
@@ -3311,19 +3311,19 @@
       {
         "id": "fateen",
         "label": "fateen",
-        "games": 292,
-        "winRate": 44.5,
-        "size": 19.733333333333334,
+        "games": 300,
+        "winRate": 45.3,
+        "size": 20.0,
         "partnerships": [
           {
             "partner": "subby",
-            "games": 219,
-            "winRate": 5.9
+            "games": 227,
+            "winRate": 5.7
           },
           {
             "partner": "nish",
-            "games": 121,
-            "winRate": 2.5
+            "games": 129,
+            "winRate": 2.3
           },
           {
             "partner": "habeas",
@@ -3361,14 +3361,14 @@
             "winRate": 0.0
           },
           {
+            "partner": "ya",
+            "games": 23,
+            "winRate": 26.1
+          },
+          {
             "partner": "samin",
             "games": 23,
             "winRate": 0.0
-          },
-          {
-            "partner": "ya",
-            "games": 15,
-            "winRate": 40.0
           },
           {
             "partner": "aadil",
@@ -3779,9 +3779,9 @@
       {
         "id": "subby",
         "label": "subby",
-        "games": 1083,
-        "winRate": 44.7,
-        "size": 46.1,
+        "games": 1091,
+        "winRate": 44.5,
+        "size": 46.36666666666667,
         "partnerships": [
           {
             "partner": "habeas",
@@ -3790,13 +3790,13 @@
           },
           {
             "partner": "nish",
-            "games": 258,
-            "winRate": 12.8
+            "games": 266,
+            "winRate": 12.4
           },
           {
             "partner": "fateen",
-            "games": 219,
-            "winRate": 15.5
+            "games": 227,
+            "winRate": 15.0
           },
           {
             "partner": "keneru",
@@ -3825,8 +3825,8 @@
           },
           {
             "partner": "ya",
-            "games": 72,
-            "winRate": 50.0
+            "games": 80,
+            "winRate": 45.0
           },
           {
             "partner": "messi",
@@ -3903,13 +3903,18 @@
       {
         "id": "nish",
         "label": "nish",
-        "games": 538,
-        "winRate": 42.9,
-        "size": 27.933333333333334,
+        "games": 559,
+        "winRate": 44.2,
+        "size": 28.633333333333333,
         "partnerships": [
           {
             "partner": "subby",
-            "games": 258,
+            "games": 266,
+            "winRate": 3.0
+          },
+          {
+            "partner": "fateen",
+            "games": 129,
             "winRate": 3.1
           },
           {
@@ -3918,19 +3923,14 @@
             "winRate": 5.0
           },
           {
-            "partner": "fateen",
-            "games": 121,
-            "winRate": 3.3
-          },
-          {
             "partner": "keneru",
             "games": 120,
             "winRate": 5.0
           },
           {
             "partner": "ya",
-            "games": 93,
-            "winRate": 44.1
+            "games": 114,
+            "winRate": 44.7
           },
           {
             "partner": "own",
@@ -5315,18 +5315,18 @@
       {
         "id": "ya",
         "label": "ya",
-        "games": 308,
-        "winRate": 19.5,
-        "size": 20.266666666666666,
+        "games": 329,
+        "winRate": 19.8,
+        "size": 20.96666666666667,
         "partnerships": [
           {
             "partner": "nish",
-            "games": 93,
-            "winRate": 10.8
+            "games": 114,
+            "winRate": 11.4
           },
           {
             "partner": "subby",
-            "games": 72,
+            "games": 80,
             "winRate": 0.0
           },
           {
@@ -5345,6 +5345,11 @@
             "winRate": 0.0
           },
           {
+            "partner": "fateen",
+            "games": 23,
+            "winRate": 0.0
+          },
+          {
             "partner": "mmmmm",
             "games": 20,
             "winRate": 5.0
@@ -5358,11 +5363,6 @@
             "partner": "mizan",
             "games": 15,
             "winRate": 40.0
-          },
-          {
-            "partner": "fateen",
-            "games": 15,
-            "winRate": 0.0
           },
           {
             "partner": "jmoon",
@@ -5914,8 +5914,8 @@
       {
         "from": "subby",
         "to": "nish",
-        "value": 258,
-        "title": "258 games together"
+        "value": 266,
+        "title": "266 games together"
       },
       {
         "from": "subby",
@@ -5974,8 +5974,8 @@
       {
         "from": "subby",
         "to": "ya",
-        "value": 72,
-        "title": "72 games together"
+        "value": 80,
+        "title": "80 games together"
       },
       {
         "from": "habeas",
@@ -6070,8 +6070,8 @@
       {
         "from": "subby",
         "to": "fateen",
-        "value": 219,
-        "title": "219 games together"
+        "value": 227,
+        "title": "227 games together"
       },
       {
         "from": "keneru",
@@ -6196,8 +6196,8 @@
       {
         "from": "nish",
         "to": "ya",
-        "value": 93,
-        "title": "93 games together"
+        "value": 114,
+        "title": "114 games together"
       },
       {
         "from": "ya",
@@ -6208,8 +6208,8 @@
       {
         "from": "nish",
         "to": "fateen",
-        "value": 121,
-        "title": "121 games together"
+        "value": 129,
+        "title": "129 games together"
       },
       {
         "from": "jmoon",
@@ -6418,8 +6418,8 @@
       {
         "from": "ya",
         "to": "fateen",
-        "value": 15,
-        "title": "15 games together"
+        "value": 23,
+        "title": "23 games together"
       },
       {
         "from": "subby",

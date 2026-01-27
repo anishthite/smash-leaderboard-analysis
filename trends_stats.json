@@ -20,7 +20,7 @@
     "insight": "Performance changes during long sessions",
     "first_3_games_wr": 48.0,
     "after_8_games_wr": 49.7,
-    "fatigue_drop": -1.8
+    "fatigue_drop": -1.7
   },
   "lopsided_matchups": [
     {
@@ -74,7 +74,7 @@
     "busiest_games": 1841,
     "quietest_day": "Tuesday",
     "quietest_games": 891,
-    "friday_vs_monday": 1.3
+    "friday_vs_monday": 1.2
   },
   "streakiness": {
     "most_streaky_player": "habeas",
@@ -119,7 +119,7 @@
     }
   ],
   "loyalty_correlation": {
-    "correlation": -0.203,
+    "correlation": -0.196,
     "insight": "Negative = diverse players win more"
   },
   "warmup": {

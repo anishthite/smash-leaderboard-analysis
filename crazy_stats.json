@@ -2,7 +2,7 @@
   "character_by_day": {
     "Monday": {
       "character": "DONKEY KONG",
-      "plays": 142
+      "plays": 145
     },
     "Tuesday": {
       "character": "DONKEY KONG",
@@ -251,8 +251,8 @@
     },
     {
       "player": "fateen",
-      "sd_games": 38,
-      "sd_win_rate": 52.6
+      "sd_games": 39,
+      "sd_win_rate": 53.8
     }
   ],
   "top_matchup_by_day": {
@@ -395,8 +395,8 @@
     },
     {
       "player": "nish",
-      "games": 219,
-      "win_rate": 42.9
+      "games": 224,
+      "win_rate": 43.3
     },
     {
       "player": "keneru",
