@@ -1,7 +1,7 @@
 {
-  "total_team_matches": 786,
+  "total_team_matches": 795,
   "match_formats": {
-    "1v2": 224,
+    "1v2": 233,
     "2v2": 289,
     "2v1": 60,
     "1v3": 72,
@@ -501,6 +501,19 @@
       "total_falls": 7
     },
     {
+      "team": "ya",
+      "members": [
+        "ya"
+      ],
+      "size": 1,
+      "wins": 4,
+      "losses": 0,
+      "total": 4,
+      "win_rate": 100.0,
+      "total_kos": 8,
+      "total_falls": 6
+    },
+    {
       "team": "audrey & jeni & shafaq",
       "members": [
         "audrey",
@@ -528,19 +541,6 @@
       "win_rate": 100.0,
       "total_kos": 12,
       "total_falls": 8
-    },
-    {
-      "team": "ya",
-      "members": [
-        "ya"
-      ],
-      "size": 1,
-      "wins": 3,
-      "losses": 0,
-      "total": 3,
-      "win_rate": 100.0,
-      "total_kos": 5,
-      "total_falls": 4
     },
     {
       "team": "own & pat & samin",
@@ -687,12 +687,12 @@
         "nish"
       ],
       "size": 1,
-      "wins": 41,
+      "wins": 46,
       "losses": 6,
-      "total": 47,
-      "win_rate": 87.2,
-      "total_kos": 141,
-      "total_falls": 83
+      "total": 52,
+      "win_rate": 88.5,
+      "total_kos": 160,
+      "total_falls": 91
     },
     {
       "team": "subby",
@@ -700,12 +700,12 @@
         "subby"
       ],
       "size": 1,
-      "wins": 44,
+      "wins": 47,
       "losses": 2,
-      "total": 46,
-      "win_rate": 95.7,
-      "total_kos": 168,
-      "total_falls": 78
+      "total": 49,
+      "win_rate": 95.9,
+      "total_kos": 178,
+      "total_falls": 83
     },
     {
       "team": "nish & subby",
@@ -715,11 +715,11 @@
       ],
       "size": 2,
       "wins": 10,
-      "losses": 30,
-      "total": 40,
-      "win_rate": 25.0,
-      "total_kos": 151,
-      "total_falls": 191
+      "losses": 31,
+      "total": 41,
+      "win_rate": 24.4,
+      "total_kos": 156,
+      "total_falls": 197
     },
     {
       "team": "samin",
@@ -1073,6 +1073,15 @@
       "games_with_best": 47
     },
     {
+      "player": "nish",
+      "team_wins": 145,
+      "team_losses": 191,
+      "team_games": 336,
+      "team_win_rate": 43.2,
+      "best_teammate": "subby",
+      "games_with_best": 59
+    },
+    {
       "player": "jeni",
       "team_wins": 6,
       "team_losses": 8,
@@ -1089,15 +1098,6 @@
       "team_win_rate": 42.9,
       "best_teammate": "mmmmm",
       "games_with_best": 4
-    },
-    {
-      "player": "nish",
-      "team_wins": 140,
-      "team_losses": 187,
-      "team_games": 327,
-      "team_win_rate": 42.8,
-      "best_teammate": "subby",
-      "games_with_best": 58
     },
     {
       "player": "pat",
@@ -1137,10 +1137,10 @@
     },
     {
       "player": "subby",
-      "team_wins": 188,
-      "team_losses": 266,
-      "team_games": 454,
-      "team_win_rate": 41.4,
+      "team_wins": 191,
+      "team_losses": 272,
+      "team_games": 463,
+      "team_win_rate": 41.3,
       "best_teammate": "fateen",
       "games_with_best": 107
     },
@@ -1182,12 +1182,12 @@
     },
     {
       "player": "ya",
-      "team_wins": 31,
-      "team_losses": 64,
-      "team_games": 95,
-      "team_win_rate": 32.6,
+      "team_wins": 32,
+      "team_losses": 72,
+      "team_games": 104,
+      "team_win_rate": 30.8,
       "best_teammate": "nish",
-      "games_with_best": 23
+      "games_with_best": 26
     },
     {
       "player": "Raulito",
@@ -1518,9 +1518,9 @@
       "partnership": "nish & subby",
       "player1": "nish",
       "player2": "subby",
-      "games_together": 58,
+      "games_together": 59,
       "wins_together": 12,
-      "win_rate": 20.7
+      "win_rate": 20.3
     },
     {
       "partnership": "keneru & nish",
@@ -1643,6 +1643,14 @@
       "win_rate": 51.9
     },
     {
+      "partnership": "nish & ya",
+      "player1": "nish",
+      "player2": "ya",
+      "games_together": 26,
+      "wins_together": 6,
+      "win_rate": 23.1
+    },
+    {
       "partnership": "fateen & strike",
       "player1": "fateen",
       "player2": "strike",
@@ -1657,18 +1665,10 @@
       "games_together": 25,
       "wins_together": 6,
       "win_rate": 24.0
-    },
-    {
-      "partnership": "nish & ya",
-      "player1": "nish",
-      "player2": "ya",
-      "games_together": 23,
-      "wins_together": 6,
-      "win_rate": 26.1
     }
   ],
   "summary": {
-    "total_team_matches": 786,
+    "total_team_matches": 795,
     "true_2v2_matches": 289,
     "total_unique_teams": 272,
     "total_unique_duos": 80,
