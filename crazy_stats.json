@@ -10,7 +10,7 @@
     },
     "Wednesday": {
       "character": "DONKEY KONG",
-      "plays": 151
+      "plays": 155
     },
     "Thursday": {
       "character": "ZELDA",
@@ -380,13 +380,13 @@
   "night_owls": [
     {
       "player": "habeas",
-      "games": 715,
-      "win_rate": 44.1
+      "games": 726,
+      "win_rate": 44.5
     },
     {
       "player": "subby",
-      "games": 424,
-      "win_rate": 46.2
+      "games": 435,
+      "win_rate": 45.5
     },
     {
       "player": "jmoon",
@@ -395,8 +395,8 @@
     },
     {
       "player": "nish",
-      "games": 235,
-      "win_rate": 44.3
+      "games": 238,
+      "win_rate": 44.1
     },
     {
       "player": "keneru",
@@ -417,9 +417,9 @@
     "won": false
   },
   "habeas_deep_dive": {
-    "total_games": 2241,
-    "total_wins": 1140,
-    "total_kos": 4804,
+    "total_games": 2252,
+    "total_wins": 1148,
+    "total_kos": 4836,
     "total_sds": 96,
     "by_day": {
       "Monday": {
@@ -431,8 +431,8 @@
         "win_rate": 56.9
       },
       "Wednesday": {
-        "games": 413,
-        "win_rate": 52.1
+        "games": 424,
+        "win_rate": 52.6
       },
       "Thursday": {
         "games": 445,

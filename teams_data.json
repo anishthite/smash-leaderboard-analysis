@@ -1,7 +1,7 @@
 {
-  "total_team_matches": 795,
+  "total_team_matches": 799,
   "match_formats": {
-    "1v2": 233,
+    "1v2": 237,
     "2v2": 289,
     "2v1": 60,
     "1v3": 72,
@@ -674,12 +674,12 @@
         "habeas"
       ],
       "size": 1,
-      "wins": 39,
+      "wins": 42,
       "losses": 13,
-      "total": 52,
-      "win_rate": 75.0,
-      "total_kos": 167,
-      "total_falls": 100
+      "total": 55,
+      "win_rate": 76.4,
+      "total_kos": 179,
+      "total_falls": 104
     },
     {
       "team": "nish",
@@ -687,12 +687,12 @@
         "nish"
       ],
       "size": 1,
-      "wins": 46,
+      "wins": 47,
       "losses": 6,
-      "total": 52,
-      "win_rate": 88.5,
-      "total_kos": 160,
-      "total_falls": 91
+      "total": 53,
+      "win_rate": 88.7,
+      "total_kos": 162,
+      "total_falls": 93
     },
     {
       "team": "subby",
@@ -715,11 +715,11 @@
       ],
       "size": 2,
       "wins": 10,
-      "losses": 31,
-      "total": 41,
-      "win_rate": 24.4,
-      "total_kos": 156,
-      "total_falls": 197
+      "losses": 33,
+      "total": 43,
+      "win_rate": 23.3,
+      "total_kos": 160,
+      "total_falls": 209
     },
     {
       "team": "samin",
@@ -735,6 +735,20 @@
       "total_falls": 61
     },
     {
+      "team": "habeas & subby",
+      "members": [
+        "habeas",
+        "subby"
+      ],
+      "size": 2,
+      "wins": 13,
+      "losses": 24,
+      "total": 37,
+      "win_rate": 35.1,
+      "total_kos": 148,
+      "total_falls": 183
+    },
+    {
       "team": "shafaq",
       "members": [
         "shafaq"
@@ -746,20 +760,6 @@
       "win_rate": 67.6,
       "total_kos": 148,
       "total_falls": 73
-    },
-    {
-      "team": "habeas & subby",
-      "members": [
-        "habeas",
-        "subby"
-      ],
-      "size": 2,
-      "wins": 13,
-      "losses": 23,
-      "total": 36,
-      "win_rate": 36.1,
-      "total_kos": 142,
-      "total_falls": 177
     },
     {
       "team": "own & subby",
@@ -1029,12 +1029,12 @@
     },
     {
       "player": "habeas",
-      "team_wins": 152,
-      "team_losses": 161,
-      "team_games": 313,
-      "team_win_rate": 48.6,
+      "team_wins": 155,
+      "team_losses": 162,
+      "team_games": 317,
+      "team_win_rate": 48.9,
       "best_teammate": "subby",
-      "games_with_best": 50
+      "games_with_best": 51
     },
     {
       "player": "fateen",
@@ -1074,12 +1074,12 @@
     },
     {
       "player": "nish",
-      "team_wins": 145,
-      "team_losses": 191,
-      "team_games": 336,
-      "team_win_rate": 43.2,
+      "team_wins": 146,
+      "team_losses": 193,
+      "team_games": 339,
+      "team_win_rate": 43.1,
       "best_teammate": "subby",
-      "games_with_best": 59
+      "games_with_best": 61
     },
     {
       "player": "jeni",
@@ -1138,9 +1138,9 @@
     {
       "player": "subby",
       "team_wins": 191,
-      "team_losses": 272,
-      "team_games": 463,
-      "team_win_rate": 41.3,
+      "team_losses": 276,
+      "team_games": 467,
+      "team_win_rate": 40.9,
       "best_teammate": "fateen",
       "games_with_best": 107
     },
@@ -1316,6 +1316,15 @@
       "games_with_best": 5
     },
     {
+      "player": "unknown",
+      "team_wins": 0,
+      "team_losses": 5,
+      "team_games": 5,
+      "team_win_rate": 0.0,
+      "best_teammate": "keneru",
+      "games_with_best": 2
+    },
+    {
       "player": "tcvora",
       "team_wins": 0,
       "team_losses": 4,
@@ -1323,15 +1332,6 @@
       "team_win_rate": 0.0,
       "best_teammate": "fateen",
       "games_with_best": 4
-    },
-    {
-      "player": "unknown",
-      "team_wins": 0,
-      "team_losses": 4,
-      "team_games": 4,
-      "team_win_rate": 0.0,
-      "best_teammate": "keneru",
-      "games_with_best": 2
     },
     {
       "player": "dhruvus",
@@ -1518,9 +1518,9 @@
       "partnership": "nish & subby",
       "player1": "nish",
       "player2": "subby",
-      "games_together": 59,
+      "games_together": 61,
       "wins_together": 12,
-      "win_rate": 20.3
+      "win_rate": 19.7
     },
     {
       "partnership": "keneru & nish",
@@ -1550,9 +1550,9 @@
       "partnership": "habeas & subby",
       "player1": "habeas",
       "player2": "subby",
-      "games_together": 50,
+      "games_together": 51,
       "wins_together": 16,
-      "win_rate": 32.0
+      "win_rate": 31.4
     },
     {
       "partnership": "strike & subby",
@@ -1668,10 +1668,10 @@
     }
   ],
   "summary": {
-    "total_team_matches": 795,
+    "total_team_matches": 799,
     "true_2v2_matches": 289,
-    "total_unique_teams": 272,
+    "total_unique_teams": 273,
     "total_unique_duos": 80,
-    "total_partnerships": 223
+    "total_partnerships": 224
   }
 }

@@ -2,9 +2,9 @@
   "biggest_grinder": {
     "stat": "Most Games Played",
     "player": "habeas",
-    "value": "2,241 games",
-    "detail": "That's 10.0 games per day on average",
-    "runner_up": "subby (1,100)"
+    "value": "2,252 games",
+    "detail": "That's 10.1 games per day on average",
+    "runner_up": "subby (1,111)"
   },
   "most_dominant": {
     "stat": "Highest Win Rate (50+ games)",
@@ -46,7 +46,7 @@
     "stat": "Most Self-Destructs (Total)",
     "player": "habeas",
     "value": "96 SDs",
-    "detail": "That's 1 SD every 23.3 games"
+    "detail": "That's 1 SD every 23.5 games"
   },
   "most_sd_prone": {
     "stat": "Most SD-Prone Player",
@@ -88,7 +88,7 @@
     "stat": "Biggest Night Owl",
     "player": "habeas",
     "value": "1063 late-night games",
-    "detail": "That's 47.4% of their games after 10PM"
+    "detail": "That's 47.2% of their games after 10PM"
   },
   "late_night_specialist": {
     "stat": "Best After 10PM",
