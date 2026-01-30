@@ -4,13 +4,13 @@
     "player": "habeas",
     "value": "2,252 games",
     "detail": "That's 10.1 games per day on average",
-    "runner_up": "subby (1,111)"
+    "runner_up": "subby (1,129)"
   },
   "most_dominant": {
     "stat": "Highest Win Rate (50+ games)",
     "player": "jmoon",
-    "value": "77.8%",
-    "detail": "755W - 215L across 970 games"
+    "value": "78.2%",
+    "detail": "770W - 215L across 985 games"
   },
   "biggest_underdog": {
     "stat": "Lowest Win Rate (50+ games)",
@@ -33,20 +33,20 @@
   "best_kd": {
     "stat": "Best KO/Death Ratio",
     "player": "jmoon",
-    "value": "1.59 K/D",
-    "detail": "2343 KOs, 1477 deaths"
+    "value": "1.60 K/D",
+    "detail": "2384 KOs, 1486 deaths"
   },
   "worst_kd": {
     "stat": "Worst KO/Death Ratio",
-    "player": "mizan",
-    "value": "0.44 K/D",
+    "player": "lando",
+    "value": "0.41 K/D",
     "detail": "Gets KO'd more than they KO"
   },
   "most_sds_total": {
     "stat": "Most Self-Destructs (Total)",
-    "player": "habeas",
-    "value": "96 SDs",
-    "detail": "That's 1 SD every 23.5 games"
+    "player": "subby",
+    "value": "99 SDs",
+    "detail": "That's 1 SD every 11.4 games"
   },
   "most_sd_prone": {
     "stat": "Most SD-Prone Player",
@@ -93,8 +93,8 @@
   "late_night_specialist": {
     "stat": "Best After 10PM",
     "player": "jmoon",
-    "value": "77.0% win rate",
-    "detail": "Across 427 late-night games"
+    "value": "77.8% win rate",
+    "detail": "Across 442 late-night games"
   },
   "giant_killer": {
     "stat": "Most Wins vs jmoon",
@@ -104,15 +104,15 @@
   },
   "most_cursed_char": {
     "stat": "Most Cursed Character",
-    "player": "GRENINJA",
-    "value": "21.3% win rate",
-    "detail": "Across 108 games. Just don't pick it."
+    "player": "FOX",
+    "value": "20.8% win rate",
+    "detail": "Across 48 games. Just don't pick it."
   },
   "most_blessed_char": {
     "stat": "Most Blessed Character",
     "player": "MARTH",
-    "value": "84.6% win rate",
-    "detail": "Across 26 games. The secret weapon."
+    "value": "81.5% win rate",
+    "detail": "Across 27 games. The secret weapon."
   },
   "biggest_rivalry": {
     "stat": "Biggest Rivalry",
@@ -140,9 +140,9 @@
   },
   "most_improved": {
     "stat": "Most Improved Player",
-    "player": "nish",
-    "value": "+32.0%",
-    "detail": "First 50 games: 44.0% \u2192 Last 50: 76.0%"
+    "player": "pat",
+    "value": "+26.0%",
+    "detail": "First 50 games: 20.0% \u2192 Last 50: 46.0%"
   },
   "fallen_off": {
     "stat": "Biggest Decline",
@@ -153,8 +153,8 @@
   "friday_king": {
     "stat": "Friday King",
     "player": "jmoon",
-    "value": "70.3% win rate",
-    "detail": "Lives for Friday sessions (229 games)"
+    "value": "72.1% win rate",
+    "detail": "Lives for Friday sessions (244 games)"
   },
   "1am_warrior": {
     "stat": "The 1AM Warrior",
@@ -165,8 +165,8 @@
   "perfect_game_master": {
     "stat": "Most Perfect Games",
     "player": "jmoon",
-    "value": "100 flawless victories",
-    "detail": "That's 10.3% of their games"
+    "value": "105 flawless victories",
+    "detail": "That's 10.7% of their games"
   },
   "single_game_kos": {
     "stat": "Most KOs in One Match",
